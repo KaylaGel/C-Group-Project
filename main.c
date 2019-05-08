@@ -39,7 +39,7 @@ struct person
     char password[MAX_PASS_LEN];
     date_t DOB;
 };
-typedef struct person person_t
+typedef struct person person_t;
 
 struct patron
 {
@@ -75,9 +75,9 @@ struct coord
 
 
     void print_menu(void);
-    void add_event(event_t events, int event_count);
+    void add_event(event_t* events, int* event_count);
     void display_event(event_t events, int event_count);
-    void edit_event(event_t events)
+    void edit_event(event_t* events)
     void add_database(event_t* events, int event_count);
     void load_database(event_t* events, int* event_count);
 //Perhaps add more prototype functions if necassary, 
