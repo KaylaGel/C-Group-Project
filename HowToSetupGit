@@ -14,8 +14,13 @@ Done
 
 Update Local Copy:
 Click 'Fetch Origin' which is located up the top of the window
-
+Done
 
 Commit Changes:
 As you edit files, the 'Changes' tab in GitHub Desktop should auto-update with those changes
-Once you wish to combine those changes with the main project, click the blue 'Commit to master' button down the bottom of the screen
+Once you wish to combine those changes with the main project,
+Give the change a name and/or description, briefly describing what you did in the change
+Click the blue 'Commit to master' button down the bottom of the screen
+Click the 'Push origin' button up the top of the screen
+If a popup shows saying there are 'newer commits on remote', click the blue 'fetch' button to update your local copy of the project
+Done
