@@ -1,7 +1,7 @@
 # C-Group-Project
 Setup:\
 Download GitHub Desktop\
-Go to the Git Project Page "https://github.com/KaylaGel/C-Group-Project"\
+Go to the Git Project Page " https://github.com/KaylaGel/C-Group-Project "\
 Click the Green 'Clone or Download' button\
 Click 'Open in Desktop' - This should open GitHub Desktop\
 In the 'Local Path' field, specify which folder you would like the Project to be saved to on your local machine\
