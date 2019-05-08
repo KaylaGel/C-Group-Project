@@ -12,7 +12,7 @@ Click 'Show in Explorer' which is located in the middle of the window\
 Open the Project folder/files in whichever text editor you prefer (SubLime/VisualStudio/CLion/etc.)\
 Done
 
-Update Local Copy
+Update Local Copy:\
 Click 'Fetch Origin' which is located up the top of the window\
 Done
 
