@@ -80,7 +80,7 @@ struct coord
     void edit_event(event_t* events)
     void add_database(event_t* events, int event_count);
     void load_database(event_t* events, int* event_count);
-//Perhaps add more prototype functions if necassary, 
+//Perhaps add more prototype functions if necessary,
 //also need to put people on different tasks for these functions
 
 
