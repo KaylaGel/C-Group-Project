@@ -1,0 +1,81 @@
+NAME: Event Hub
+
+USERS:
+—> Event coordinator
+—> Staff
+—> Patrons
+
+OPENING SCREEN:
+
+	1. Login
+	2. Create Account
+	3. Exit
+
+LOGIN:
+
+	Username:
+	Password:
+
+MENU:
+
+    1. Add Event
+    2. Edit Event
+    3. Join Event
+    4. Exit program
+
+ADD EVENT:
+—> Assign event to username and id
+
+	Name of Event:
+	Location:
+	Time:
+	MAX number of people:
+
+	Event ID: * (automatically generated)
+	Create Password for Event:
+
+Edit Event:
+
+	Option 1:
+
+		Event ID:
+		Event Password:
+
+		IF PASSWORD AND EVENT ID MATCHES FILE
+
+		Enter Event id
+		1. Name of Event:
+		2. Location:
+		3. Time:
+		4. MAX number of people:
+        		5. Return to menu
+		____________________________________
+
+        		Current number of people attending:
+        		Current number of staff:
+		____________________________________
+		Choose a number to Edit(1-5):
+
+	Option 2:
+
+		IF PASSWORD AND EVENT ID DOESN’T MATCHE FILE
+
+		“You Don’t have any events at the moment.”
+
+
+JOIN Event (If there is 1 or more event):
+
+* Lists all the current events
+* Give the user the option to search for an event or sort
+
+	SELECT EVENT (1-num of events):
+	REQUEST TO JOIN AS PATRON OR STAFF: (option)
+
+	IF OPTION =. Patron
+
+		Enter Credit Card Details for event:
+		Name:
+		Card Number:
+		Expiry Date:
+		CVV:
+	(Encrypt Card Number)
