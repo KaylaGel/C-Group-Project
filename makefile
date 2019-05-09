@@ -4,10 +4,11 @@
 
 CC = gcc
 CFLAGS = -Wall -ansi -lm
-BINARY = event_manager
+BINARY = main
+EXECUTABLE = EventManager
 
-$(BINARY).out : $(BINARY).o
-	$(CC) $(CFLAGS) -o $(BINARY).out $(BINARY).o
+$(EXECUTABLE) : $(BINARY).o
+	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(BINARY).o
 	echo "Build Complete"
 
 $(BINARY).o : $(BINARY).c
@@ -15,6 +16,6 @@ $(BINARY).o : $(BINARY).c
 	echo "Compile Complete"
 
 clean:
-	rm $(BINARY).o
-	rm $(BINARY).out
+	rm -f *.o
+	rm -f $(EXECUTABLE)
 	echo "Cleaning Complete"
