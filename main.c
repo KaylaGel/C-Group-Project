@@ -14,7 +14,24 @@ int main(void)
 
     print_menu_login();
     print_menu_main();
-
+    char test;
+    scanChar(&test);
+    if (validInt(&test)) {
+        int testInt = convertInt(&test);
+        printf("Int: %i\n", testInt);
+    } else
+    {
+        printf("Char: %c\n", test);
+    }
+    char testString[11];
+    scanString(testString, 10);
+    if (validInt(testString)) {
+        int testInt = convertInt(testString);
+        printf("Int: %i\n", testInt);
+    } else
+    {
+        printf("String: %s\n", testString);
+    }
 
     return 0;
 }
