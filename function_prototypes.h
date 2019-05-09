@@ -5,6 +5,10 @@
 
     void print_menu_login(void);
     void print_menu_main(void);
+
+    void scanChar(char* input);
+    void scanString(char* input, int len);
+
     void add_event(event_t* events, int* event_count);
     void display_event(event_t events, int event_count);
     void edit_event(event_t* events);

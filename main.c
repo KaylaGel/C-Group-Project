@@ -5,6 +5,7 @@
 #include "function_prototypes.h"
 
 #include "event_menu.c"
+#include "user_input.c"
 
 int main(void)
 {
