@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include "event_manger.h"
+#include "event_manager.h"
 
     int main()
     {
