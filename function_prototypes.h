@@ -3,7 +3,8 @@
 #ifndef C_GROUP_PROJECT_PROTOTYPES_H
     #define C_GROUP_PROJECT_PROTOTYPES_H
 
-    void print_menu(void);
+    void print_menu_login(void);
+    void print_menu_main(void);
     void add_event(event_t* events, int* event_count);
     void display_event(event_t events, int event_count);
     void edit_event(event_t* events);
