@@ -1,5 +1,8 @@
 #include <stdio.h>
-#include "event_manager.h"
+
+#include "definitions.h"
+#include "structs.h"
+#include "function_prototypes.h"
 
 int main(void)
 {
