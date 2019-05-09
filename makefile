@@ -16,5 +16,5 @@ $(BINARY).o : $(BINARY).c
 
 clean:
 	rm $(BINARY).o
-    rm $(BINARY).out
+	rm $(BINARY).out
 	echo "Cleaning Complete"
