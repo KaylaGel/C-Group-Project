@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 
-void scanString(char* input, int len)
+void scan_string(char* input, int len)
 {
     /* Get one character from stdin and save it to input */
     fgets(input, len + 1, stdin);
@@ -11,7 +11,7 @@ void scanString(char* input, int len)
     return;
 }
 
-void scanChar(char* input)
+void scan_char(char* input)
 {
     scanString(input, 1);
     return;
