@@ -15,5 +15,5 @@ $(BINARY).o : $(BINARY).c
 	echo "Compile Complete"
 
 clean:
-	rm event_manager.o
+	rm $(BINARY).o
 	echo "Cleaning Complete"
