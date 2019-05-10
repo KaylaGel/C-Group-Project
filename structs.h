@@ -1,6 +1,7 @@
 /* Header file for event_manager.c structs */
 
 #ifndef C_GROUP_PROJECT_STRUCTS_H
+    #include "definitions.h" /* MAX_NAME_LEN, MAX_PATRONS, MAX_STAFF */
     #define C_GROUP_PROJECT_STRUCTS_H
 
     struct date

@@ -1,5 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> /* scanf(), printf() */
+#include <stdlib.h> /* malloc() */
+
+#include "definitions.h" /* MAX_INT_LEN */
+#include "function_prototypes.h" /* valid_int(), convert_int() */
 
 void get_user_login(char* username, char* password)
 {

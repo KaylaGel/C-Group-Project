@@ -1,12 +1,8 @@
-#include <stdio.h>
+#include <stdio.h> /* UNUSED */
 
-#include "definitions.h"
-#include "structs.h"
-#include "function_prototypes.h"
-
-#include "event_menu.c"
-#include "user_input.c"
-#include "data_validation.c"
+#include "definitions.h" /* UNUSED */
+#include "structs.h" /* event_t */
+#include "function_prototypes.h" /* UNUSED */
 
 int main(void)
 {

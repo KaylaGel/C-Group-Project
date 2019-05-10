@@ -1,6 +1,7 @@
 /* Header file for event_manager.c function prototypes */
 
 #ifndef C_GROUP_PROJECT_PROTOTYPES_H
+    #include "structs.h" /* event_t */
     #define C_GROUP_PROJECT_PROTOTYPES_H
 
     /* event_menu.c */

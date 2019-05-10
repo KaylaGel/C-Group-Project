@@ -1,5 +1,5 @@
-#include <string.h>
-#include <stdlib.h>
+#include <string.h> /* strlen() */
+#include <stdlib.h> /* strtol() */
 
 int valid_int(char* input)
 {

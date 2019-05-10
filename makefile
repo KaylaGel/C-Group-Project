@@ -3,18 +3,21 @@
 #to clean up file, type 'make clean' int the command line
 
 CC = gcc
-CFLAGS = -Wall -ansi -lm
-BINARY = main
+CFLAGS = -Wall -lm -Wno-unused-variable
+
 EXECUTABLE = EventManager
+
+HEADERS = definitions.h structs.h funciton_prototypes.h
+OBJECTS = main.o event_menu.o data_validation.o user_input.o
 
 default: $(EXECUTABLE)
 
-$(EXECUTABLE) : $(BINARY).o
-	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(BINARY).o
+$(EXECUTABLE) : $(OBJECTS)
+	$(CC) -o $@ $^ $(CFLAGS)
 	echo "Build Complete"
 
-$(BINARY).o : $(BINARY).c
-	$(CC) $(CFLAGS) -c -o $(BINARY).o $(BINARY).c -Wno-unused-variable
+%.o : %.c $(HEADERS)
+	$(CC) -c -o $@ $< $(CFLAGS)
 	echo "Compile Complete"
 
 clean:
