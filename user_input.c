@@ -14,10 +14,10 @@ void get_user_login(char* username, char* password)
     return;
 }
 
-void get_event_login(char* event_id, char* event_password)
+void get_event_login(int* event_id, char* event_password)
 {
     printf("Event ID: ");
-    scanf("%s", event_id);
+    scanf("%i", event_id);
 
     printf("Password: ");
     scanf("%s", event_password);
