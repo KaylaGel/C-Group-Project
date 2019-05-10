@@ -24,6 +24,7 @@
     {
         char firstname[MAX_NAME_LEN];
         char lastname[MAX_NAME_LEN];
+        char username[MAX_NAME_LEN];
         char password[MAX_PASS_LEN];
         date_t DOB;
     };
