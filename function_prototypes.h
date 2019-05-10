@@ -5,6 +5,8 @@
     #define C_GROUP_PROJECT_PROTOTYPES_H
 
     /* event_menu.c */
+    void menu_login(event_t* events, int* event_count);
+    void menu_main(event_t* events, int* event_count);
     void print_menu_login(void);
     void print_menu_main(void);
 
