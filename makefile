@@ -7,6 +7,8 @@ CFLAGS = -Wall -ansi -lm
 BINARY = main
 EXECUTABLE = EventManager
 
+default: $(EXECUTABLE)
+
 $(EXECUTABLE) : $(BINARY).o
 	$(CC) $(CFLAGS) -o $(EXECUTABLE) $(BINARY).o
 	echo "Build Complete"
