@@ -1,8 +1,8 @@
-#include <stdio.h> /* UNUSED */
+#include <stdio.h> /* printf() */
 
-#include "definitions.h" /* UNUSED */
+#include "definitions.h" /* MAX_EVENTS */
 #include "structs.h" /* event_t */
-#include "function_prototypes.h" /* UNUSED */
+#include "function_prototypes.h" /* menu_login() */
 
 int main(void)
 {
