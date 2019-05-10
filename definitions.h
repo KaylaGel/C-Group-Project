@@ -3,6 +3,8 @@
 #ifndef C_GROUP_PROJECT_DEFINITIONS_H
     #define C_GROUP_PROJECT_DEFINITIONS_H
 
+    #define MAX_INT_LEN 10 /* eg: 2,147,483,647; MAX_INT = 10 digits */
+
     #define MAX_NAME_LEN 20
     #define MAX_PASS_LEN 24
     #define MIN_PASS_LEN 8

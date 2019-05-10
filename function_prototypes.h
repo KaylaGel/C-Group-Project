@@ -12,6 +12,10 @@
     int convert_int(char* input);
 
     /* function_prototypes.c */
+    void get_user_login(char* username, char* password);
+    void get_event_login(char* event_id, char* event_password);
+    int scan_int(void);
+
     /* TODO */
     void add_event(event_t* events, int* event_count);
     void display_event(event_t events, int event_count);
