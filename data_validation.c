@@ -17,5 +17,5 @@ int valid_int(char* input)
 
 int convert_int(char* input)
 {
-    return (int)strtol(input, NULL, 10);
+    return (int) strtol(input, NULL, 10);
 }

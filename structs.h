@@ -12,7 +12,8 @@
     };
     typedef struct date date_t;
 
-    struct card {
+    struct card
+    {
         int card_num;
         date_t exp;
         int cvv;

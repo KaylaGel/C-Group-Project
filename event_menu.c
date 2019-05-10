@@ -9,10 +9,19 @@ void menu_login(event_t* events, int* event_count)
     int user_selection = scan_int();
     switch(user_selection)
     {
-        case 1: printf("Login Selected\n"); break;
-        case 2: printf("Create Account Selected\n"); break;
-        case 3: printf("Exit Selected\n"); break;
-        default: printf("Not a valid entry\n"); menu_login(events, event_count); break;
+        case 1:
+            printf("Login Selected\n");
+            break;
+        case 2:
+            printf("Create Account Selected\n");
+            break;
+        case 3:
+            printf("Exit Selected\n");
+            break;
+        default:
+            printf("Not a valid entry\n");
+            menu_login(events, event_count);
+            break;
     }
     return;
 }
@@ -23,11 +32,22 @@ void menu_main(event_t* events, int* event_count)
     int user_selection = scan_int();
     switch(user_selection)
     {
-        case 1: printf("Add Event Selected\n"); break;
-        case 2: printf("Edit Event Selected\n"); break;
-        case 3: printf("Join Event Selected\n"); break;
-        case 4: printf("Exit program Selected\n"); break;
-        default: printf("Not a valid entry\n"); menu_main(events, event_count); break;
+        case 1:
+            printf("Add Event Selected\n");
+            break;
+        case 2:
+            printf("Edit Event Selected\n");
+            break;
+        case 3:
+            printf("Join Event Selected\n");
+            break;
+        case 4:
+            printf("Exit program Selected\n");
+            break;
+        default:
+            printf("Not a valid entry\n");
+            menu_main(events, event_count);
+            break;
     }
     return;
 }
