@@ -38,6 +38,7 @@ int scan_int(void)
         {
             printf("Not a valid number\n");
             printf("Please input a valid number: \n");
+            printf("> ");
             return scan_int();
         }
     }
