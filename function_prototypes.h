@@ -3,14 +3,16 @@
 #ifndef C_GROUP_PROJECT_PROTOTYPES_H
     #define C_GROUP_PROJECT_PROTOTYPES_H
 
+    /* event_menu.c */
     void print_menu_login(void);
     void print_menu_main(void);
 
-    void scan_char(char* input);
-    void scan_string(char* input, int len);
+    /* data_validation.c */
     int valid_int(char* input);
     int convert_int(char* input);
 
+    /* function_prototypes.c */
+    /* TODO */
     void add_event(event_t* events, int* event_count);
     void display_event(event_t events, int event_count);
     void edit_event(event_t* events);
