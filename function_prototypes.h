@@ -13,11 +13,19 @@
     /* data_validation.c */
     int valid_int(char* input);
     int convert_int(char* input);
+    int username_taken(event_t* events, char* username);
 
-    /* function_prototypes.c */
+    /* user_input.c */
     void get_user_login(char* username, char* password);
-    void get_event_login(char* event_id, char* event_password);
+    void get_event_login(int* event_id, char* event_password);
     int scan_int(void);
+    void get_new_user_username(event_t* events, char* username);
+    void get_new_user_password(char* password);
+    void get_new_user_firstname(char* firstname);
+    void get_new_user_lastname(char* lastname);
+
+    /* accounts.c */
+    void create_new_user(event_t* events, person_t* user);
 
     /* TODO */
     void add_event(event_t* events, int* event_count);

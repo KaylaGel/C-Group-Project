@@ -1,5 +1,6 @@
 #include <stdio.h> /* scanf(), printf() */
 #include <stdlib.h> /* malloc() */
+#include <string.h>
 
 #include "definitions.h" /* MAX_INT_LEN */
 #include "function_prototypes.h" /* valid_int(), convert_int() */
@@ -43,4 +44,71 @@ int scan_int(void)
         }
     }
 
+}
+
+void get_new_user_username(event_t* events, char* username)
+{
+    printf("Please enter your chosen username\n");
+    printf("> ");
+
+    scanf("%s", username);
+
+    if(username_taken(events, username))
+    {
+        printf("Username already taken\n");
+        get_new_user_username(events, username);
+        return;
+    }
+    return;
+}
+
+void get_new_user_password(char* password)
+{
+    printf("Please enter your chosen password\n");
+    printf("> ");
+
+    scanf("%s", password);
+
+    if(strlen(password) < MIN_PASS_LEN || strlen(password) > MAX_PASS_LEN)
+    {
+        printf("Password should be between %i and %i characters long\n", MIN_PASS_LEN, MAX_PASS_LEN);
+        printf("Your password was %i characters long\n", (int) strlen(password));
+        get_new_user_password(password);
+        return;
+    }
+    return;
+}
+
+void get_new_user_firstname(char* firstname)
+{
+    printf("Please enter your first name\n");
+    printf("> ");
+
+    scanf("%s", firstname);
+
+    if(strlen(firstname) > MAX_NAME_LEN)
+    {
+        printf("First name should be less than %i characters long\n", MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n", (int) strlen(firstname));
+        get_new_user_firstname(firstname);
+        return;
+    }
+    return;
+}
+
+void get_new_user_lastname(char* lastname)
+{
+    printf("Please enter your last name\n");
+    printf("> ");
+
+    scanf("%s", lastname);
+
+    if(strlen(lastname) > MAX_NAME_LEN)
+    {
+        printf("Last name should be less than %i characters long\n", MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n", (int) strlen(lastname));
+        get_new_user_lastname(lastname);
+        return;
+    }
+    return;
 }
