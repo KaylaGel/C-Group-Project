@@ -46,17 +46,17 @@ int scan_int(void)
 
 }
 
-void get_new_user_username(event_t* events, char* username)
+void get_new_user_username(event_manager_t event_manager, char* username)
 {
     printf("Please enter your chosen username\n");
     printf("> ");
 
     scanf("%s", username);
 
-    if(username_taken(events, username))
+    if(username_taken(event_manager, username))
     {
         printf("Username already taken\n");
-        get_new_user_username(events, username);
+        get_new_user_username(event_manager, username);
         return;
     }
     return;

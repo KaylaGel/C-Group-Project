@@ -55,7 +55,16 @@
         patron_t patrons[MAX_PATRONS];
         staff_t staffs[MAX_STAFF];
         coord_t coordinator;
+        int num_patrons;
+        int num_staff;
     };
     typedef struct event event_t;
+
+    struct event_manager
+    {
+        event_t events[MAX_EVENTS];
+        int num_events;
+    };
+    typedef struct event_manager event_manager_t;
 
 #endif /*C_GROUP_PROJECT_STRUCTS_H*/

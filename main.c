@@ -6,11 +6,11 @@
 
 int main(void)
 {
-    event_t events[MAX_EVENTS];
-    int event_count = 0;
+    event_manager_t event_manager;
+    event_manager.num_events = 0;
 
     printf("Welcome to EventManager v2.4\n"); /* TODO: make this temp welcome line better */
-    menu_login(events, &event_count);
+    menu_login(&event_manager);
 
 
     return 0;

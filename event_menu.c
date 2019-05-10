@@ -3,7 +3,7 @@
 #include "structs.h"
 #include "function_prototypes.h"
 
-void menu_login(event_t* events, int* event_count)
+void menu_login(event_manager_t* event_manager)
 {
     print_menu_login();
     int user_selection = scan_int();
@@ -20,13 +20,13 @@ void menu_login(event_t* events, int* event_count)
             break;
         default:
             printf("Not a valid entry\n");
-            menu_login(events, event_count);
+            menu_login(event_manager);
             break;
     }
     return;
 }
 
-void menu_main(event_t* events, int* event_count)
+void menu_main(event_manager_t* event_manager)
 {
     print_menu_main();
     int user_selection = scan_int();
@@ -46,7 +46,7 @@ void menu_main(event_t* events, int* event_count)
             break;
         default:
             printf("Not a valid entry\n");
-            menu_main(events, event_count);
+            menu_main(event_manager);
             break;
     }
     return;
