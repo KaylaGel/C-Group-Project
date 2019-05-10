@@ -7,7 +7,9 @@ CFLAGS = -Wall -lm -Wno-unused-variable
 
 EXECUTABLE = EventManager
 
+#Add any new header files that get created into this variable
 HEADERS = definitions.h structs.h funciton_prototypes.h
+#Add any new .c code files that get created into this variable, but with a .o file extention instead of .c
 OBJECTS = main.o event_menu.o data_validation.o user_input.o
 
 default: $(EXECUTABLE)
