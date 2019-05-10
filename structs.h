@@ -22,10 +22,10 @@
 
     struct person
     {
-        char firstname[MAX_NAME_LEN];
-        char lastname[MAX_NAME_LEN];
-        char username[MAX_NAME_LEN];
-        char password[MAX_PASS_LEN];
+        char firstname[MAX_NAME_LEN+1];
+        char lastname[MAX_NAME_LEN+1];
+        char username[MAX_NAME_LEN+1];
+        char password[MAX_PASS_LEN+1];
         date_t DOB;
     };
     typedef struct person person_t;
@@ -51,7 +51,7 @@
 
     struct event
     {
-        char name[MAX_NAME_LEN];
+        char name[MAX_NAME_LEN+1];
         patron_t patrons[MAX_PATRONS];
         staff_t staffs[MAX_STAFF];
         coord_t coordinator;
