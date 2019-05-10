@@ -14,13 +14,10 @@ default: $(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJECTS)
 	$(CC) -o $@ $^ $(CFLAGS)
-	echo "Build Complete"
 
 %.o : %.c $(HEADERS)
 	$(CC) -c -o $@ $< $(CFLAGS)
-	echo "Compile Complete"
 
 clean:
 	rm -f *.o
 	rm -f $(EXECUTABLE)
-	echo "Cleaning Complete"
