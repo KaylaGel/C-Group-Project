@@ -76,6 +76,7 @@ void get_new_user_username(event_manager_t event_manager, char* username)
 
 void get_new_user_password(char* password)
 {
+    /* TODO: handle the password in a way that incorporates encryption/hashing ie. dont store passwords in plaintext */
     printf("Please enter your chosen password\n");
     printf("> ");
 
