@@ -14,6 +14,7 @@ void menu_login(event_manager_t* event_manager)
             break;
         case 2:
             printf("Create Account Selected\n");
+            account_creation(event_manager);
             break;
         case 3:
             printf("Exit Selected\n");

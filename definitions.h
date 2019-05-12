@@ -8,6 +8,7 @@
     #define MAX_NAME_LEN 20
     #define MAX_PASS_LEN 24
     #define MIN_PASS_LEN 8
+    #define MAX_RESPONSE_LEN 10
 
     #define YEAR_LEN 4
     #define MIN_MONTH 1

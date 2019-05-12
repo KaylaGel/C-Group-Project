@@ -28,6 +28,7 @@
 
     /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
+    void account_creation(event_manager_t* event_manager);
 
     /* struct_factory.c */
     void init_event_manager(event_manager_t* event_manager);
