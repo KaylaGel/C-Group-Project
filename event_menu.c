@@ -17,11 +17,11 @@ void menu_login(event_manager_t* event_manager)
             break;
         case 3:
             printf("Exit Selected\n");
-            break;
+            return;
         default:
             printf("Not a valid entry\n");
             menu_login(event_manager);
-            break;
+            return;
     }
     return;
 }
@@ -37,6 +37,11 @@ void menu_main(event_manager_t* event_manager)
             break;
         case 2:
             printf("Edit Event Selected\n");
+            /* TODO: Move the following function calls to their own function */
+            printf("Please select the event you would like to edit\n");
+            list_event_names(*event_manager);
+            int event_selection = scan_int();
+            printf("%i selected\n", event_selection);
             break;
         case 3:
             printf("Join Event Selected\n");
