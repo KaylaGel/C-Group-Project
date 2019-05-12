@@ -22,6 +22,7 @@ int convert_int(char* input)
     return (int) strtol(input, NULL, 10);
 }
 
+
 int username_taken(event_manager_t event_manager, char* username)
 {
     /* Loop through each event */

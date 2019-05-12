@@ -66,6 +66,7 @@ void print_menu_login(void)
     printf("> ");
     return;
 }
+
 void print_menu_main(void)
 {
     printf("1. Add Event\n");
@@ -75,6 +76,7 @@ void print_menu_main(void)
     printf("> ");
     return;
 }
+
 
 void list_event_names(event_manager_t event_manager)
 {

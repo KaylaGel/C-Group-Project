@@ -25,6 +25,7 @@ void get_event_login(int* event_id, char* event_password)
     return;
 }
 
+
 int scan_int(void)
 {
     char* input = malloc(MAX_INT_LEN + 1);
@@ -57,6 +58,7 @@ int scan_int_min_max(int min_value, int max_value)
     }
     return value;
 }
+
 
 void get_new_user_username(event_manager_t event_manager, char* username)
 {
