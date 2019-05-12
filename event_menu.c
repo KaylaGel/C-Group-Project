@@ -70,3 +70,21 @@ void print_menu_main(void)
     printf("> ");
     return;
 }
+
+void list_event_names(event_manager_t event_manager)
+{
+    if(event_manager.num_events == 0)
+    {
+        printf("No events\n");
+        return;
+    }
+
+    int i;
+    for (i = 0; i < event_manager.num_events; i++)
+    {
+        event_t event = event_manager.events[i];
+
+        printf("%i: %s\n", i, event.name);
+    }
+    return;
+}

@@ -9,6 +9,7 @@
     void menu_main(event_manager_t* event_manager);
     void print_menu_login(void);
     void print_menu_main(void);
+    void list_event_names(event_manager_t event_manager);
 
     /* data_validation.c */
     int valid_int(char* input);
