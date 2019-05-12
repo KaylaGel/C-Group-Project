@@ -1,6 +1,6 @@
 #include <stdio.h> /* scanf(), printf() */
 #include <stdlib.h> /* malloc() */
-#include <string.h>
+#include <string.h> /* strlen() */
 
 #include "definitions.h" /* MAX_INT_LEN */
 #include "function_prototypes.h" /* valid_int(), convert_int() */

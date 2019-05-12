@@ -1,7 +1,5 @@
-#include "stdlib.h"
-
 #include "structs.h" /* event_t, person_t */
-#include "function_prototypes.h" /* get_new_user_*,  */
+#include "function_prototypes.h" /* get_new_user_* */
 
 void create_new_user(event_manager_t event_manager, person_t *user)
 {

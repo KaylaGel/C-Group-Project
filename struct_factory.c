@@ -1,6 +1,4 @@
-#include <stdlib.h>
-
-#include "structs.h"
+#include "structs.h" /* event_manager_t, event_t */
 
 void init_event_manager(event_manager_t* event_manager)
 {

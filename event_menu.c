@@ -1,7 +1,7 @@
 #include <stdio.h> /* printf() */
 
-#include "structs.h"
-#include "function_prototypes.h"
+#include "structs.h" /* event_manager_t, event_t */
+#include "function_prototypes.h" /* print_menu_login(), print_menu_main(), scan_int() */
 
 void menu_login(event_manager_t* event_manager)
 {

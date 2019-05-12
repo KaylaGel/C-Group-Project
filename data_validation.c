@@ -1,8 +1,7 @@
-#include <string.h> /* strlen() */
+#include <string.h> /* strlen(), strcmp() */
 #include <stdlib.h> /* strtol() */
-#include <string.h>
 
-#include "structs.h"
+#include "structs.h" /* event_manager_t, patron_t, staff_t, event_t */
 
 int valid_int(char* input)
 {
