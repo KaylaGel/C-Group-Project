@@ -7,7 +7,7 @@
 int main(void)
 {
     event_manager_t event_manager;
-    event_manager.num_events = 0;
+    init_event_manager(&event_manager);
 
     printf("Welcome to EventManager v2.4\n"); /* TODO: make this temp welcome line better */
     menu_login(&event_manager);
