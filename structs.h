@@ -53,7 +53,7 @@
     {
         char name[MAX_NAME_LEN+1];
         patron_t patrons[MAX_PATRONS];
-        staff_t staffs[MAX_STAFF];
+        staff_t staff[MAX_STAFF];
         coord_t coordinator;
         int num_patrons;
         int num_staff;
