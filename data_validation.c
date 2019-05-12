@@ -1,5 +1,6 @@
 #include <string.h> /* strlen() */
 #include <stdlib.h> /* strtol() */
+#include <string.h>
 
 #include "structs.h"
 
@@ -24,6 +25,37 @@ int convert_int(char* input)
 
 int username_taken(event_manager_t event_manager, char* username)
 {
-    /* TODO: Loop through every user in each event and test to see if the username is taken */
+    /* Loop through each event */
+    int i;
+    for (i = 0; i < event_manager.num_events; i++)
+    {
+        event_t event = event_manager.events[i];
+
+        /* Loop through each staff member of the currently iterated event */
+        int j;
+        for (j = 0; j < event.num_staff; j++)
+        {
+            staff_t staff = event.staff[j];
+
+            /* Compare the currently iterated staff member's username with the supplied username */
+            if( strcmp(staff.personal.username, username) )
+            {
+                return 1;
+            }
+        }
+
+        /* Loop through each patron of the currently iterated event */
+        int k;
+        for (k = 0; k < event.num_patrons; k++)
+        {
+            patron_t patron = event.patrons[j];
+
+            /* Compare the currently iterated patron's username with the supplied username */
+            if( strcmp(patron.personal.username, username) )
+            {
+                return 1;
+            }
+        }
+    }
     return 0;
 }
