@@ -20,6 +20,7 @@
     void get_user_login(char* username, char* password);
     void get_event_login(int* event_id, char* event_password);
     int scan_int(void);
+    int scan_int_min_max(int min_value, int max_value);
     void get_new_user_username(event_manager_t event_manager, char* username);
     void get_new_user_password(char* password);
     void get_new_user_firstname(char* firstname);

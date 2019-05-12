@@ -43,7 +43,19 @@ int scan_int(void)
             return scan_int();
         }
     }
+}
 
+int scan_int_min_max(int min_value, int max_value)
+{
+    int value = scan_int();
+    if(value < min_value || value > max_value)
+    {
+        printf("%i is not between %i and %i\n", value, min_value, max_value);
+        printf("Please input a valid number between %i and %i\n", min_value, max_value);
+        printf("> ");
+        return scan_int_min_max (min_value, max_value);
+    }
+    return value;
 }
 
 void get_new_user_username(event_manager_t event_manager, char* username)
