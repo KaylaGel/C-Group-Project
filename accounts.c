@@ -36,6 +36,7 @@ void account_creation(event_manager_t* event_manager)
         if(user_response[0] == 'y' || user_response[0] == 'Y')
         {
             /* TODO: Create new event and assign created user as the coordinator */
+            create_event(event_manager, user);
         }else
         {
             printf("Exiting account creation\n");
