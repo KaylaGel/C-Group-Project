@@ -10,6 +10,7 @@ void init_event_manager(event_manager_t* event_manager)
 
 void init_event(event_t* event, person_t coordinator)
 {
+    /* TODO: get user input to assign the event name */
     event->num_patrons = 0;
     event->num_staff = 0;
 
@@ -35,10 +36,11 @@ void init_staff(event_t* event, staff_t staff)
 
 void create_event(event_manager_t* event_manager, person_t creator)
 {
+
     /* Create an event struct */
     event_t event;
     /* Initialise the event structs values */
-    init_event(&event, &creator);
+    init_event(&event, creator);
 
     /* Assign the created event to the next free array index
      * ie; there are 2 events that already exist, so access event array

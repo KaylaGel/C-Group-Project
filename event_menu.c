@@ -10,14 +10,23 @@ void menu_login(event_manager_t* event_manager)
     switch(user_selection)
     {
         case 1:
-            printf("Login Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Login Selected\n");
+            #endif
+
             break;
         case 2:
-            printf("Create Account Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Create Account Selected\n");
+            #endif
+
             account_creation(event_manager);
             break;
         case 3:
-            printf("Exit Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Exit Selected\n");
+            #endif
+
             return;
         default:
             printf("Not a valid entry\n");
