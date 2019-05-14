@@ -33,6 +33,7 @@
     /* struct_factory.c */
     void init_event_manager(event_manager_t* event_manager);
     void init_event(event_t* event, person_t coordinator);
+    void init_staff(event_t* event, staff_t staff);
     void create_event(event_manager_t* event_manager, person_t creator);
 
     /* TODO */

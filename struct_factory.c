@@ -19,6 +19,19 @@ void init_event(event_t* event, person_t coordinator)
     return;
 }
 
+void init_staff(event_t* event, staff_t staff)
+{
+    /* Set the staff id to how many staff there were before them
+     * ie; the first staff will have id:0, second will have id:1
+     * fifteenth will have id:14, etc...*/
+    staff.id= event->num_staff;
+    /* Set the next available staff array spot to the provided staff struct */
+    event->staff[event->num_staff] = staff;
+    /* Increment the staff counter */
+    event->num_staff++;
+    return;
+}
+
 
 void create_event(event_manager_t* event_manager, person_t creator)
 {
