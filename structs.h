@@ -30,12 +30,6 @@
     };
     typedef struct person person_t;
 
-    struct patron
-    {
-        person_t personal;
-    };
-    typedef struct patron patron_t;
-
     struct staff
     {
         int id;
@@ -52,7 +46,7 @@
     struct event
     {
         char name[MAX_NAME_LEN+1];
-        patron_t patrons[MAX_PATRONS];
+        person_t patrons[MAX_PATRONS];
         staff_t staff[MAX_STAFF];
         coord_t coordinator;
         int num_patrons;
