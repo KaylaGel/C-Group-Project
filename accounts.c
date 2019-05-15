@@ -43,7 +43,7 @@ void login(event_manager_t* event_manager, person_t *user){
             if( strcmp( event_manager.users[i].password, password ) )
             {
                 /* correct password */
-
+                /* Set current logged in user as the found user */
                 event_manager->current_logged_in_user = event_manager.users[i];
             }
         }
