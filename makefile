@@ -3,7 +3,7 @@
 #to clean up file, type 'make clean' int the command line
 
 CC = gcc
-CFLAGS = -Wall -lm
+CFLAGS = -Wall -lm -ansi
 
 EXECUTABLE = EventManager
 
