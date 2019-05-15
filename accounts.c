@@ -21,15 +21,32 @@ void account_creation(event_manager_t* event_manager)
 
     /* Assign the current user to the next available user slot */
     event_manager->users[event_manager->num_users] = user;
+    event_manager->num_users++;
 
     return;
 }
 
-void login(event_manager_t event_manager, person_t *user){   
+void login(event_manager_t* event_manager, person_t *user){
     char username[MAX_NAME_LEN+1];
     char password[MAX_PASS_LEN+1];
     
     void get_user_login(char* username, char* password);
-    
+
+
+    int i;
+    for (i = 0; i < event_manager.num_users; i++)
+    {
+        if ( strcmp( event_manager.users[i].username, username ) )
+        {
+            /*username exists*/
+            if( strcmp( event_manager.users[i].password, password ) )
+            {
+                /* correct password */
+
+                event_manager->current_logged_in_user = event_manager.users[i];
+            }
+        }
+    }
+    /* Username does not exist */
 
 }

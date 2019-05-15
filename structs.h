@@ -58,6 +58,8 @@
 
     struct event_manager
     {
+        person_t current_logged_in_user;
+
         event_t events[MAX_EVENTS];
         int num_events;
 
