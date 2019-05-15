@@ -43,10 +43,16 @@ void menu_main(event_manager_t* event_manager)
     switch(user_selection)
     {
         case 1:
-            printf("Add Event Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Add Event Selected\n");
+            #endif
+
             break;
         case 2:
-            printf("Edit Event Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Edit Event Selected\n");
+            #endif
+
             /* TODO: Move the following function calls to their own function */
             printf("Please select the event you would like to edit\n");
             list_event_names(*event_manager);
@@ -54,10 +60,16 @@ void menu_main(event_manager_t* event_manager)
             printf("%i selected\n", event_selection);
             break;
         case 3:
-            printf("Join Event Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Join Event Selected\n");
+            #endif
+
             break;
         case 4:
-            printf("Exit program Selected\n");
+            #ifdef DEBUG /* For debugging */
+                printf("Exit program Selected\n");
+            #endif
+
             break;
         default:
             printf("Not a valid entry\n");
