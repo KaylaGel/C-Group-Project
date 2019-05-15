@@ -4,3 +4,5 @@
 *.out
 *.o
 EventManager
+.vscode/ipch/6beaa604146cd218/ACCOUNTS.ipch
+*.ipch
