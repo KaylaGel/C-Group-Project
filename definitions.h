@@ -16,6 +16,9 @@
     #define MIN_DAY 1
     #define MAX_DAY 31
 
+    /* 200 patrons, 50 staff and a coordinator = 251 users per event */
+    /* 10 events * 251 users = 2510 total users. 3000 gives headroom */
+    #define MAX_USERS 3000
     #define MAX_PATRONS 200
     #define MAX_STAFF 50
     #define MAX_EVENTS 10
