@@ -1,5 +1,5 @@
 #makefile for event_manager.out
-#to build, type 'make' into the command line
+#to build, type 'make' into the command line -- Requires make to be installed, doesnt work on windows
 #to clean up file, type 'make clean' int the command line
 
 CC = gcc
