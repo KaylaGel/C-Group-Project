@@ -1,5 +1,6 @@
 .idea/*
 .vscode\*
+.vscode*
 *.out
 *.o
 EventManager
