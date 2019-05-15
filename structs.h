@@ -60,6 +60,9 @@
     {
         event_t events[MAX_EVENTS];
         int num_events;
+
+        person_t users[MAX_USERS];
+        int num_users;
     };
     typedef struct event_manager event_manager_t;
 

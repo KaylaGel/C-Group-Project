@@ -48,10 +48,10 @@ int username_taken(event_manager_t event_manager, char* username)
         int k;
         for (k = 0; k < event.num_patrons; k++)
         {
-            patron_t patron = event.patrons[j];
+            person_t patron = event.patrons[j];
 
             /* Compare the currently iterated patron's username with the supplied username */
-            if( strcmp(patron.personal.username, username) )
+            if( strcmp(patron.username, username) )
             {
                 return 1;
             }
