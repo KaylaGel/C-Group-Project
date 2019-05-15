@@ -29,6 +29,7 @@ void account_creation(event_manager_t* event_manager)
 void login(event_manager_t* event_manager, person_t *user){
     char username[MAX_NAME_LEN+1];
     char password[MAX_PASS_LEN+1];
+    int i; 
     
     void get_user_login(char* username, char* password);
 
@@ -47,6 +48,4 @@ void login(event_manager_t* event_manager, person_t *user){
             }
         }
     }
-    /* Username does not exist */
-
 }
