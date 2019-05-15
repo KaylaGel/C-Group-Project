@@ -11,6 +11,7 @@ void init_event(event_t* event, person_t coordinator)
     /* TODO: get user input to assign the event name */
     event->num_patrons = 0;
     event->num_staff = 0;
+    event->free_event = 0; /* TODO: get user input to ask the coordinator whether the event is free or not */
 
     event->coordinator.staff.id = 0; /* Why does the coordinator need an id? */
     event->coordinator.staff.personal = coordinator;

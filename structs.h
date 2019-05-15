@@ -57,6 +57,7 @@
         coord_t coordinator;
         int num_patrons;
         int num_staff;
+        int free_event;
     };
     typedef struct event event_t;
 
