@@ -48,7 +48,7 @@
         char name[MAX_NAME_LEN+1];
         person_t patrons[MAX_PATRONS];
         staff_t staff[MAX_STAFF];
-        coord_t coordinator;
+        coord_t coordinator; /*possibly staff_t*/
         int num_patrons;
         int num_staff;
         date_t event_date;

@@ -26,7 +26,8 @@ void account_creation(event_manager_t* event_manager)
         list_event_names(*event_manager);
         int user_selection = scan_int_min_max(0, event_manager->num_events);
         /* TODO: continue this chain, get the event_t struct for the user requested event
-         * TODO: request if they want to be a staff or patron */
+         * TODO: request if they want to be a staff or person */
+        printf("");
     }else
     {
         printf("There are no events created yet\n");
@@ -47,4 +48,13 @@ void account_creation(event_manager_t* event_manager)
     }
 
     return;
+}
+
+void login(event_manager_t event_manager, person_t *user){   
+    char username[MAX_NAME_LEN+1];
+    char password[MAX_PASS_LEN+1];
+    
+    void get_user_login(char* username, char* password);
+    
+
 }
