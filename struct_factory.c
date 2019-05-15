@@ -24,7 +24,7 @@ void init_staff(event_t* event, staff_t staff)
     /* Set the staff id to how many staff there were before them
      * ie; the first staff will have id:0, second will have id:1
      * fifteenth will have id:14, etc...*/
-    staff.id= event->num_staff;
+    staff.id = event->num_staff;
     /* Set the next available staff array spot to the provided staff struct */
     event->staff[event->num_staff] = staff;
     /* Increment the staff counter */
