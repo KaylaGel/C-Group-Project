@@ -1,7 +1,5 @@
 #include "structs.h" /* event_manager_t, event_t */
 
-#include <stdio.h>
-
 void init_event_manager(event_manager_t* event_manager)
 {
     event_manager->num_events = 0;

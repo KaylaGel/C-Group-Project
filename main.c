@@ -21,7 +21,6 @@ int main(void)
 
     printf("Welcome to EventManager v2.4\n"); /* TODO: make this temp welcome line better */
     menu_login(&event_manager);
-    printf("coordinator: %s\n", event_manager.events[0].coordinator.staff.personal.firstname);
 
     return 0;
 }
