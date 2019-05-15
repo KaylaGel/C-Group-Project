@@ -9,7 +9,7 @@ void create_new_user(event_manager_t event_manager, person_t *user)
     get_new_user_password(user->password);
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
-
+     
     return;
 }
 
@@ -20,6 +20,7 @@ void account_creation(event_manager_t* event_manager)
 
     if(event_manager->num_events != 0)
     {
+        /*heeelllllooooo*/
         printf("Please select the event you would like to join\n");
         list_event_names(*event_manager);
         int user_selection = scan_int_min_max(0, event_manager->num_events);
