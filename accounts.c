@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <string.h>
 
 #include "structs.h" /* event_t, person_t */
 #include "function_prototypes.h" /* get_new_user_* */
@@ -26,25 +27,25 @@ void account_creation(event_manager_t* event_manager)
     return;
 }
 
-void login(event_manager_t* event_manager, person_t *user){
+void login(event_manager_t* event_manager)
+{
     char username[MAX_NAME_LEN+1];
     char password[MAX_PASS_LEN+1];
     int i; 
     
-    void get_user_login(char* username, char* password);
+    get_user_login(username, password);
 
-
-    int i;
-    for (i = 0; i < event_manager.num_users; i++)
+    for (i = 0; i < event_manager->num_users; i++)
     {
-        if ( strcmp( event_manager.users[i].username, username ) )
+        if ( strcmp( event_manager->users[i].username, username ) )
         {
             /*username exists*/
-            if( strcmp( event_manager.users[i].password, password ) )
+            if( strcmp( event_manager->users[i].password, password ) )
             {
                 /* correct password */
                 /* Set current logged in user as the found user */
-                event_manager->current_logged_in_user = event_manager.users[i];
+                event_manager->current_logged_in_user = event_manager->users[i];
+                printf("Successfully logged in as '%s'\n", event_manager->current_logged_in_user.username);
             }
         }
     }

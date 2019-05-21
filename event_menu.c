@@ -14,6 +14,7 @@ void menu_login(event_manager_t* event_manager)
                 printf("Login Selected\n");
             #endif
             /*get_user_login*/
+            login(event_manager);
             break;
         case 2:
             #ifdef DEBUG /* For debugging */
