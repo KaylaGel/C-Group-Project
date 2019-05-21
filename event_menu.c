@@ -165,7 +165,13 @@ void list_event_names(event_manager_t event_manager)
     {
         event_t event = event_manager.events[i];
 
-        printf("%i: %s\n", i, event.name);
+        printf("%i: ", i + 1);
+        printf("%-*s", MAX_NAME_LEN, event.name);
+
+        if(event.free_event)
+            printf(" | Free Event");
+
+        printf("\n");
     }
     return;
 }
