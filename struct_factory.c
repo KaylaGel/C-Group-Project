@@ -19,18 +19,13 @@ void init_event(event_t* event, person_t coordinator)
     get_new_event_name(event->name);
     get_new_event_free_status(&event->free_event);
 
-    event->coordinator.staff.id = 0; /* Why does the coordinator need an id? */
-    event->coordinator.staff.personal = coordinator;
+    event->coordinator = coordinator;
 
     return;
 }
 
-void init_staff(event_t* event, staff_t staff)
+void init_staff(event_t* event, person_t staff)
 {
-    /* Set the staff id to how many staff there were before them
-     * ie; the first staff will have id:0, second will have id:1
-     * fifteenth will have id:14, etc...*/
-    staff.id = event->num_staff;
     /* Set the next available staff array spot to the provided staff struct */
     event->staff[event->num_staff] = staff;
     /* Increment the staff counter */

@@ -35,10 +35,10 @@ int username_taken(event_manager_t event_manager, char* username)
         int j;
         for (j = 0; j < event.num_staff; j++)
         {
-            staff_t staff = event.staff[j];
+            person_t staff = event.staff[j];
 
             /* Compare the currently iterated staff member's username with the supplied username */
-            if( strcmp(staff.personal.username, username) )
+            if( strcmp(staff.username, username) )
             {
                 return 1;
             }

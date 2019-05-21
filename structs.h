@@ -31,25 +31,12 @@
     };
     typedef struct person person_t;
 
-    struct staff
-    {
-        int id;
-        person_t personal;
-    };
-    typedef struct staff staff_t;
-
-    struct coord
-    {
-        staff_t staff;
-    };
-    typedef struct coord coord_t;
-
     struct event
     {
         char name[MAX_NAME_LEN+1];
         person_t patrons[MAX_PATRONS];
-        staff_t staff[MAX_STAFF];
-        coord_t coordinator; /*possibly staff_t*/
+        person_t staff[MAX_STAFF];
+        person_t coordinator;
         int num_patrons;
         int num_staff;
         date_t event_date;
