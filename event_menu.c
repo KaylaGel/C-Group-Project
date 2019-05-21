@@ -43,7 +43,7 @@ void menu_login(event_manager_t* event_manager)
 
 void menu_main(event_manager_t* event_manager)
 {
-    print_menu_main();
+    print_menu_main(event_manager->current_logged_in_user.username);
     int user_selection = scan_int();
     switch(user_selection)
     {
@@ -87,6 +87,8 @@ void menu_main(event_manager_t* event_manager)
 
 void print_menu_login(void)
 {
+    printf("\nLogin Menu\n");
+    printf("Please select an option from the following list\n");
     printf("1. Login\n");
     printf("2. Create Account\n");
     printf("3. Exit\n");
@@ -94,12 +96,15 @@ void print_menu_login(void)
     return;
 }
 
-void print_menu_main(void)
+void print_menu_main(char* current_logged_in_username)
 {
+    printf("\nMain Menu\n");
+    printf("Currently logged in as '%s'\n\n", current_logged_in_username);
+    printf("Please select an option from the following list\n");
     printf("1. Add Event\n");
     printf("2. Edit Event\n");
     printf("3. Join Event\n");
-    printf("4. Exit program\n");
+    printf("4. Logout\n");
     printf("> ");
     return;
 }

@@ -8,7 +8,7 @@
     void menu_login(event_manager_t* event_manager);
     void menu_main(event_manager_t* event_manager);
     void print_menu_login(void);
-    void print_menu_main(void);
+    void print_menu_main(char* current_logged_in_username);
     void list_event_names(event_manager_t event_manager);
 
     /* data_validation.c */
