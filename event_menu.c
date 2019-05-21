@@ -132,8 +132,8 @@ void print_menu_login(void)
 
 void print_menu_main(char* current_logged_in_username)
 {
-    printf("\nMain Menu\n");
-    printf("Currently logged in as '%s'\n\n", current_logged_in_username);
+    printf("\nMain Menu\n\n");
+    printf("Currently logged in as '%s'\n", current_logged_in_username);
     printf("Please select an option from the following list\n");
     printf("1. Add Event\n");
     printf("2. Edit Event\n");
