@@ -13,8 +13,12 @@ void menu_login(event_manager_t* event_manager)
             #ifdef DEBUG /* For debugging */
                 printf("Login Selected\n");
             #endif
-            
-            login(event_manager);
+
+            if( login(event_manager) )
+            {
+                menu_main(event_manager);
+            }
+
             break;
         case 2:
             #ifdef DEBUG /* For debugging */

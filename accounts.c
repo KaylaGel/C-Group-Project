@@ -27,7 +27,7 @@ void account_creation(event_manager_t* event_manager)
     return;
 }
 
-void login(event_manager_t* event_manager)
+int login(event_manager_t* event_manager)
 {
     char username[MAX_NAME_LEN+1];
     char password[MAX_PASS_LEN+1];
@@ -37,16 +37,23 @@ void login(event_manager_t* event_manager)
 
     for (i = 0; i < event_manager->num_users; i++)
     {
-        if ( strcmp( event_manager->users[i].username, username ) )
+        if ( strcmp( event_manager->users[i].username, username ) == 0 )
         {
             /*username exists*/
-            if( strcmp( event_manager->users[i].password, password ) )
+            if( strcmp( event_manager->users[i].password, password ) == 0 )
             {
                 /* correct password */
                 /* Set current logged in user as the found user */
                 event_manager->current_logged_in_user = event_manager->users[i];
                 printf("Successfully logged in as '%s'\n", event_manager->current_logged_in_user.username);
+                return 1;
+            }else
+            {
+                printf("Incorrect Password\n");
+                return 0;
             }
         }
     }
+    printf("Incorrect Username\n");
+    return 0;
 }
