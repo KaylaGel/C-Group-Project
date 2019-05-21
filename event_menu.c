@@ -145,9 +145,9 @@ void print_menu_main(char* current_logged_in_username)
 
 void print_menu_admin(void)
 {
-    printf("1. List All\n");
-    printf("2. List Events\n");
-    printf("9. Logout\n");
+    printf("1. List All\n\n");
+    printf("2. List Events\n\n");
+    printf("9. Logout\n\n");
     printf(">");
 }
 
