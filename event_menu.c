@@ -64,11 +64,6 @@ void menu_main(event_manager_t* event_manager)
                 printf("Edit Event Selected\n");
             #endif
 
-            /* TODO: Move the following function calls to their own function */
-            printf("Please select the event you would like to edit\n");
-            list_event_names(*event_manager);
-            int event_selection = scan_int();
-            printf("%i selected\n", event_selection);
             break;
         case 3:
             #ifdef DEBUG /* For debugging */
