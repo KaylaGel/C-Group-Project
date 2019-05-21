@@ -7,7 +7,7 @@ void init_event_manager(event_manager_t* event_manager)
 {
     event_manager->num_events = 0;
     event_manager->num_users = 0;
-    init_admin_account(&event_manager->admin_account)
+    init_admin_account(&event_manager->admin_account);
     return;
 }
 

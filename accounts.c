@@ -43,7 +43,7 @@ int login(event_manager_t* event_manager)
         {
             event_manager->current_logged_in_user = event_manager->admin_account;
             printf("Successfully logged in as '%s'\n\n", event_manager->current_logged_in_user.username);
-            return 1;
+            return 2;
         }
     }
 
