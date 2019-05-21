@@ -27,13 +27,13 @@ void menu_login(event_manager_t* event_manager)
             #ifdef DEBUG /* For debugging */
                 printf("Exit Selected\n");
             #endif
-
+            printf("Exiting program\n");
             return;
         default:
             printf("Not a valid entry\n");
-            menu_login(event_manager);
-            return;
+            break;
     }
+    menu_login(event_manager);
     return;
 }
 
