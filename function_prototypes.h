@@ -28,6 +28,8 @@
     void get_new_user_password(char* password);
     void get_new_user_firstname(char* firstname);
     void get_new_user_lastname(char* lastname);
+    void get_new_event_name(char* event_name);
+    void get_new_event_free_status(int* event_free_status);
 
     /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);

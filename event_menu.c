@@ -59,7 +59,7 @@ void menu_main(event_manager_t* event_manager)
             #ifdef DEBUG /* For debugging */
                 printf("Add Event Selected\n");
             #endif
-
+            create_event(event_manager, event_manager->current_logged_in_user);
             break;
         case 2:
             #ifdef DEBUG /* For debugging */
