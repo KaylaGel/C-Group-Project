@@ -17,11 +17,9 @@ void menu_login(event_manager_t* event_manager)
             switch(login(event_manager))
             {
                 case 1:
-                    printf("User Login: %s\n", event_manager->current_logged_in_user.username);
                     menu_main(event_manager);
                     break;
                 case 2:
-                    printf("Admin Login: %s\n", event_manager->current_logged_in_user.username);
                     menu_admin(event_manager);
                     break;
             }
@@ -121,7 +119,7 @@ void menu_admin(event_manager_t* event_manager)
 
 void print_menu_login(void)
 {
-    printf("\nLogin Menu\n");
+    printf("\nLogin Menu\n\n");
     printf("Please select an option from the following list\n");
     printf("1. Login\n");
     printf("2. Create Account\n");
@@ -145,9 +143,10 @@ void print_menu_main(char* current_logged_in_username)
 
 void print_menu_admin(void)
 {
-    printf("1. List All\n\n");
-    printf("2. List Events\n\n");
-    printf("9. Logout\n\n");
+    printf("\nAdmin Menu\n\n");
+    printf("1. List All\n");
+    printf("2. List Events\n");
+    printf("9. Logout\n");
     printf(">");
 }
 
