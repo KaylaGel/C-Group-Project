@@ -1,9 +1,13 @@
+#include <string.h>
+
 #include "structs.h" /* event_manager_t, event_t */
+#include "function_prototypes.h" /* init_admin_account() */
 
 void init_event_manager(event_manager_t* event_manager)
 {
     event_manager->num_events = 0;
     event_manager->num_users = 0;
+    init_admin_account(&event_manager->admin_account)
     return;
 }
 
@@ -31,6 +35,17 @@ void init_staff(event_t* event, staff_t staff)
     /* Increment the staff counter */
     event->num_staff++;
     return;
+}
+
+void init_admin_account(person_t* admin)
+{
+    strcpy(admin->username, "Admin");
+    strcpy(admin->password, "Password");
+    strcpy(admin->firstname, "Admin");
+    strcpy(admin->lastname, "Account");
+    admin->DOB.day = MIN_DAY;
+    admin->DOB.month = MIN_MONTH;
+    admin->DOB.year = MIN_YEAR;
 }
 
 

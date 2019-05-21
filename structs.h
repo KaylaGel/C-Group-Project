@@ -66,6 +66,8 @@
 
         person_t users[MAX_USERS];
         int num_users;
+
+        person_t admin_account;
     };
     typedef struct event_manager event_manager_t;
 
