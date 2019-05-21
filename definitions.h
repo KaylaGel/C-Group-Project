@@ -10,7 +10,8 @@
     #define MIN_PASS_LEN 8
     #define MAX_RESPONSE_LEN 10
 
-    #define YEAR_LEN 4
+    #define MIN_YEAR 0000
+    #define MAX_YEAR 9999
     #define MIN_MONTH 1
     #define MAX_MONTH 12
     #define MIN_DAY 1
