@@ -43,6 +43,10 @@
     void init_admin_account(person_t* admin);
     void create_event(event_manager_t* event_manager, person_t creator);
 
+    /* print.c */
+    void print_event_name(event_t event, int event_index);
+    void print_event_details(event_t event, int event_index);
+
     /* TODO */
     void add_event(event_manager_t* event_manager);
     void display_event(event_manager_t* event_manager);
