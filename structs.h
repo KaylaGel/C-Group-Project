@@ -26,7 +26,7 @@
         char lastname[MAX_NAME_LEN+1];
         char username[MAX_NAME_LEN+1];
         char password[MAX_PASS_LEN+1];
-        
+
         date_t DOB;
     };
     typedef struct person person_t;
