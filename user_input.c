@@ -84,7 +84,9 @@ void get_new_user_password(char* password)
     printf("Please enter your chosen password\n");
     printf("> ");
 
-    scanf("%s", password);
+    char plaintext[MAX_PASS_LEN+1];
+
+    scanf("%s", plaintext);
 
     if(strlen(password) < MIN_PASS_LEN || strlen(password) > MAX_PASS_LEN)
     {
@@ -93,6 +95,11 @@ void get_new_user_password(char* password)
         get_new_user_password(password);
         return;
     }
+
+    encrypt_plaintext(plaintext, password);
+
+    plaintext = '\0';
+
     return;
 }
 
