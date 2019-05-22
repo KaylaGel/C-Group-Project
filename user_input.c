@@ -128,6 +128,39 @@ void get_new_user_lastname(char* lastname)
     return;
 }
 
+void get_new_user_DOB(date_t* DOB)
+{
+    printf("Please enter your date of birth in the form DD/MM/YYYY\n");
+    printf("> ");
+
+    scanf("%d/%d/%d", DOB->day, DOB->month, DOB->year);
+
+    if(DOB->day > MAX_DAY | DOB->day < MIN_DAY)
+    {
+        printf("The day within your DOB should be between %d and %d\n", MAX_DAY, MIN_DAY);
+        printf("Your input day was %d\n", (int) DOB->day);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    else if (DOB->month > MAX_MONTH | DOB->month < MIN_MONTH)
+    {
+        printf("The month within your DOB should be between %d and %d\n", MAX_MONTH, MIN_MONTH);
+        printf("Your inputted day date was %d\n", (int) DOB->month);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    else if (DOB->year > MAX_YEAR | DOB->year < MIN_YEAR)
+    {
+        printf("The year within your DOB should be between %d and %d\n", MAX_YEAR, MIN_YEAR);
+        printf("Your input year was %d\n", (int) DOB->year);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    
+    
+    return;
+}
+
 void get_new_event_name(char* event_name)
 {
     printf("Please enter the event name\n");
