@@ -11,7 +11,7 @@ void create_new_user(event_manager_t event_manager, person_t *user)
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
     get_new_user_lastname(user->DOB->day); /* Fix!!!!!!!!!!!!!!!!! */
-    /* TODO: Ask user for their DOB */
+    
      
     return;
 }
