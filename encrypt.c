@@ -3,6 +3,7 @@
 void encrypt_plaintext(char* plaintext, char* ciphertext)
 {
     strcpy(ciphertext, plaintext);
+    /*write test function to make sure that it runs.*/
 
     int text_len = strlen(ciphertext);
 
@@ -25,6 +26,6 @@ void decrypt_plaintext(char* plaintext, char* ciphertext)
     {
         plaintext[i]--;
     }
-
+    
     return;
 }
