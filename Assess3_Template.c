@@ -1,10 +1,10 @@
 /*****************************************************************************
-Project Name: Event HUB 
-Authors: Ryan Cleminson, Tyalr Hart, Kayla Gelman, Jacob Gowing, Dee-Jay Logozzo 
+Project Name: Event HUB
+Authors: Ryan Cleminson, Tyalr Hart, Kayla Gelman, Jacob Gowing, Dee-Jay Logozzo
 
-Design Brief: Event Hub is a program where people can create and edit events and patrons can join events. 
+Design Brief: Event Hub is a program where people can create and edit events and patrons can join events.
 
-*****************************************************************************/ 
+*****************************************************************************/
 
 #include <stdio.h>
 
@@ -28,7 +28,7 @@ struct date
 	int year;
 	int month;
 	int day;
-	
+
 };
 typedef struct date date_t;
 
@@ -36,11 +36,11 @@ struct card
 {
 	int card_num;
 	date_t exp;
-	int cvv; 
-	char name; 
+	int cvv;
+	char name;
 };
-typedef struct card card_t; 
-	
+typedef struct card card_t;
+
 struct person
 {
 	char firstname[MAX_NAME_LEN];
@@ -80,18 +80,18 @@ struct event;
 typedef struct event event_t;
 
 
-void print_menu(void); 
-void login(person person_t); 
-void create_account(person person_t); 
+void print_menu(void);
+void login(person person_t);
+void create_account(person person_t);
 void add_event(event_t events, int event_count);
 void display_event(event_t events, int event_count);
-void search_event(event_t events, int event_count); 
-void sort_event(event_t events, int event_count); 
-void edit_event(event_t events); 
+void search_event(event_t events, int event_count);
+void sort_event(event_t events, int event_count);
+void edit_event(event_t events);
 void add_database(event_t* events, int event_count);
 void load_database(event_t* events, int* event_count);
-void join_event(event_t events, int event_count); 
-void encrypt_cc(card card_t); 
+void join_event(event_t events, int event_count);
+void encrypt_cc(card card_t);
 
 
 
@@ -106,172 +106,173 @@ int main()
 /************************************************************************
 Author: Dee-Jay
 
-Inputs: 
-- Read details from user database 
+Inputs:
+- Read details from user database
 
-Outputs: 
-- First Name 
-- Last Name 
-- Password 
+Outputs:
+- First Name
+- Last Name
+- Password
 
-************************************************************************/ 
+************************************************************************/
 void login(person person_t)
-{ 
+{
 
 }
 
 /************************************************************************
-Author: Ryan 
+Author: Ryan
 
-Inputs: 
-- First Name 
-- Last Name 
-- Password 
+Inputs:
+- First Name
+- Last Name
+- Password
 
-Outputs: 
-- Write to user database 
+Outputs:
+- Write to user database
 
 
 
-************************************************************************/ 
+************************************************************************/
 void create_account(person person_t)
-{ 
-
-}
-
-/************************************************************************
-Author: Kayla 
-
-Inputs: 
-- Event Details 
-
-Outputs: 
-- Write event details to file 
-
-************************************************************************/ 
-void add_event(event_t events, int event_count)
-{ 
-
-}
-
-/************************************************************************
-Author: Tyler
-
-Inputs: 
-- event counter
-- new event details 
-
-Outputs: 
-- Update event details 
-
-************************************************************************/ 
-void edit_event(event_t events, int event_count)
-{ 
-
-}
-
-/************************************************************************
-Author: Jacob 
-
-Inputs: 
-- event details
-- event counter 
-
-Outputs: 
-- event details 
-
-************************************************************************/ 
-void display_event(event_t events, int event_count)
-{ 
-
-}
-
-/************************************************************************
-Author: Dee-Jay
-
-Inputs: 
-- event details 
-- event counter 
-
-Outputs: 
-- None 
-
-************************************************************************/ 
-
-void search_event(event_t events, int event_count)
-{ 
-
-}
-
-/************************************************************************
-Author: Ryan 
-
-Inputs: 
-- event details 
-- event counter 
-
-Outputs: 
-- None 
-
-************************************************************************/ 
-void sort_event(event_t events, int event_count)
-{ 
+{
 
 }
 
 /************************************************************************
 Author: Kayla
 
-Function to write files to database 
+Inputs:
+- Event Details
 
-*compression will occur here
+Outputs:
+- Write event details to file
 
-************************************************************************/ 
-void add_database(event_t* events, int event_count)
-{ 
-	
+************************************************************************/
+void add_event(event_t events, int event_count)
+{
+
 }
 
 /************************************************************************
-Author: Tyler 
+Author: Tyler
 
-Function to write files to database 
+Inputs:
+- event counter
+- new event details
 
-************************************************************************/ 
+Outputs:
+- Update event details
+
+************************************************************************/
+void edit_event(event_t events, int event_count)
+{
+
+}
+
+/************************************************************************
+Author: Jacob
+
+Inputs:
+- event details
+- event counter
+
+Outputs:
+- event details
+
+************************************************************************/
+void display_event(event_t events, int event_count)
+{
+
+}
+
+/************************************************************************
+Author: Dee-Jay
+
+Inputs:
+- event details
+- event counter
+- event name
+
+Outputs:
+- None
+
+************************************************************************/
+
+void search_event(event_t events, int event_count, char[] event_name)
+{
+
+}
+
+/************************************************************************
+Author: Ryan
+
+Inputs:
+- event details
+- event counter
+
+Outputs:
+- None
+
+************************************************************************/
+void sort_event(event_t events, int event_count)
+{
+
+}
+
+/************************************************************************
+Author: Kayla
+
+Function to write files to database
+
+*compression will occur here
+
+************************************************************************/
+void add_database(event_t* events, int event_count)
+{
+
+}
+
+/************************************************************************
+Author: Tyler
+
+Function to write files to database
+
+************************************************************************/
 void load_database(event_t* events, int* event_count)
 {
 
 }
 
 /************************************************************************
-Author: Jacob 
+Author: Jacob
 
-Inputs: 
-- event counter 
-- event details 
+Inputs:
+- event counter
+- event details
 
-Outputs: 
-- None 
+Outputs:
+- None
 
-* Update database with correct number of patrons attending 
+* Update database with correct number of patrons attending
 
-************************************************************************/ 
+************************************************************************/
 void join_event(event_t events, int event_count)
-{ 
+{
 
 }
 
 /************************************************************************
-Author: Dee-Jay 
+Author: Dee-Jay
 
-Inputs: 
-- Credit card details 
+Inputs:
+- Credit card details
 
-Outputs: 
+Outputs:
 - encrypted credit card number
 
-************************************************************************/ 
+************************************************************************/
 void encrypt_cc(card card_t)
-{ 
+{
 
 }
