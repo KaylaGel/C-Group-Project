@@ -9,6 +9,7 @@
     #define MAX_PASS_LEN 24
     #define MIN_PASS_LEN 8
     #define MAX_RESPONSE_LEN 10
+    #define MAX_EVENTTYPE_LEN 10
 
     #define MIN_YEAR 0000
     #define MAX_YEAR 9999
