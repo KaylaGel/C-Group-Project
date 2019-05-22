@@ -52,13 +52,13 @@
     /* edit event.c */
     void edit_event(event_manager_t* event_manager);
     int print_edit(void);
-    void edit_name(event_manager_t* event_manager);
-    void edit_type(event_manager_t* event_manager);
-    void edit_location(event_manager_t* event_manager);
-    void edit_date_time(event_manager_t* event_manager);
-    void edit_staff(event_manager_t* event_manager);
-    void edit_patrons(event_manager_t* event_manager);
-    void search_event(event_manager_t* event_manager, char* event_name);
+    void edit_name(event_manager_t* event_manager, int event_num);
+    void edit_type(event_manager_t* event_manager, int event_num);
+    void edit_location(event_manager_t* event_manager, int event_num);
+    void edit_date_time(event_manager_t* event_manager, int event_num);
+    void edit_staff(event_manager_t* event_manager, int event_num);
+    void edit_patrons(event_manager_t* event_manager, int event_num);
+    int search_event(event_manager_t* event_manager, char event_name[]);
 
     /* encrypt.c */
     void encrypt_plaintext(char* plaintext, char* ciphertext);

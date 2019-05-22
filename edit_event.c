@@ -71,7 +71,7 @@ int print_edit(void)
 	return edit_num;
 }
 
-void edit_name(event_manager_t* event_manager)
+void edit_name(event_manager_t* event_manager, int edit_num)
 {
 	char answer;
 	int toggle = 1;
@@ -95,7 +95,7 @@ void edit_name(event_manager_t* event_manager)
 	}
 }
 
-void edit_type(event_manager_t* event_manager)
+void edit_type(event_manager_t* event_manager, int edit_num)
 {
 	char answer;
 	int toggle = 1;
@@ -119,7 +119,7 @@ void edit_type(event_manager_t* event_manager)
 	}
 }
 
-void edit_location(event_manager_t* event_manager)
+void edit_location(event_manager_t* event_manager, int edit_num)
 {
 	char answer;
 	int toggle = 1;
@@ -143,7 +143,7 @@ void edit_location(event_manager_t* event_manager)
 	}
 }
 
-void edit_date_time(event_manager_t* event_manager);
+void edit_date_time(event_manager_t* event_manager, int edit_num);
 {
 	char answer;
 	int toggle = 1;
@@ -167,12 +167,12 @@ void edit_date_time(event_manager_t* event_manager);
 	}
 }
 
-void edit_staff(event_manager_t* event_manager)
+void edit_staff(event_manager_t* event_manager, int edit_num)
 {
 
 }
 
-void edit_patrons(event_manager_t* event_manager)
+void edit_patrons(event_manager_t* event_manager, int edit_num)
 {
 
 }
