@@ -57,6 +57,7 @@
     void edit_date_time(event_manager_t* event_manager);
     void edit_staff(event_manager_t* event_manager);
     void edit_patrons(event_manager_t* event_manager);
+    void search_event(event_manager_t* event_manager, char[] event_name);
 
     /* TODO */
     void add_event(event_manager_t* event_manager);
