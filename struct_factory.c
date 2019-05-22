@@ -13,7 +13,6 @@ void init_event_manager(event_manager_t* event_manager)
 
 void init_event(event_t* event, person_t coordinator)
 {
-    /* TODO: get user input to assign the event name */
     event->num_patrons = 0;
     event->num_staff = 0;
     get_new_event_name(event->name);
