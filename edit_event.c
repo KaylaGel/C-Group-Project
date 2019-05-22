@@ -1,4 +1,5 @@
 #include <stdio.h> /* printf() */
+#include <string.h> /* strcmp() */
 
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* edit_event, print_edit, edit_name, edit_type, edit_location, edit_date_time,
@@ -46,7 +47,7 @@ void edit_event(event_manager_t* event_manager)
 	}
 	else
 	{
-		printf("Invalid Event");
+		printf("Invalid Event Name");
 	}
 }
 
@@ -176,7 +177,15 @@ void edit_patrons(event_manager_t* event_manager)
 
 }
 
-void search_event(event_manager_t* event_manager, char[] event_name)
+int search_event(event_manager_t* event_manager, char[] event_name)
 {
-	
+	int i = 0;
+	while (i != MAX_EVENTS)
+	{
+		if strcmp(event_name, event_manager->events[i].name)
+		{
+			return i;
+		}
+	}
+	return -1;
 }
