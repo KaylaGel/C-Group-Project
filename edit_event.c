@@ -71,7 +71,7 @@ int print_edit(void)
 	return edit_num;
 }
 
-void edit_name(event_manager_t* event_manager, int edit_num)
+void edit_name(event_manager_t* event_manager, int event_num)
 {
 	char answer;
 	int toggle = 1;
@@ -80,7 +80,7 @@ void edit_name(event_manager_t* event_manager, int edit_num)
 		printf("Current Name: %s\n", event_manager->events[event_num].name);
 		printf("Would you like to edit this? (Y/N)\n");
 
-		scanf("%c", answer)
+		scanf("%c", answer);
 		if (answer == 'Y' || answer == 'y')
 		{
 			printf("Insert Name: ");
@@ -95,7 +95,7 @@ void edit_name(event_manager_t* event_manager, int edit_num)
 	}
 }
 
-void edit_type(event_manager_t* event_manager, int edit_num)
+void edit_type(event_manager_t* event_manager, int event_num)
 {
 	char answer;
 	int toggle = 1;
@@ -119,7 +119,7 @@ void edit_type(event_manager_t* event_manager, int edit_num)
 	}
 }
 
-void edit_location(event_manager_t* event_manager, int edit_num)
+void edit_location(event_manager_t* event_manager, int event_num)
 {
 	char answer;
 	int toggle = 1;
@@ -128,7 +128,7 @@ void edit_location(event_manager_t* event_manager, int edit_num)
 		printf("Current Location: %d %s, %s %s %d\n", event_manager->events[event_num].location.street_num, event_manager->events[event_num].location.street_name, event_manager->events[event_num].location.suburb, event_manager->events[event_num].location.state, event_manager->events[event_num].location.postcode);
 		printf("Would you like to edit this? (Y/N)\n");
 
-		scanf("%c", answer)
+		scanf("%c", answer);
 		if (answer == 'Y' || answer == 'y')
 		{
 			printf("Insert Location using the same format above: ");
@@ -143,7 +143,7 @@ void edit_location(event_manager_t* event_manager, int edit_num)
 	}
 }
 
-void edit_date_time(event_manager_t* event_manager, int edit_num);
+void edit_date_time(event_manager_t* event_manager, int event_num)
 {
 	char answer;
 	int toggle = 1;
@@ -152,7 +152,7 @@ void edit_date_time(event_manager_t* event_manager, int edit_num);
 		printf("Current Date and Time: %d/%d/%d %d%d\n", event_manager->events[event_num].event_date.day, event_manager->events[event_num].event_date.month, event_manager->events[event_num].event_date.year, event_manager->events[event_num].event_date.hour, event_manager->events[event_num].event_date.minute);
 		printf("Would you like to edit this? (Y/N)\n");
 
-		scanf("%c", answer)
+		scanf("%c", answer);
 		if (answer == 'Y' || answer == 'y')
 		{
 			printf("Insert Event Date and Time as formatted above: ");
@@ -167,12 +167,12 @@ void edit_date_time(event_manager_t* event_manager, int edit_num);
 	}
 }
 
-void edit_staff(event_manager_t* event_manager, int edit_num)
+void edit_staff(event_manager_t* event_manager, int event_num)
 {
 
 }
 
-void edit_patrons(event_manager_t* event_manager, int edit_num)
+void edit_patrons(event_manager_t* event_manager, int event_num)
 {
 
 }
