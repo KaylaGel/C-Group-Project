@@ -5,6 +5,8 @@
 #include "definitions.h" /* MAX_INT_LEN */
 #include "function_prototypes.h" /* valid_int(), convert_int() */
 
+#define DEBUG
+
 void get_user_login(char* username, char* password)
 {
     printf("Username: ");
@@ -51,7 +53,7 @@ int scan_int_min_max(int min_value, int max_value)
     int value = scan_int();
     if(value < min_value || value > max_value)
     {
-        printf("%i is not between %i and %i\n", value, min_value, max_value);
+        printf("\n%i is not between %i and %i\n", value, min_value, max_value);
         printf("Please input a valid number between %i and %i\n", min_value, max_value);
         printf("> ");
         return scan_int_min_max (min_value, max_value);
@@ -130,34 +132,27 @@ void get_new_user_lastname(char* lastname)
 
 void get_new_user_DOB(date_t* DOB)
 {
-    printf("Please enter your date of birth in the form DD/MM/YYYY\n");
-    printf("> ");
+    printf("Please enter your date of birth\n");
 
-    scanf("%d/%d/%d", DOB->day, DOB->month, DOB->year);
+    printf("\nDay\n");
+    printf(">");
+    DOB->day = scan_int_min_max(MIN_DAY, MAX_DAY);
 
-    if(DOB->day > MAX_DAY | DOB->day < MIN_DAY)
-    {
-        printf("The day within your DOB should be between %d and %d\n", MAX_DAY, MIN_DAY);
-        printf("Your input day was %d\n", (int) DOB->day);
-        get_new_user_DOB(DOB);
-        return;
-    }
-    else if (DOB->month > MAX_MONTH | DOB->month < MIN_MONTH)
-    {
-        printf("The month within your DOB should be between %d and %d\n", MAX_MONTH, MIN_MONTH);
-        printf("Your inputted day date was %d\n", (int) DOB->month);
-        get_new_user_DOB(DOB);
-        return;
-    }
-    else if (DOB->year > MAX_YEAR | DOB->year < MIN_YEAR)
-    {
-        printf("The year within your DOB should be between %d and %d\n", MAX_YEAR, MIN_YEAR);
-        printf("Your input year was %d\n", (int) DOB->year);
-        get_new_user_DOB(DOB);
-        return;
-    }
-    
-    
+    printf("\nMonth\n");
+    printf(">");
+    DOB->month = scan_int_min_max(MIN_MONTH, MAX_MONTH);
+
+    printf("\nYear\n");
+    printf(">");
+    DOB->year = scan_int_min_max(MIN_YEAR, MAX_YEAR);
+
+    #ifdef DEBUG /* For debugging */
+        printf("Inputted DOB is\n");
+        printf("Day: %i\n", DOB->day);
+        printf("Month: %i\n", DOB->month);
+        printf("Year: %i\n", DOB->year);
+    #endif
+
     return;
 }
 
