@@ -58,6 +58,9 @@
     void edit_staff(event_manager_t* event_manager);
     void edit_patrons(event_manager_t* event_manager);
 
+    /* encrypt.c */
+    void encrypt_plaintext(char* plaintext, char* ciphertext);
+
     /* TODO */
     void add_event(event_manager_t* event_manager);
     void display_event(event_manager_t* event_manager);

@@ -98,7 +98,7 @@ void get_new_user_password(char* password)
 
     encrypt_plaintext(plaintext, password);
 
-    plaintext = '\0';
+    strcpy(plaintext, " ");
 
     return;
 }
