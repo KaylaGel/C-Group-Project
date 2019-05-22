@@ -12,7 +12,7 @@ void display_event(event_t events[], int event_count) {
         if (strcmp(display_choice, "all") == 0) {
             int space[2];
             int i, j;
-            int c_temp
+            int temp_count
             printf("Event Name           Event Type Date       Coordinator\n");
             printf("-------------------- ---------- ---------- --------------------\n");
 
@@ -49,7 +49,7 @@ void display_event(event_t events[], int event_count) {
 
             for (i = 0; i <= event_count; i++) {
                 if (strcmp(display_choice, events[i].event_name) == 0) {
-                    c_temp = i;
+                    temp_count = i;
                     printf("Event Name           Event Type Date       Coordinator\n");
                     printf("-------------------- ---------- ---------- --------------------\n");
 
