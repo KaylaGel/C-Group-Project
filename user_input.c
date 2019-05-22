@@ -141,15 +141,15 @@ void get_new_user_DOB(date_t* DOB)
 {
     printf("Please enter your date of birth\n");
 
-    printf("\nDay\n");
+    printf("Day");
     printf(">");
     DOB->day = scan_int_min_max(MIN_DAY, MAX_DAY);
 
-    printf("\nMonth\n");
+    printf("Month");
     printf(">");
     DOB->month = scan_int_min_max(MIN_MONTH, MAX_MONTH);
 
-    printf("\nYear\n");
+    printf("Year");
     printf(">");
     DOB->year = scan_int_min_max(MIN_YEAR, MAX_YEAR);
 
