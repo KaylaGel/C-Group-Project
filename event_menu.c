@@ -177,7 +177,9 @@ void list_all(event_manager_t event_manager)
     return;
 }
 
-
+/*******************************************************
+ * Editing the Event
+*******************************************************/
 
 void edit_event(event_t events, int event_count)
 {

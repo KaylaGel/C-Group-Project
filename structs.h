@@ -9,8 +9,20 @@
         int year;
         int month;
         int day;
+        int hour;
+        int minute;
     };
     typedef struct date date_t;
+
+    struct address
+    {
+        int street_num;
+        char street_name[];
+        char suburb[];
+        int postcode;
+        char state[];
+    };
+    typedef struct address address_t;
 
     struct card
     {
@@ -34,11 +46,13 @@
     struct event
     {
         char name[MAX_NAME_LEN+1];
+        char event_type[MAX_NAME_LEN+1];
         person_t patrons[MAX_PATRONS];
         person_t staff[MAX_STAFF];
         person_t coordinator;
         int num_patrons;
         int num_staff;
+        address_t location;
         date_t event_date;
         int free_event;
     };
