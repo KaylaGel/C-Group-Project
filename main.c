@@ -15,7 +15,6 @@ int main(void)
         printf("Debug mode enabled\n");
     #endif
 
-
     event_manager_t event_manager;
     init_event_manager(&event_manager);
 
