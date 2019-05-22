@@ -7,12 +7,9 @@
     /* event_menu.c */
     void menu_login(event_manager_t* event_manager);
     void menu_main(event_manager_t* event_manager);
-    void menu_admin(event_manager_t* event_manager);
     void print_menu_login(void);
-    void print_menu_main(char* current_logged_in_username);
-    void print_menu_admin(void);
+    void print_menu_main(void);
     void list_event_names(event_manager_t event_manager);
-    void list_all(event_manager_t event_manager);
 
     /* data_validation.c */
     int valid_int(char* input);
@@ -28,27 +25,19 @@
     void get_new_user_password(char* password);
     void get_new_user_firstname(char* firstname);
     void get_new_user_lastname(char* lastname);
-    void get_new_user_DOB(date_t* DOB);
-    void get_new_event_name(char* event_name);
-    void get_new_event_free_status(int* event_free_status);
 
     /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
     void account_creation(event_manager_t* event_manager);
-    int login(event_manager_t* event_manager);
 
     /* struct_factory.c */
     void init_event_manager(event_manager_t* event_manager);
     void init_event(event_t* event, person_t coordinator);
-    void init_staff(event_t* event, person_t staff);
-    void init_admin_account(person_t* admin);
+    void init_staff(event_t* event, staff_t staff);
     void create_event(event_manager_t* event_manager, person_t creator);
 
-    /* print.c */
-    void print_event_name(event_t event, int event_index);
-    void print_event_details(event_t event, int event_index);
 
-    /* edit event.c */
+    /* edit.c */
     void edit_event(event_t events);
     int print_edit(void);
     void edit_name(event_t events, int event_num);
@@ -57,6 +46,8 @@
     void edit_date_time(event_t events, int event_num);
     void edit_staff(event_t events, int event_num);
     void edit_patrons(event_t events, int event_num);
+
+
 
     /* TODO */
     void add_event(event_manager_t* event_manager);
