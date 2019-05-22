@@ -4,7 +4,7 @@
     #include "structs.h" /* event_t */
     #define C_GROUP_PROJECT_PROTOTYPES_H
 
-    /* event_menu.c */
+    /* menus.c */
     void menu_login(event_manager_t* event_manager);
     void menu_main(event_manager_t* event_manager);
     void menu_admin(event_manager_t* event_manager);
@@ -33,7 +33,7 @@
     void get_new_event_free_status(int* event_free_status);
     void get_net_event_type(char* event_type);
 
-    /* accounts.c */
+    /* login_and_accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
     void account_creation(event_manager_t* event_manager);
     int login(event_manager_t* event_manager);
@@ -58,6 +58,7 @@
     void edit_date_time(event_manager_t* event_manager);
     void edit_staff(event_manager_t* event_manager);
     void edit_patrons(event_manager_t* event_manager);
+    void search_event(event_manager_t* event_manager, char[] event_name);
 
     /* encrypt.c */
     void encrypt_plaintext(char* plaintext, char* ciphertext);
