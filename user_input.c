@@ -127,3 +127,78 @@ void get_new_user_lastname(char* lastname)
     }
     return;
 }
+
+void get_new_user_DOB(date_t* DOB)
+{
+    printf("Please enter your date of birth in the form DD/MM/YYYY\n");
+    printf("> ");
+
+    scanf("%d/%d/%d", DOB->day, DOB->month, DOB->year);
+
+    if(DOB->day > MAX_DAY | DOB->day < MIN_DAY)
+    {
+        printf("The day within your DOB should be between %d and %d\n", MAX_DAY, MIN_DAY);
+        printf("Your input day was %d\n", (int) DOB->day);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    else if (DOB->month > MAX_MONTH | DOB->month < MIN_MONTH)
+    {
+        printf("The month within your DOB should be between %d and %d\n", MAX_MONTH, MIN_MONTH);
+        printf("Your inputted day date was %d\n", (int) DOB->month);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    else if (DOB->year > MAX_YEAR | DOB->year < MIN_YEAR)
+    {
+        printf("The year within your DOB should be between %d and %d\n", MAX_YEAR, MIN_YEAR);
+        printf("Your input year was %d\n", (int) DOB->year);
+        get_new_user_DOB(DOB);
+        return;
+    }
+    
+    
+    return;
+}
+
+void get_new_event_name(char* event_name)
+{
+    printf("Please enter the event name\n");
+    printf(">");
+
+    scanf("%s", event_name);
+
+    if(strlen(event_name) > MAX_NAME_LEN)
+    {
+        printf("Event name should be less than %i characters long\n", MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n", (int) strlen(event_name));
+        get_new_event_name(event_name);
+        return;
+    }
+    return;
+}
+void get_new_event_free_status(int* event_free_status)
+{
+    char user_response[MAX_RESPONSE_LEN];
+
+    printf("Would you like this event to be free? (yes/no)\n");
+    printf(">");
+
+    scanf("%s", user_response);
+
+    switch(user_response[0])
+    {
+        case 'y':
+        case 'Y':
+            printf("Event will be set to free entry\n");
+            *event_free_status = 1;
+            break;
+        case 'n':
+        case 'N':
+            printf("Event will be set to paid entry\n");
+            *event_free_status = 0;
+            break;
+    }
+
+    return;
+}

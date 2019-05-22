@@ -6,7 +6,7 @@
 
 /* lines within the code surrounded by #ifdef DEBUG
  * will only run if the following line is not commented out*/
-#define DEBUG
+/* #define DEBUG */
 
 
 int main(void)
