@@ -8,7 +8,7 @@ void edit_event(event_manager_t* event_manager)
 {
 	char event_name;
 	int event_num;
-	toggle = 1;
+	int toggle = 1;
 	printf("Enter the event name you would like to edit:\n");
 	scanf("%s", event_name);
 	if (search_event(event_manager, event_name) >= 0)
