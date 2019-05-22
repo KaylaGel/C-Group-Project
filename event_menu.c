@@ -185,6 +185,8 @@ void edit_event(event_t events, int event_count)
 {
 	char event_name;
 	int event_num;
+    int toggle;
+
 	toggle = 1;
 	printf("Enter the event name you would like to edit:\n");
 	scanf("%s", event_name);
@@ -194,7 +196,7 @@ void edit_event(event_t events, int event_count)
 		while (toggle == 1)
 		{
 			switch(print_edit())
-
+            {
 				case 1:
 					edit_name(events, event_num);
 					break;
@@ -218,11 +220,12 @@ void edit_event(event_t events, int event_count)
 					break;
 				default:
 					printf("Invalid Input\n");
+            }
 		}
 	}
 	else
 	{
-		printf("Invalid Event")
+		printf("Invalid Event");
 	}
 }
 

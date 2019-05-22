@@ -17,8 +17,8 @@
     struct address
     {
         int street_num;
-        char street_name[];
-        char suburb[];
+        char street_name[MAX_NAME_LEN];
+        char suburb[MAX_NAME_LEN];
         int postcode;
         char state[];
     };
