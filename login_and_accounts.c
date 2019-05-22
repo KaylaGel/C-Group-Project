@@ -54,14 +54,16 @@ int login(event_manager_t* event_manager)
         if ( strcmp( event_manager->users[i].username, username ) == 0 )
         {
             /*username exists*/
-            char plaintext[MAX_NAME_LEN+1];
-            decrypt_plaintext(plaintext, password);
+            char ciphertext[MAX_NAME_LEN+1];
+            encrypt_plaintext(password, ciphertext);
             #ifdef DEBUG /* For debugging */
-                printf("Decrypted Password: %s\n", plaintext);
+                printf("DEBUG: Plaintext User Input: %s\n", password);
+                printf("DEBUG: Encrypted User Input: %s\n", ciphertext);
+                printf("DEBUG: Encrypted Account Password: %s\n", event_manager->users[i].password);
             #endif
 
 
-            if( strcmp( event_manager->users[i].password, plaintext ) == 0 )
+            if( strcmp( event_manager->users[i].password, ciphertext ) == 0 )
             {
                 /* correct password */
                 /* Set current logged in user as the found user */

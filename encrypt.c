@@ -1,6 +1,6 @@
 #include <string.h>
 
-void encrypt_plaintext(char* plaintext, char* ciphertext)
+void encrypt_plaintext(const char* plaintext, char* ciphertext)
 {
     strcpy(ciphertext, plaintext);
     /*write test function to make sure that it runs.*/
@@ -15,7 +15,7 @@ void encrypt_plaintext(char* plaintext, char* ciphertext)
 
     return;
 }
-void decrypt_plaintext(char* plaintext, char* ciphertext)
+void decrypt_plaintext(char* plaintext, const char* ciphertext)
 {
     strcpy(plaintext, ciphertext);
 

@@ -61,9 +61,8 @@
     int search_event(event_manager_t* event_manager, char event_name[]);
 
     /* encrypt.c */
-    void encrypt_plaintext(char* plaintext, char* ciphertext);
-
-    void decrypt_plaintext(char* plaintext, char* ciphertext);
+    void encrypt_plaintext(const char* plaintext, char* ciphertext);
+    void decrypt_plaintext(char* plaintext, const char* ciphertext);
 
     /* TODO */
     void add_event(event_manager_t* event_manager);
