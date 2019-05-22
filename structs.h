@@ -55,7 +55,6 @@
         address_t location;
         date_t event_date;
         int free_event;
-        char event_type[MAX_EVENTTYPE_LEN];
     };
     typedef struct event event_t;
 
