@@ -17,6 +17,7 @@ void init_event(event_t* event, person_t coordinator)
     event->num_staff = 0;
     get_new_event_name(event->name);
     get_new_event_free_status(&event->free_event);
+    get_new_event_type(event->event_type);
 
     event->coordinator = coordinator;
 
