@@ -192,6 +192,7 @@ void edit_event(event_t events, int event_count)
 		while (toggle == 1)
 		{
 			switch(print_edit())
+			{
 
 				case 1:
 					edit_name(events, event_num);
@@ -216,6 +217,7 @@ void edit_event(event_t events, int event_count)
 					break;
 				default:
 					printf("Invalid Input\n");
+			}
 		}
 	}
 	else
