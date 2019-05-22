@@ -14,3 +14,17 @@ void encrypt_plaintext(char* plaintext, char* ciphertext)
 
     return;
 }
+void decrypt_plaintext(char* plaintext, char* ciphertext)
+{
+    strcpy(plaintext, ciphertext);
+
+    int text_len = strlen(plaintext);
+
+    int i;
+    for (i = 0; i < text_len; i++)
+    {
+        plaintext[i]--;
+    }
+
+    return;
+}
