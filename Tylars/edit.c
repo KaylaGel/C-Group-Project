@@ -102,7 +102,7 @@ void edit_type(event_t events, int event_num)
 		printf("Current Event Type: %s\n", events[event_num].event_type);
 		printf("Would you like to edit this? (Y/N)\n");
 
-		scanf("%c", answer)
+		scanf("%c", answer);
 		if (answer == 'Y' || answer == 'y')
 		{
 			printf("Insert Event Type: ");
