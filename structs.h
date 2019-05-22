@@ -20,7 +20,7 @@
         char street_name[MAX_NAME_LEN+1];
         char suburb[MAX_NAME_LEN+1];
         int postcode;
-        char state[MAX_NAME_LEN+1;
+        char state[MAX_NAME_LEN+1];
     };
     typedef struct address address_t;
 
