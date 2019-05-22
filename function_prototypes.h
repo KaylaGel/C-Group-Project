@@ -31,6 +31,7 @@
     void get_new_user_DOB(date_t* DOB);
     void get_new_event_name(char* event_name);
     void get_new_event_free_status(int* event_free_status);
+    void get_net_event_type(char* event_type);
 
     /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
