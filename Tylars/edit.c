@@ -4,7 +4,7 @@
 #include "function_prototypes.h" /* edit_event, print_edit, edit_name, edit_type, edit_location, edit_date_time,
 edit_staff, edit_patrons */
 
-void edit_event(event_t events, int event_count)
+void edit_event(event_manager_t* event_manager)
 {
 	char event_name;
 	int event_num;
@@ -17,7 +17,7 @@ void edit_event(event_t events, int event_count)
 		while (toggle == 1)
 		{
 			switch(print_edit())
-
+			{
 				case 1:
 					edit_name(events, event_num);
 					break;
@@ -41,11 +41,12 @@ void edit_event(event_t events, int event_count)
 					break;
 				default:
 					printf("Invalid Input\n");
+			}
 		}
 	}
 	else
 	{
-		printf("Invalid Event")
+		printf("Invalid Event");
 	}
 }
 
@@ -69,7 +70,7 @@ int print_edit(void)
 	return edit_num;
 }
 
-void edit_name(event_t events, int event_num)
+void edit_name(event_manager_t* event_manager)
 {
 	char answer;
 	int toggle = 1;
@@ -93,7 +94,7 @@ void edit_name(event_t events, int event_num)
 	}
 }
 
-void edit_type(event_t events, int event_num)
+void edit_type(event_manager_t* event_manager)
 {
 	char answer;
 	int toggle = 1;
@@ -117,7 +118,7 @@ void edit_type(event_t events, int event_num)
 	}
 }
 
-void edit_location(event_t events, int event_num)
+void edit_location(event_manager_t* event_manager)
 {
 	char answer;
 	int toggle = 1;
@@ -141,7 +142,7 @@ void edit_location(event_t events, int event_num)
 	}
 }
 
-void edit_date_time(event_t events, int event_num);
+void edit_date_time(event_manager_t* event_manager);
 {
 	char answer;
 	int toggle = 1;
@@ -165,12 +166,12 @@ void edit_date_time(event_t events, int event_num);
 	}
 }
 
-void edit_staff(event_t events, int event_num)
+void edit_staff(event_manager_t* event_manager)
 {
 
 }
 
-void edit_patrons(event_t events, int event_num)
+void edit_patrons(event_manager_t* event_manager)
 {
 
 }
