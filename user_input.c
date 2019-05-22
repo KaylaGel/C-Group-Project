@@ -88,7 +88,7 @@ void get_new_user_password(char* password)
 
     scanf("%s", plaintext);
 
-    if(strlen(password) < MIN_PASS_LEN || strlen(password) > MAX_PASS_LEN)
+    if(strlen(plaintext) < MIN_PASS_LEN || strlen(plaintext) > MAX_PASS_LEN)
     {
         printf("Password should be between %i and %i characters long\n", MIN_PASS_LEN, MAX_PASS_LEN);
         printf("Your password was %i characters long\n", (int) strlen(password));
@@ -97,6 +97,11 @@ void get_new_user_password(char* password)
     }
 
     encrypt_plaintext(plaintext, password);
+    #ifdef DEBUG /* For debugging */
+            printf("Plaintext Password: %s\n", password);
+            printf("Encrypted Password: %s\n", password);
+    #endif
+
 
     strcpy(plaintext, " ");
 
@@ -202,5 +207,10 @@ void get_new_event_free_status(int* event_free_status)
             break;
     }
 
+    return;
+}
+
+void get_new_event_type(char* event_type)
+{
     return;
 }
