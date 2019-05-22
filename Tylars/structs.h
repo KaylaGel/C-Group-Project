@@ -15,14 +15,14 @@
     typedef struct date date_t;
 
     struct address
-{
-	int street_num;
-	char street_name[];
-	char suburb[];
-	int postcode;
-	char state[];
-};
-typedef struct address address_t;
+    {
+	     int street_num;
+	     char street_name[];
+	     char suburb[];
+	     int postcode;
+       char state[];
+    };
+    typedef struct address address_t;
 
     struct card
     {
@@ -46,7 +46,7 @@ typedef struct address address_t;
     struct event
     {
         char name[MAX_NAME_LEN+1];
-        char[] event_type;
+        char event_type[MAX_NAME_LEN+1];
         person_t patrons[MAX_PATRONS];
         staff_t staff[MAX_STAFF];
         coord_t coordinator; /*possibly staff_t*/
@@ -67,6 +67,7 @@ typedef struct address address_t;
 
         person_t users[MAX_USERS];
         int num_users;
+
     };
     typedef struct event_manager event_manager_t;
 

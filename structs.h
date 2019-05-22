@@ -17,10 +17,10 @@
     struct address
     {
         int street_num;
-        char street_name[MAX_NAME_LEN];
-        char suburb[MAX_NAME_LEN];
+        char street_name[MAX_NAME_LEN+1];
+        char suburb[MAX_NAME_LEN+1];
         int postcode;
-        char state[];
+        char state[MAX_NAME_LEN+1;
     };
     typedef struct address address_t;
 
@@ -62,10 +62,10 @@
     {
         person_t current_logged_in_user;
 
-        event_t events[MAX_EVENTS];
+        event_t events[MAX_EVENTS+1];
         int num_events;
 
-        person_t users[MAX_USERS];
+        person_t users[MAX_USERS+1];
         int num_users;
 
         person_t admin_account;
