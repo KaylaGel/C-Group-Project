@@ -177,12 +177,12 @@ void edit_patrons(event_manager_t* event_manager)
 
 }
 
-int search_event(event_manager_t* event_manager, char[] event_name)
+int search_event(event_manager_t* event_manager, char event_name[])
 {
 	int i = 0;
 	while (i != MAX_EVENTS)
 	{
-		if strcmp(event_name, event_manager->events[i].name)
+		if (strcmp(event_name, event_manager->events[i].name))
 		{
 			return i;
 		}
