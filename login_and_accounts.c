@@ -4,6 +4,8 @@
 #include "structs.h" /* event_t, person_t */
 #include "function_prototypes.h" /* get_new_user_* */
 
+#define DEBUG
+
 void create_new_user(event_manager_t event_manager, person_t *user)
 {
     get_new_user_username(event_manager, user->username);
@@ -52,7 +54,14 @@ int login(event_manager_t* event_manager)
         if ( strcmp( event_manager->users[i].username, username ) == 0 )
         {
             /*username exists*/
-            if( strcmp( event_manager->users[i].password, password ) == 0 )
+            char plaintext[MAX_NAME_LEN+1];
+            decrypt_plaintext(plaintext, password);
+            #ifdef DEBUG /* For debugging */
+                printf("Decrypted Password: %s\n", plaintext);
+            #endif
+
+
+            if( strcmp( event_manager->users[i].password, plaintext ) == 0 )
             {
                 /* correct password */
                 /* Set current logged in user as the found user */
