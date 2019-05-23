@@ -78,7 +78,7 @@ void get_new_user_username(event_manager_t event_manager, char* username)
     return;
 }
 
-void get_new_user_password(char* password)
+void get_new_user_password(char* password, int user_index)
 {
     printf("Please enter your chosen password\n");
     printf("> ");
@@ -91,11 +91,11 @@ void get_new_user_password(char* password)
     {
         printf("Password should be between %i and %i characters long\n", MIN_PASS_LEN, MAX_PASS_LEN);
         printf("Your password was %i characters long\n", (int) strlen(password));
-        get_new_user_password(password);
+        get_new_user_password(password, user_index);
         return;
     }
 
-    caeser_cipher(1, plaintext, password);
+    caeser_cipher(user_index, plaintext, password);
     #ifdef DEBUG /* For debugging */
             printf("DEBUG: Plaintext Password: %s\n", plaintext);
             printf("DEBUG: Encrypted Password: %s\n", password);

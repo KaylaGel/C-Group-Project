@@ -25,7 +25,7 @@
     int scan_int(void);
     int scan_int_min_max(int min_value, int max_value);
     void get_new_user_username(event_manager_t event_manager, char* username);
-    void get_new_user_password(char* password);
+    void get_new_user_password(char* password, int user_index);
     void get_new_user_firstname(char* firstname);
     void get_new_user_lastname(char* lastname);
     void get_new_user_DOB(date_t* DOB);

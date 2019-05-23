@@ -9,7 +9,7 @@
 void create_new_user(event_manager_t event_manager, person_t *user)
 {
     get_new_user_username(event_manager, user->username);
-    get_new_user_password(user->password);
+    get_new_user_password(user->password, event_manager.num_users+1);
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
     get_new_user_DOB(&user->DOB);
@@ -54,7 +54,7 @@ int login(event_manager_t* event_manager)
         if ( strcmp( event_manager->users[i].username, username ) == 0 )
         {
             char ciphertext[MAX_NAME_LEN+1];
-            caeser_cipher(i, password, ciphertext);
+            caeser_cipher(i + 1, password, ciphertext);
 
             #ifdef DEBUG /* For debugging */
                 printf("DEBUG: Plaintext User Input: %s\n", password);
