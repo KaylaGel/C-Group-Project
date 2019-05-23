@@ -1,6 +1,7 @@
 #include <stdio.h>
 
 #include "structs.h"
+#include "definitions.h"
 
 void print_event_name(event_t event, int event_index)
 {

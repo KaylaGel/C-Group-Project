@@ -4,15 +4,16 @@
 #include "structs.h" /* event_t, person_t */
 #include "function_prototypes.h" /* get_new_user_* */
 
+#define DEBUG
+
 void create_new_user(event_manager_t event_manager, person_t *user)
 {
     get_new_user_username(event_manager, user->username);
     get_new_user_password(user->password, event_manager.num_users+1);
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
-    get_new_user_lastname(user->DOB->day); /* Fix!!!!!!!!!!!!!!!!! */
-    /* TODO: Ask user for their DOB */
-
+    get_new_user_DOB(&user->DOB);
+     
     return;
 }
 
@@ -33,8 +34,8 @@ int login(event_manager_t* event_manager)
 {
     char username[MAX_NAME_LEN+1];
     char password[MAX_PASS_LEN+1];
-    int i;
-
+    int i; 
+    
     get_user_login(username, password);
 
     /* Test to see if admin details were supplied */
@@ -52,11 +53,17 @@ int login(event_manager_t* event_manager)
     {
         if ( strcmp( event_manager->users[i].username, username ) == 0 )
         {
-            /*username exists*/
-            if( strcmp( event_manager->users[i].password, password ) == 0 )
+            char ciphertext[MAX_NAME_LEN+1];
+            caeser_cipher(i + 1, password, ciphertext);
+
+            #ifdef DEBUG /* For debugging */
+                printf("DEBUG: Plaintext User Input: %s\n", password);
+                printf("DEBUG: Encrypted User Input: %s\n", ciphertext);
+                printf("DEBUG: Encrypted Account Password: %s\n", event_manager->users[i].password);
+            #endif
+            
+            if( strcmp( event_manager->users[i].password, ciphertext ) == 0 )
             {
-                /* correct password */
-                /* Set current logged in user as the found user */
                 event_manager->current_logged_in_user = event_manager->users[i];
                 printf("Successfully logged in as '%s'\n", event_manager->current_logged_in_user.username);
                 return 1;

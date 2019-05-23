@@ -33,7 +33,7 @@
     void get_new_event_free_status(int* event_free_status);
     void get_new_event_type(char* event_type);
 
-    /* login_and_accounts.c */
+    /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
     void account_creation(event_manager_t* event_manager);
     int login(event_manager_t* event_manager);
@@ -49,7 +49,7 @@
     void print_event_name(event_t event, int event_index);
     void print_event_details(event_t event, int event_index);
 
-    /* edit event.c */
+    /* edit_event.c */
     void edit_event(event_manager_t* event_manager);
     int print_edit(void);
     void edit_name(event_manager_t* event_manager, int event_num);
@@ -58,18 +58,23 @@
     void edit_date_time(event_manager_t* event_manager, int event_num);
     void edit_staff(event_manager_t* event_manager, int event_num);
     void edit_patrons(event_manager_t* event_manager, int event_num);
-    int search_event(event_manager_t* event_manager, char event_name[]);
 
     /* encrypt.c */
     void caeser_cipher(const int shift, const char* plaintext, char* ciphertext);
     int xor_encrypt_file(const char* key, const char* input_filename, const char* output_filename);
 
-    /* TODO */
+    /* search.c */
+    int search_event(event_t* events, int event_count, char* event_name);
+
+    /* display.c */
+    void display_event(event_t* events, int event_count);
+
+    /* TODO
     void add_event(event_manager_t* event_manager);
     void display_event(event_manager_t* event_manager);
     void add_database(event_manager_t* event_manager);
     void load_database(event_manager_t* event_manager);
-    /*Perhaps add more prototype functions if necessary,
+    Perhaps add more prototype functions if necessary,
     also need to put people on different tasks for these functions*/
 
 #endif /*C_GROUP_PROJECT_PROTOTYPES_H*/
