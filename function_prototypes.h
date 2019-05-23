@@ -61,8 +61,8 @@
     int search_event(event_manager_t* event_manager, char event_name[]);
 
     /* encrypt.c */
-    void encrypt_plaintext(const char* plaintext, char* ciphertext);
-    void decrypt_plaintext(char* plaintext, const char* ciphertext);
+    void caeser_cipher(const int shift, const char* plaintext, char* ciphertext);
+    int xor_encrypt_file(const char* key, const char* input_filename, const char* output_filename);
 
     /* TODO */
     void add_event(event_manager_t* event_manager);

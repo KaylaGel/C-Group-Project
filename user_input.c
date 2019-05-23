@@ -95,7 +95,7 @@ void get_new_user_password(char* password)
         return;
     }
 
-    encrypt_plaintext(plaintext, password);
+    caeser_cipher(1, plaintext, password);
     #ifdef DEBUG /* For debugging */
             printf("DEBUG: Plaintext Password: %s\n", plaintext);
             printf("DEBUG: Encrypted Password: %s\n", password);
