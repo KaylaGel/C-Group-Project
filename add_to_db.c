@@ -52,7 +52,12 @@ void add_database(event_t* events, int event_count)
    fclose(fp);
 
    /* To Do */
-   /* User Database --> Save usernames, encypted passwords*/
+   /* User Database --> Save usernames, encypted passwords
+    *
+    * NOTE xor_encrypt_file() has been created and can be used to xor encrypt files
+    * Could use for the database after it has been saved and before it is loaded
+    * Could possibly ask user for a database password that is used as the xor key to save and load the database
+    * Wrong password when loading would result in incorrect data loading*/
    return;
 
 
