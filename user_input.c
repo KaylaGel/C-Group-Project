@@ -68,15 +68,14 @@ int response_yes(void)
     scanf("%s", user_response);
     switch(user_response[0])
     {
+        /* 'yes' & 'no' is not needed here because in the switch, we are
+         * getting the very first character of the users response and only
+         * dealing with that (user_response[0]) */
         case 'y':
         case 'Y':
-        case 'Yes':
-        case 'yes':
             return 1;
         case 'n':
         case 'N':
-        case 'No':
-        case 'no':
             return 0;
         default:
             printf("Invalid input\n");
