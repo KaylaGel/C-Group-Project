@@ -24,7 +24,7 @@ void account_creation(event_manager_t* event_manager)
     create_new_user(*event_manager, &user);
 
     /* Assign the current user to the next available user slot */
-    event_manager->users[event_manager->num_users] = user;
+    event_manager->users[event_manager->num_users /* + 1? */] = user;
     event_manager->num_users++;
 
     return;
