@@ -10,8 +10,7 @@ EXECUTABLE = EventManager
 #Add any new header files that get created into this variable
 HEADERS = definitions.h structs.h funciton_prototypes.h
 #Add any new .c code files that get created into this variable, but with a .o file extention instead of .c
-OBJECTS = accounts.o add_to_db.o data_validation.o display.o edit_event.o encrypt.o event_factory.o main.o menus.o print.o search.o struct_factory.o  user_factory.o user_input.o
-
+OBJECTS = main.o menus.o data_validation.o user_input.o accounts.o struct_factory.o print.o encrypt.o display.o search.o edit_event.o event_factory.o user_factory.o
 default: $(EXECUTABLE)
 
 $(EXECUTABLE) : $(OBJECTS)
