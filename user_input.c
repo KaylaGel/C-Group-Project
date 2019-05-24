@@ -70,9 +70,13 @@ int response_yes(void)
     {
         case 'y':
         case 'Y':
+        case 'Yes':
+        case 'yes':
             return 1;
         case 'n':
         case 'N':
+        case 'No':
+        case 'no':
             return 0;
         default:
             printf("Invalid input\n");
