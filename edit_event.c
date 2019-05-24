@@ -112,10 +112,12 @@ void edit_patrons(event_t* event)
 
 void add_patron_to_event(event_t* event, person_t* user)
 {
-    event->patrons[event->num_patrons] = user;
+    event->patrons[event->num_patrons] = *user;
+    event->num_patrons++;
 }
 
 void add_staff_to_event(event_t* event, person_t* user)
 {
-    event->staff[event->num_staff] = user;
+    event->staff[event->num_staff] = *user;
+    event->num_staff++;
 }

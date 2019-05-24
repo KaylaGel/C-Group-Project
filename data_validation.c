@@ -25,37 +25,14 @@ int convert_int(char* input)
 
 int username_taken(event_manager_t event_manager, char* username)
 {
-    /* Loop through each event */
     int i;
-    for (i = 0; i < event_manager.num_events; i++)
+    for (i = 0; i < event_manager.num_users; i++)
     {
-        event_t event = event_manager.events[i];
-
-        /* Loop through each staff member of the currently iterated event */
-        int j;
-        for (j = 0; j < event.num_staff; j++)
+        if ( strcmp(event_manager.users[i].username, username) == 0 )
         {
-            person_t staff = event.staff[j];
-
-            /* Compare the currently iterated staff member's username with the supplied username */
-            if( strcmp(staff.username, username) )
-            {
-                return 1;
-            }
-        }
-
-        /* Loop through each patron of the currently iterated event */
-        int k;
-        for (k = 0; k < event.num_patrons; k++)
-        {
-            person_t patron = event.patrons[j];
-
-            /* Compare the currently iterated patron's username with the supplied username */
-            if( strcmp(patron.username, username) )
-            {
-                return 1;
-            }
+            return 1;
         }
     }
+
     return 0;
 }

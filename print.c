@@ -27,7 +27,9 @@ void print_event_details(event_t event, int event_index)
 
     printf("\tStaff:\n");
     if(event.num_staff == 0)
+    {
         printf("\t\tNo Staff\n");
+    }
     int i;
     for (i = 0; i < event.num_staff; i++)
     {
@@ -41,12 +43,12 @@ void print_event_details(event_t event, int event_index)
     if(event.num_patrons == 0)
         printf("\t\tNo Patrons\n");
     int j;
-    for (j = 0; j < event.num_staff; j++)
+    for (j = 0; j < event.num_patrons; j++)
     {
-        person_t current_staff = event.staff[i];
+        person_t current_patron = event.patrons[j];
         printf("\t\t");
-        printf("%-*s | ", MAX_NAME_LEN, current_staff.username);
-        printf("%s %s\n", current_staff.firstname, current_staff.lastname);
+        printf("%-*s | ", MAX_NAME_LEN, current_patron.username);
+        printf("%s %s\n", current_patron.firstname, current_patron.lastname);
     }
     printf("\n");
 }

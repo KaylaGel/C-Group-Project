@@ -92,13 +92,13 @@ void join_event(event_manager_t* event_manager)
         return;
     }
 
-    event_t* event = event_manager->events[event_num];
+    event_t* event = &event_manager->events[event_num];
 
     printf("Are you sure you want to join '%s'?\n", event->name);
     if(response_yes())
     {
         printf("Joining '%s'\n", event->name);
-        add_patron_to_event(event, event_manager->current_logged_in_user);
+        add_patron_to_event(event, &event_manager->current_logged_in_user);
     }else
     {
         printf("Exiting event join\n");
@@ -113,7 +113,7 @@ void edit_event(event_manager_t* event_manager)
     if (event_num == -1)
     {
         printf("Not a valid Event\n");
-        break;
+        return;
     }
 
     menu_edit(&event_manager->events[event_num]);

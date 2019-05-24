@@ -117,7 +117,7 @@ void menu_admin(event_manager_t* event_manager)
 
 void menu_edit(event_t* event)
 {
-    print_menu_edit();
+    print_menu_edit(event->name);
     int user_selection = scan_int();
     switch (user_selection)
     {
