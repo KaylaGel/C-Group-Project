@@ -18,7 +18,8 @@ int main(void)
     event_manager_t event_manager;
     init_event_manager(&event_manager);
 
-    printf("Welcome to EventManager v2.4\n"); /* TODO: make this temp welcome line better */
+    /* TODO: make this temp welcome line better */
+    printf("Welcome to EventManager v2.4\n");
     menu_login(&event_manager);
 
     return 0;

@@ -54,11 +54,33 @@ int scan_int_min_max(int min_value, int max_value)
     if(value < min_value || value > max_value)
     {
         printf("\n%i is not between %i and %i\n", value, min_value, max_value);
-        printf("Please input a valid number between %i and %i\n", min_value, max_value);
+        printf("Please input a valid number between %i and %i\n", min_value,
+                max_value);
         printf("> ");
         return scan_int_min_max (min_value, max_value);
     }
     return value;
+}
+
+int response_yes(void)
+{
+    char user_response[MAX_RESPONSE_LEN];
+    scanf("%s", user_response);
+    switch(user_response[0])
+    {
+        case 'y':
+        case 'Y':
+            return 1;
+        case 'n':
+        case 'N':
+            return 0;
+        default:
+            printf("Invalid input\n");
+            printf("Please enter yes/no\n");
+            printf("> ");
+            break;
+    }
+    return response_yes();
 }
 
 
@@ -89,9 +111,11 @@ void get_new_user_password(char* password, int user_index)
 
     if(strlen(plaintext) < MIN_PASS_LEN || strlen(plaintext) > MAX_PASS_LEN)
     {
-        printf("Password should be between %i and %i characters long\n", MIN_PASS_LEN, MAX_PASS_LEN);
-        printf("Your password was %i characters long\n", (int) strlen(password));
-        get_new_user_password(password, user_index);
+        printf("Password should be between %i and %i characters long\n",
+                MIN_PASS_LEN, MAX_PASS_LEN);
+        printf("Your password was %i characters long\n",
+                (int) strlen(password));
+        get_new_user_password(password, user_index  );
         return;
     }
 
@@ -116,8 +140,10 @@ void get_new_user_firstname(char* firstname)
 
     if(strlen(firstname) > MAX_NAME_LEN)
     {
-        printf("First name should be less than %i characters long\n", MAX_NAME_LEN);
-        printf("Your inputted name was %i characters long\n", (int) strlen(firstname));
+        printf("First name should be less than %i characters long\n",
+                MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n",
+                (int) strlen(firstname));
         get_new_user_firstname(firstname);
         return;
     }
@@ -133,8 +159,10 @@ void get_new_user_lastname(char* lastname)
 
     if(strlen(lastname) > MAX_NAME_LEN)
     {
-        printf("Last name should be less than %i characters long\n", MAX_NAME_LEN);
-        printf("Your inputted name was %i characters long\n", (int) strlen(lastname));
+        printf("Last name should be less than %i characters long\n",
+                MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n",
+                (int) strlen(lastname));
         get_new_user_lastname(lastname);
         return;
     }
@@ -176,8 +204,10 @@ void get_new_event_name(char* event_name)
 
     if(strlen(event_name) > MAX_NAME_LEN)
     {
-        printf("Event name should be less than %i characters long\n", MAX_NAME_LEN);
-        printf("Your inputted name was %i characters long\n", (int) strlen(event_name));
+        printf("Event name should be less than %i characters long\n",
+                MAX_NAME_LEN);
+        printf("Your inputted name was %i characters long\n",
+                (int) strlen(event_name));
         get_new_event_name(event_name);
         return;
     }
@@ -203,6 +233,11 @@ void get_new_event_free_status(int* event_free_status)
         case 'N':
             printf("Event will be set to paid entry\n");
             *event_free_status = 0;
+            break;
+        default:
+            printf("Invalid input\n");
+            printf("Please enter yes/no\n");
+            get_new_event_free_status(event_free_status);
             break;
     }
 

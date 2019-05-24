@@ -8,6 +8,7 @@
     void menu_login(event_manager_t* event_manager);
     void menu_main(event_manager_t* event_manager);
     void menu_admin(event_manager_t* event_manager);
+    void menu_edit(event_t* event);
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
@@ -24,6 +25,7 @@
     void get_event_login(int* event_id, char* event_password);
     int scan_int(void);
     int scan_int_min_max(int min_value, int max_value);
+    int response_yes(void);
     void get_new_user_username(event_manager_t event_manager, char* username);
     void get_new_user_password(char* password, int user_index);
     void get_new_user_firstname(char* firstname);
@@ -48,23 +50,30 @@
     /* print.c */
     void print_event_name(event_t event, int event_index);
     void print_event_details(event_t event, int event_index);
+    void list_event_names(event_manager_t event_manager);
+    void list_all(event_manager_t event_manager);
+    void print_menu_login(void);
+    void print_menu_main(char* current_logged_in_username);
+    void print_menu_admin(void);
+    void print_menu_edit(void);
 
     /* edit_event.c */
-    void edit_event(event_manager_t* event_manager);
-    int print_edit(void);
-    void edit_name(event_manager_t* event_manager, int event_num);
-    void edit_type(event_manager_t* event_manager, int event_num);
-    void edit_location(event_manager_t* event_manager, int event_num);
-    void edit_date_time(event_manager_t* event_manager, int event_num);
-    void edit_staff(event_manager_t* event_manager, int event_num);
-    void edit_patrons(event_manager_t* event_manager, int event_num);
+    void edit_name(event_t* event);
+    void edit_type(event_t* event);
+    void edit_location(event_t* event);
+    void edit_date_time(event_t* event);
+    void edit_staff(event_t* event);
+    void edit_patrons(event_t* event);
 
     /* encrypt.c */
-    void caeser_cipher(const int shift, const char* plaintext, char* ciphertext);
-    int xor_encrypt_file(const char* key, const char* input_filename, const char* output_filename);
+    void caeser_cipher(const int shift, const char* plaintext,
+            char* ciphertext);
+    int xor_encrypt_file(const char* key, const char* input_filename, const
+    char* output_filename);
 
     /* search.c */
-    int search_event(event_t* events, int event_count, char* event_name);
+    int search_event(event_manager_t* event_manager, char* event_name);
+    int search_event_edit(event_manager_t* event_manager);
 
     /* display.c */
     void display_event(event_t* events, int event_count);

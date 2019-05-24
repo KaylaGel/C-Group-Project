@@ -4,6 +4,8 @@
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* print_menu_login(), print_menu_main(), scan_int() */
 
+#define DEBUG
+
 void menu_login(event_manager_t* event_manager)
 {
     print_menu_login();
@@ -64,6 +66,15 @@ void menu_main(event_manager_t* event_manager)
                 printf("Edit Event Selected\n");
             #endif
 
+            int event_num = search_event_edit(event_manager);
+
+            if (event_num == -1)
+            {
+                printf("Not a valid Event\n");
+                break;
+            }
+
+            menu_edit(&event_manager->events[event_num]);
             break;
         case 3:
             #ifdef DEBUG /* For debugging */
@@ -71,9 +82,6 @@ void menu_main(event_manager_t* event_manager)
             #endif
 
             break;
-
-
-
         case 9:
             #ifdef DEBUG /* For debugging */
                 printf("Logout Selected\n");
@@ -112,68 +120,37 @@ void menu_admin(event_manager_t* event_manager)
 }
 
 
-void print_menu_login(void)
+void menu_edit(event_t* event)
 {
-    printf("\nLogin Menu\n\n");
-    printf("Please select an option from the following list\n");
-    printf("1. Login\n");
-    printf("2. Create Account\n");
-    printf("9. Exit\n");
-    printf("> ");
-    return;
-}
-
-void print_menu_main(char* current_logged_in_username)
-{
-    printf("\nMain Menu\n\n");
-    printf("Currently logged in as '%s'\n", current_logged_in_username);
-    printf("Please select an option from the following list\n");
-    printf("1. Add Event\n");
-    printf("2. Edit Event\n");
-    printf("3. Join Event\n");
-    printf("9. Logout\n");
-    printf("> ");
-    return;
-}
-
-void print_menu_admin(void)
-{
-    printf("\nAdmin Menu\n\n");
-    printf("1. List All\n");
-    printf("2. List Events\n");
-    printf("9. Logout\n");
-    printf(">");
-}
-
-
-void list_event_names(event_manager_t event_manager)
-{
-    if(event_manager.num_events == 0)
+    print_menu_edit();
+    int user_selection = scan_int();
+    switch (user_selection)
     {
-        printf("No events\n");
-        return;
+        case 1:
+            edit_name(event);
+            break;
+        case 2:
+            edit_type(event);
+            break;
+        case 3:
+            edit_location(event);
+            break;
+        case 4:
+            edit_date_time(event);
+            break;
+        case 5:
+            edit_staff(event);
+            break;
+        case 6:
+            edit_patrons(event);
+            break;
+        case 9:
+            printf("Exiting edit menu\n\n");
+            return;
+        default:
+            printf("Invalid Input\n");
+            break;
     }
-
-    int i;
-    for (i = 0; i < event_manager.num_events; i++)
-    {
-        event_t event = event_manager.events[i];
-        print_event_name(event, i + 1);
-    }
+    menu_edit(event);
     return;
 }
-
-void list_all(event_manager_t event_manager)
-{
-    printf("Events\n\n");
-    int i;
-    for (i = 0; i < event_manager.num_events; i++)
-    {
-        event_t event = event_manager.events[i];
-        print_event_details(event, i + 1);
-    }
-
-    /*TODO*/
-    return;
-}
-
