@@ -66,20 +66,15 @@ void menu_main(event_manager_t* event_manager)
                 printf("Edit Event Selected\n");
             #endif
 
-            int event_num = search_event_edit(event_manager);
+            edit_event(event_manager);
 
-            if (event_num == -1)
-            {
-                printf("Not a valid Event\n");
-                break;
-            }
-
-            menu_edit(&event_manager->events[event_num]);
             break;
         case 3:
             #ifdef DEBUG /* For debugging */
                 printf("Join Event Selected\n");
             #endif
+
+            join_event(event_manager);
 
             break;
         case 9:

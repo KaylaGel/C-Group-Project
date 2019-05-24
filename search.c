@@ -35,3 +35,14 @@ int search_event_edit(event_manager_t* event_manager)
 
     return search_event(event_manager, event_name);
 }
+
+int search_event_join(event_manager_t* event_manager)
+{
+    char event_name[MAX_NAME_LEN+1];
+
+    printf("Enter the event name you would like to join\n");
+    printf("> ");
+    scanf("%s", event_name);
+
+    return search_event(event_manager, event_name);
+}

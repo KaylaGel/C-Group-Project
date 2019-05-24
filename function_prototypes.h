@@ -26,6 +26,8 @@
     int scan_int(void);
     int scan_int_min_max(int min_value, int max_value);
     int response_yes(void);
+    void join_event(event_manager_t* event_manager);
+    void edit_event(event_manager_t* event_manager);
 
     /* user_factory.c */
     void get_new_user_username(event_manager_t event_manager, char* username);
@@ -68,6 +70,8 @@
     void edit_date_time(event_t* event);
     void edit_staff(event_t* event);
     void edit_patrons(event_t* event);
+    void add_patron_to_event(event_t* event, person_t* user);
+    void add_staff_to_event(event_t* event, person_t* user);
 
     /* encrypt.c */
     void caeser_cipher(const int shift, const char* plaintext,
@@ -78,6 +82,7 @@
     /* search.c */
     int search_event(event_manager_t* event_manager, char* event_name);
     int search_event_edit(event_manager_t* event_manager);
+    int search_event_join(event_manager_t* event_manager);
 
     /* display.c */
     void display_event(event_t* events, int event_count);

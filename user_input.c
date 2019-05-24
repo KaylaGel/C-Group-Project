@@ -83,4 +83,30 @@ int response_yes(void)
     return response_yes();
 }
 
+void join_event(event_manager_t* event_manager)
+{
+    int event_num = search_event_join(event_manager);
+    if (event_num == -1)
+    {
+        printf("Not a valid event\n");
+        return;
+    }
 
+    add_patron_to_event(event_manager->events[event_num],
+                        event_manager->current_logged_in_user);
+    return;
+}
+
+void edit_event(event_manager_t* event_manager)
+{
+    int event_num = search_event_edit(event_manager);
+
+    if (event_num == -1)
+    {
+        printf("Not a valid Event\n");
+        break;
+    }
+
+    menu_edit(&event_manager->events[event_num]);
+    return;
+}
