@@ -59,7 +59,7 @@
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
-    void print_menu_edit(void);
+    void print_menu_edit(char* event_name);
 
     /* edit_event.c */
     void edit_name(event_t* event);

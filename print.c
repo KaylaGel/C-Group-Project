@@ -117,9 +117,10 @@ void print_menu_admin(void)
     return;
 }
 
-void print_menu_edit(void)
+void print_menu_edit(char* event_name)
 {
     printf("Edit Menu\n");
+    printf("Currently editing event '%s'\n", event_name);
     printf("1. Edit Event Name\n");
     printf("2. Edit Event Type\n");
     printf("3. Edit Event Location\n");
