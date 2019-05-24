@@ -116,6 +116,52 @@ void edit_event(event_manager_t* event_manager)
         return;
     }
 
-    menu_edit(&event_manager->events[event_num]);
+    menu_edit(event_manager, event_num);
+    return;
+}
+
+void add_patron(event_t* event, event_manager_t* event_manager)
+{
+    int user_num = search_user_add(event_manager);
+    if (user_num == -1)
+    {
+        printf("Not a valid user\n");
+        return;
+    }
+
+    person_t* user = &event_manager->users[user_num];
+
+    printf("Are you sure you want to add '%s'?\n", user->username);
+    if(response_yes())
+    {
+        printf("Adding '%s'\n", user->username);
+        add_patron_to_event(event, user);
+    }else
+    {
+        printf("Exiting event join\n");
+    }
+    return;
+}
+
+void add_staff(event_t* event, event_manager_t* event_manager)
+{
+    int user_num = search_user_add(event_manager);
+    if (user_num == -1)
+    {
+        printf("Not a valid user\n");
+        return;
+    }
+
+    person_t* user = &event_manager->users[user_num];
+
+    printf("Are you sure you want to add '%s' as a staff?\n", user->username);
+    if(response_yes())
+    {
+        printf("Adding '%s'\n", user->username);
+        add_staff_to_event(event, user);
+    }else
+    {
+        printf("Exiting event join\n");
+    }
     return;
 }

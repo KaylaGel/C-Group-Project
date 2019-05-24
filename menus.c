@@ -115,8 +115,10 @@ void menu_admin(event_manager_t* event_manager)
 }
 
 
-void menu_edit(event_t* event)
+void menu_edit(event_manager_t* event_manager, int event_num)
 {
+    event_t* event = &event_manager->events[event_num];
+
     print_menu_edit(event->name);
     int user_selection = scan_int();
     switch (user_selection)
@@ -134,10 +136,10 @@ void menu_edit(event_t* event)
             edit_date_time(event);
             break;
         case 5:
-            edit_staff(event);
+            edit_staff(event_manager, event_num);
             break;
         case 6:
-            edit_patrons(event);
+            edit_patrons(event_manager, event_num);
             break;
         case 9:
             printf("Exiting edit menu\n\n");
@@ -146,6 +148,6 @@ void menu_edit(event_t* event)
             printf("Invalid Input\n");
             break;
     }
-    menu_edit(event);
+    menu_edit(event_manager, event_num);
     return;
 }

@@ -5,7 +5,7 @@
 
 void print_event_name(event_t event, int event_index)
 {
-    printf("%i: ", event_index);
+    printf("\t%i: ", event_index);
     /* Print event name, right padded with spaces up until MAX_NAME_LEN
      * length */
     printf("%-*s", MAX_NAME_LEN, event.name);
@@ -20,33 +20,32 @@ void print_event_name(event_t event, int event_index)
 void print_event_details(event_t event, int event_index)
 {
     print_event_name(event, event_index);
-
-    printf("\tCoordinator:\n");
-    printf("\t\t%-*s | ", MAX_NAME_LEN, event.coordinator.username);
+    printf("\t\tCoordinator:\n");
+    printf("\t\t\t%-*s | ", MAX_NAME_LEN, event.coordinator.username);
     printf("%s %s\n", event.coordinator.firstname, event.coordinator.lastname);
 
-    printf("\tStaff:\n");
+    printf("\t\tStaff:\n");
     if(event.num_staff == 0)
     {
-        printf("\t\tNo Staff\n");
+        printf("\t\t\tNo Staff\n");
     }
     int i;
     for (i = 0; i < event.num_staff; i++)
     {
         person_t current_staff = event.staff[i];
-        printf("\t\t");
+        printf("\t\t\t");
         printf("%-*s | ", MAX_NAME_LEN, current_staff.username);
         printf("%s %s\n", current_staff.firstname, current_staff.lastname);
     }
 
-    printf("\tPatrons:\n");
+    printf("\t\tPatrons:\n");
     if(event.num_patrons == 0)
-        printf("\t\tNo Patrons\n");
+        printf("\t\t\tNo Patrons\n");
     int j;
     for (j = 0; j < event.num_patrons; j++)
     {
         person_t current_patron = event.patrons[j];
-        printf("\t\t");
+        printf("\t\t\t");
         printf("%-*s | ", MAX_NAME_LEN, current_patron.username);
         printf("%s %s\n", current_patron.firstname, current_patron.lastname);
     }
@@ -70,14 +69,30 @@ void list_event_names(event_manager_t event_manager)
     return;
 }
 
+void print_user_details(person_t user, int user_index)
+{
+    printf("\t%i: %-*s\n", user_index, MAX_NAME_LEN, user.username);
+    printf("\t\tName: %s %s\n", user.firstname, user.lastname);
+    printf("\t\tPassword: %s\n", user.password);
+    printf("\t\tDOB: %i/%i/%i\n", user.DOB.day, user.DOB.month, user.DOB.year);
+    return;
+}
+
 void list_all(event_manager_t event_manager)
 {
-    printf("Events\n\n");
     int i;
+
+    printf("Events\n");
     for (i = 0; i < event_manager.num_events; i++)
     {
         event_t event = event_manager.events[i];
         print_event_details(event, i + 1);
+    }
+    printf("Users\n");
+    for (i = 0; i < event_manager.num_users; i++)
+    {
+        person_t user = event_manager.users[i];
+        print_user_details(user, i + 1);
     }
 
     /*TODO*/
@@ -131,5 +146,23 @@ void print_menu_edit(char* event_name)
     printf("6. Edit Event Patrons\n");
     printf("9. Exit\n");
     printf("> ");
+    return;
+}
+
+void print_menu_edit_staff(void)
+{
+    printf("Edit Staff Menu\n");
+    printf("1. Add Staff\n");
+    printf("2. Remove Staff\n");
+    printf("9. Exit\n");
+    return;
+}
+
+void print_menu_edit_patrons(void)
+{
+    printf("Edit Patron Menu\n");
+    printf("1. Add Patron\n");
+    printf("2. Remove Patron\n");
+    printf("9. Exit\n");
     return;
 }

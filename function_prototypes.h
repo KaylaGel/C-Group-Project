@@ -8,7 +8,7 @@
     void menu_login(event_manager_t* event_manager);
     void menu_main(event_manager_t* event_manager);
     void menu_admin(event_manager_t* event_manager);
-    void menu_edit(event_t* event);
+    void menu_edit(event_manager_t* event_manager, int event_num);
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
@@ -28,6 +28,8 @@
     int response_yes(void);
     void join_event(event_manager_t* event_manager);
     void edit_event(event_manager_t* event_manager);
+    void add_patron(event_t* event, event_manager_t* event_manager);
+    void add_staff(event_t* event, event_manager_t* event_manager);
 
     /* user_factory.c */
     void get_new_user_username(event_manager_t event_manager, char* username);
@@ -57,19 +59,22 @@
     void print_event_name(event_t event, int event_index);
     void print_event_details(event_t event, int event_index);
     void list_event_names(event_manager_t event_manager);
+    void print_user_details(person_t user, int user_index);
     void list_all(event_manager_t event_manager);
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
     void print_menu_edit(char* event_name);
+    void print_menu_edit_staff(void);
+    void print_menu_edit_patrons(void);
 
     /* edit_event.c */
     void edit_name(event_t* event);
     void edit_type(event_t* event);
     void edit_location(event_t* event);
     void edit_date_time(event_t* event);
-    void edit_staff(event_t* event);
-    void edit_patrons(event_t* event);
+    void edit_staff(event_manager_t* event_manager, int event_num);
+    void edit_patrons(event_manager_t* event_manager, int event_num);
     void add_patron_to_event(event_t* event, person_t* user);
     void add_staff_to_event(event_t* event, person_t* user);
 
@@ -83,6 +88,8 @@
     int search_event(event_manager_t* event_manager, char* event_name);
     int search_event_edit(event_manager_t* event_manager);
     int search_event_join(event_manager_t* event_manager);
+    int search_user(event_manager_t* event_manager, char* username);
+    int search_user_add(event_manager_t* event_manager);
 
     /* display.c */
     void display_event(event_t* events, int event_count);

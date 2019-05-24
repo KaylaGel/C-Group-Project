@@ -100,14 +100,46 @@ void edit_date_time(event_t* event)
     }
 }
 
-void edit_staff(event_t* event)
+void edit_staff(event_manager_t* event_manager, int event_num)
 {
-
+    print_menu_edit_staff();
+    int user_selection = scan_int();
+    switch (user_selection)
+    {
+        case 1:
+            add_staff(&event_manager->events[event_num], event_manager);
+            break;
+        case 2:
+            break;
+        case 9:
+            printf("Exiting edit menu\n\n");
+            return;
+        default:
+            printf("Invalid Input\n");
+            break;
+    }
+    edit_staff(event_manager, event_num);
 }
 
-void edit_patrons(event_t* event)
+void edit_patrons(event_manager_t* event_manager, int event_num)
 {
-
+    print_menu_edit_patrons();
+    int user_selection = scan_int();
+    switch (user_selection)
+    {
+        case 1:
+            add_patron(&event_manager->events[event_num], event_manager);
+            break;
+        case 2:
+            break;
+        case 9:
+            printf("Exiting edit menu\n\n");
+            return;
+        default:
+            printf("Invalid Input\n");
+            break;
+    }
+    edit_patrons(event_manager, event_num);
 }
 
 void add_patron_to_event(event_t* event, person_t* user)
