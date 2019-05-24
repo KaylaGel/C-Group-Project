@@ -24,7 +24,12 @@ void account_creation(event_manager_t* event_manager)
     create_new_user(*event_manager, &user);
 
     /* Assign the current user to the next available user slot */
-    event_manager->users[event_manager->num_users /* + 1? */] = user;
+    /* It cant be '+ 1' because when there is 0 users, you would want to
+     * access the 0th member of the array
+     * If there are 5 users, you would want to access the 5th member of the
+     * array, because slots 0, 1, 2, 3, and 4 would be occupied by the other
+     * 5 users*/
+    event_manager->users[event_manager->num_users] = user;
     event_manager->num_users++;
 
     return;
