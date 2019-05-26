@@ -75,8 +75,6 @@
     void edit_date_time(event_t* event);
     void edit_staff(event_manager_t* event_manager, int event_num);
     void edit_patrons(event_manager_t* event_manager, int event_num);
-    void add_patron_to_event(event_t* event, person_t* user);
-    void add_staff_to_event(event_t* event, person_t* user);
 
     /* encrypt.c */
     void caeser_cipher(const int shift, const char* plaintext,

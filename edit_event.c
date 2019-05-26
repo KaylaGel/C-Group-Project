@@ -143,15 +143,3 @@ void edit_patrons(event_manager_t* event_manager, int event_num)
     }
     edit_patrons(event_manager, event_num);
 }
-
-void add_patron_to_event(event_t* event, person_t* user)
-{
-    event->patrons[event->num_patrons] = *user;
-    event->num_patrons++;
-}
-
-void add_staff_to_event(event_t* event, person_t* user)
-{
-    event->staff[event->num_staff] = *user;
-    event->num_staff++;
-}
