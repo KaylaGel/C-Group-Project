@@ -63,8 +63,8 @@
     {
         person_t* current_logged_in_user;
 
-        node_t events[MAX_EVENTS];
-        node_t users[MAX_USERS];
+        node_t* events;
+        node_t* users;
     };
     typedef struct event_manager event_manager_t;
 

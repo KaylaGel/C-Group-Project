@@ -1,5 +1,6 @@
 #include <string.h>
 #include <stdlib.h>
+#include <stdio.h>
 
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* init_admin_account() */
@@ -11,8 +12,8 @@ void init_event_manager(event_manager_t* event_manager)
 
     init_admin_account(admin_account);
 
-    init_node(event_manager->events, admin_event, sizeof(event_t));
-    init_node(event_manager->users, admin_account, sizeof(person_t));
+    event_manager->users = init_node(admin_account, sizeof(person_t));
+    event_manager->events = init_node(admin_event, sizeof(event_t));
     return;
 }
 

@@ -6,8 +6,7 @@
 void list_add(node_t* list_node, void* data, size_t data_size)
 {
     node_t* current_node = list_node;
-    node_t* new_node = malloc(sizeof(current_node));
-    init_node(new_node, data, data_size);
+    node_t* new_node = init_node(data, data_size);
 
     /* Crawl to the end of the linked list */
     while(current_node->next != NULL)
@@ -63,19 +62,25 @@ int list_count(node_t* node)
     return count;
 }
 
-void init_node(node_t* node, void* data, size_t data_size)
+node_t* init_node(void* data, size_t data_size)
 {
-    node->previous = NULL;
-    node->next = NULL;
-    node->data = malloc(data_size);
+    node_t* new_node = malloc(sizeof(node_t));
+
+    new_node->previous = malloc(sizeof(node_t*));
+    new_node->previous = NULL;
+    new_node->next = malloc(sizeof(node_t*));
+    new_node->next = NULL;
+
+    new_node->data = malloc(data_size);
+
     /* Copy over data from supplied void pointer, byte by byte
      * (Assuming a char is one byte)*/
     int i;
     for (i = 0; i < data_size; i++)
     {
-        *(char *)(node->data + i) = *(char *)(data + i);
+        *(char *)(new_node->data + i) = *(char *)(data + i);
     }
-    return;
+    return new_node;
 }
 
 node_t* list_get(node_t* list_node, int index)
