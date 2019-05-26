@@ -155,6 +155,7 @@ void print_menu_edit_staff(void)
     printf("1. Add Staff\n");
     printf("2. Remove Staff\n");
     printf("9. Exit\n");
+    printf("> ");
     return;
 }
 
@@ -164,5 +165,6 @@ void print_menu_edit_patrons(void)
     printf("1. Add Patron\n");
     printf("2. Remove Patron\n");
     printf("9. Exit\n");
+    printf("> ");
     return;
 }
