@@ -119,6 +119,13 @@ void edit_event(event_manager_t* event_manager)
         return;
     }
 
+    if ( strcmp( event_manager->current_logged_in_user.username,
+                 event_manager->events[event_num].coordinator.username) != 0)
+    {
+        printf("You are not the coordinator for this event\n");
+        return;
+    }
+
     menu_edit(event_manager, event_num);
     return;
 }
