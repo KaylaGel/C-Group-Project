@@ -7,8 +7,6 @@
 
 void init_event_manager(event_manager_t* event_manager)
 {
-    event_t* admin_event = malloc(sizeof(event_t));
-    person_t* admin_account = malloc(sizeof(person_t));
 
     init_admin_account(admin_account);
 
@@ -17,7 +15,7 @@ void init_event_manager(event_manager_t* event_manager)
     return;
 }
 
-void init_event(event_t* event, person_t coordinator)
+void init_event(event_t* event, person_t* coordinator)
 {
     event->num_patrons = 0;
     event->num_staff = 0;
@@ -51,7 +49,7 @@ void init_admin_account(person_t* admin)
 }
 
 
-void create_event(event_manager_t* event_manager, person_t creator)
+void create_event(event_manager_t* event_manager, person_t* creator)
 {
 
     /* Create an event struct */

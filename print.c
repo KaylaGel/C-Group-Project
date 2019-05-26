@@ -21,8 +21,9 @@ void print_event_details(event_t event, int event_index)
 {
     print_event_name(event, event_index);
     printf("\t\tCoordinator:\n");
-    printf("\t\t\t%-*s | ", MAX_NAME_LEN, event.coordinator.username);
-    printf("%s %s\n", event.coordinator.firstname, event.coordinator.lastname);
+    printf("\t\t\t%-*s | ", MAX_NAME_LEN, event.coordinator->username);
+    printf("%s %s\n", event.coordinator->firstname,
+                      event.coordinator->lastname);
 
     printf("\t\tStaff:\n");
     if(event.num_staff == 0)

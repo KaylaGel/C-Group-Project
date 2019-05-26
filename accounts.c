@@ -40,7 +40,7 @@ int login(event_manager_t* event_manager)
     get_user_login(username, password);
 
     /* Test to see if admin details were supplied */
-    person_t* admin = (person_t*) event_manager->users->data;
+    person_t* admin = &event_manager->admin_account;
     if( strcmp( admin->username, username ) == 0 )
     {
         if( strcmp( admin->password, password ) == 0 )

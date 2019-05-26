@@ -50,7 +50,7 @@
         char event_type[MAX_NAME_LEN+1];
         person_t patrons[MAX_PATRONS];
         person_t staff[MAX_STAFF];
-        person_t coordinator;
+        person_t *coordinator;
         int num_patrons;
         int num_staff;
         address_t location;

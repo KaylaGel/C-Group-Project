@@ -121,7 +121,7 @@ void edit_event(event_manager_t* event_manager)
     event_t* event = list_get(event_manager->events, event_num)->data;
 
     if ( strcmp( event_manager->current_logged_in_user->username,
-                 event->coordinator.username) != 0)
+                 event->coordinator->username) != 0)
     {
         printf("You are not the coordinator for this event\n");
         return;
