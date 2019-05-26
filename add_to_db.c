@@ -41,7 +41,6 @@ void add_database(event_manager_t* event_manager)
 {
     /*write all event details to add_database*/
     /*write all logins to database*/
-    int i;
     FILE *fp = NULL;
 
     fp = fopen(EVENT_DATABASE_FILE_NAME, "+w");
@@ -52,6 +51,7 @@ void add_database(event_manager_t* event_manager)
     }
 
     /* Event database */
+    int i;
     for (i = 0; i <= event_manager->num_events; i++)
     {
         /* For Event Export might have to change some things due to encryption*/
