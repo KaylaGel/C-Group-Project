@@ -40,6 +40,10 @@ void list_remove(node_t* node)
 
 int list_count(node_t* node)
 {
+    if(node == NULL)
+    {
+        return 0;
+    }
     node_t* current_node = node;
     int count = 0;
 
