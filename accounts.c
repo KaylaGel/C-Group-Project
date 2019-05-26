@@ -12,8 +12,11 @@ void create_new_user(event_manager_t event_manager, person_t *user /*should it b
     get_new_user_password(user->password, list_count(event_manager.users));
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
-    get_new_user_DOB(&user->DOB); /*why &*/
-     
+    get_new_user_DOB(&user->DOB); /*why &, because a pointer is needed for
+ * the function to actually edit the value passed, and not just a local copy
+ * made by the function, the others dont need it because they are pointers
+ * already, strings are just char pointers*/
+
     return;
 }
 
