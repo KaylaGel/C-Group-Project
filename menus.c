@@ -117,7 +117,7 @@ void menu_admin(event_manager_t* event_manager)
 
 void menu_edit(event_manager_t* event_manager, int event_num)
 {
-    event_t* event = (event_t*) list_get(event_manager->events, event_num);
+    event_t* event = (event_t*) list_get(event_manager->events, event_num)->data;
 
     print_menu_edit(event->name);
     int user_selection = scan_int();
