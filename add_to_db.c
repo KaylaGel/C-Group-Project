@@ -1,5 +1,8 @@
+#include <stdio.h>
+
 #include "structs.h"
-#define DB_Name "Database.txt"
+
+#define DATABASE_FILE_NAME "Database.txt"
 
 /************************************************************************
 Author: Kayla
@@ -9,24 +12,26 @@ Function to write files to database
 *compression will occur here
 
 ************************************************************************/
-void add_database(event_t* events, int event_count)
+void add_database(event_manager_t* event_manager)
 {
   /*write all event details to add_database*/
   /*write all logins to database*/
   int i;
   FILE* fp = NULL;
 
-    fp = fopen(DB_NAME, "+w");
+    fp = fopen(DATABASE_FILE_NAME, "+w");
     if (fp == NULL)
     {
         printf("Write error\n");
         return;
     }
 
-    // event database
-   for (i = 0; i <= event_count; i++)
+    /* event database */
+   for (i = 0; i <= event_manager->num_events; i++)
    {
-      fprintf(fp,%s,event[i].name); /*What other variables need to be saved to the file*/
+      fprintf(fp,"%s",event_manager->events[i].name); /*What other variables
+ * need to be
+      saved to the file*/
 
       /*
        * The username & password of every user
