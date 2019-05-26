@@ -7,8 +7,8 @@
 
 void init_event_manager(event_manager_t* event_manager)
 {
+    init_admin_account(&event_manager->admin_account);
 
-    init_admin_account(admin_account);
     event_manager->users = NULL;
     event_manager->events = NULL;
     return;

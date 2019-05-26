@@ -62,6 +62,7 @@
     struct event_manager
     {
         person_t* current_logged_in_user;
+        person_t admin_account;
 
         node_t* events;
         node_t* users;
