@@ -55,9 +55,13 @@ void create_event(event_manager_t* event_manager, person_t* creator)
     event_t* event = malloc(sizeof(event_t));
     /* Initialise the event structs values */
     init_event(event, creator);
-    /* Add the event to the event list */
-    list_add(event_manager->events, (void*) event, sizeof(event_t));
-
+    if(event_manager->events== NULL)
+    {
+        event_manager->events = init_node(event, sizeof(event_t));
+    }else
+    {
+        list_add(event_manager->events, (void*) event, sizeof(event_t));
+    }
 
 
     return;

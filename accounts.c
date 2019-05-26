@@ -26,7 +26,14 @@ void account_creation(event_manager_t* event_manager)
     person_t* user = malloc(sizeof(person_t));
     create_new_user(*event_manager, user);
 
-    list_add(event_manager->users, (void*) user, sizeof(person_t));
+
+    if(event_manager->users == NULL)
+    {
+        event_manager->users = init_node(user, sizeof(person_t));
+    }else
+    {
+        list_add(event_manager->users, (void *) user, sizeof(person_t));
+    }
 
     return;
 }
