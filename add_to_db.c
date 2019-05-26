@@ -39,27 +39,28 @@ EVENT DATABASE WRITING/APPENDING
 ************************************************************************/
 void add_database(event_manager_t* event_manager)
 {
-  /*write all event details to add_database*/
-  /*write all logins to database*/
-  int i;
-  FILE* fp = NULL;
+    /*write all event details to add_database*/
+    /*write all logins to database*/
+    int i;
+    FILE *fp = NULL;
 
     fp = fopen(EVENT_DATABASE_FILE_NAME, "+w");
     if (fp == NULL)
     {
-      printf("Write error\n");
-      return;
+        printf("Write error\n");
+        return;
     }
 
     /* Event database */
     for (i = 0; i <= event_manager->num_events; i++)
     {
-      /* For Event Export might have to change some things due to encryption*/
-      fprintf(fp,"%s",event_manager->events[i]); /*What other variables need to be saved to the file*/
+        /* For Event Export might have to change some things due to encryption*/
+        fprintf(fp, "%s",
+                event_manager->events[i]); /*What other variables need to be saved to the file*/
     }
-    
 
-   fclose(fp);
+
+    fclose(fp);
 
     /************************************************************************
     
@@ -69,34 +70,31 @@ void add_database(event_manager_t* event_manager)
 
     ************************************************************************/
 
-    FILE* fp = NULL;
+    FILE *fp = NULL;
 
     fp = fopen(USER_DATABASE_FILE_NAME, "+w");
     if (fp == NULL)
     {
-      printf("Write error\n");
-      return;
+        printf("Write error\n");
+        return;
     }
 
     /* User database */
-    for ( i = 0; i <= MAX_USERS-1; i++)
+    for (i = 0; i <= MAX_USERS - 1; i++)
     {
-      /* For User Export might have to change some things due to encryption*/
-      fprintf(fp,"%s",event_manager->users[i]);
-      /* The username & password of every user
-       * The first & last name of every user
-       * The DOB of every user
-      */
+        /* For User Export might have to change some things due to encryption*/
+        fprintf(fp, "%s", event_manager->users[i]);
+        /* The username & password of every user
+         * The first & last name of every user
+         * The DOB of every user
+        */
 
     }
 
     fclose(fp);
-   
-    
-   
 
-  
-   return;
+
+    return;
 
 
 }
