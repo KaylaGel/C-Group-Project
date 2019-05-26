@@ -41,23 +41,11 @@ void caeser_cipher(const int shift, const char* plaintext, char* ciphertext)
     return;
 }
 
-int xor_encrypt_file(const char* key, const char* input_filename, const char* output_filename)
+int xor_encrypt_file(const char* key, FILE* input, FILE* output)
 {
-    FILE* input;
-    FILE* output;
-
     char buffer;
     int index = 0;
     int key_len = strlen(key);
-
-    input = fopen(input_filename, "rb");
-    output = fopen(output_filename, "wb");
-
-    if(input == NULL || output == NULL)
-    {
-        printf("Error: failure opening file\n");
-        return 1;
-    }
 
     /* While the end of the file hasn't been reached yet*/
     while( ( buffer = fgetc(input) ) != EOF )
@@ -66,9 +54,5 @@ int xor_encrypt_file(const char* key, const char* input_filename, const char* ou
         fputc(buffer, output);
         index++;
     }
-
-    fclose(input);
-    fclose(output);
-
     return 0;
 }

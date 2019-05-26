@@ -80,9 +80,8 @@
 
     /* encrypt.c */
     void caeser_cipher(const int shift, const char* plaintext,
-            char* ciphertext);
-    int xor_encrypt_file(const char* key, const char* input_filename, const
-    char* output_filename);
+                                              char* ciphertext);
+    int xor_encrypt_file(const char* key, FILE* input, FILE* output);
 
     /* search.c */
     int search_event(event_manager_t* event_manager, char* event_name);
