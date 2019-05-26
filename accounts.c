@@ -7,13 +7,12 @@
 
 #define DEBUG
 
-void create_new_user(event_manager_t event_manager, person_t *user)
-{
+void create_new_user(event_manager_t event_manager, person_t *user /*should it be users or current_logged_in_user*/){
     get_new_user_username(event_manager, user->username);
     get_new_user_password(user->password, list_count(event_manager.users));
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
-    get_new_user_DOB(&user->DOB);
+    get_new_user_DOB(&user->DOB); /*why &*/
      
     return;
 }
