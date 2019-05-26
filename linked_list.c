@@ -100,3 +100,27 @@ node_t* list_get(node_t* list_node, int index)
     }
     return current_node;
 }
+
+node_t* list_first(node_t* list_node)
+{
+    node_t* current_node = list_node;
+
+    /* Crawl to the start of the linked list */
+    while(current_node->previous != NULL)
+    {
+        current_node = current_node->previous;
+    }
+    return current_node;
+}
+
+node_t* list_last(node_t* list_node)
+{
+    node_t* current_node = list_node;
+
+    /* Crawl to the start of the linked list */
+    while(current_node->next != NULL)
+    {
+        current_node = current_node->next;
+    }
+    return current_node;
+}

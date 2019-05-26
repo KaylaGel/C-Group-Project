@@ -21,5 +21,7 @@
     int list_count(node_t* node);
     void init_node(node_t* node, void* data, size_t data_size);
     node_t* list_get(node_t* list_node, int index);
+    node_t* list_first(node_t* list_node);
+    node_t* list_last(node_t* list_node);
 
 #endif /*C_GROUP_PROJECT_LINKED_LIST_H*/
