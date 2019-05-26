@@ -107,7 +107,8 @@ void edit_staff(event_manager_t* event_manager, int event_num)
     switch (user_selection)
     {
         case 1:
-            add_staff(&event_manager->events[event_num], event_manager);
+            add_staff((event_t *) list_get(event_manager->events, event_num)->data,
+                    event_manager);
             break;
         case 2:
             break;
@@ -128,7 +129,8 @@ void edit_patrons(event_manager_t* event_manager, int event_num)
     switch (user_selection)
     {
         case 1:
-            add_patron(&event_manager->events[event_num], event_manager);
+            add_patron((event_t *) list_get(event_manager->events, event_num)->data,
+                    event_manager);
             break;
         case 2:
             break;

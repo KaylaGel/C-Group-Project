@@ -1,13 +1,18 @@
 #include <string.h>
+#include <stdlib.h>
 
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* init_admin_account() */
 
 void init_event_manager(event_manager_t* event_manager)
 {
-    event_manager->num_events = 0;
-    event_manager->num_users = 0;
-    init_admin_account(&event_manager->admin_account);
+    event_t* admin_event = malloc(sizeof(event_t));
+    person_t* admin_account = malloc(sizeof(person_t));
+
+    init_admin_account(admin_account);
+
+    init_node(event_manager->events, admin_event, sizeof(event_t));
+    init_node(event_manager->users, admin_account, sizeof(person_t));
     return;
 }
 
@@ -49,17 +54,13 @@ void create_event(event_manager_t* event_manager, person_t creator)
 {
 
     /* Create an event struct */
-    event_t event;
+    event_t* event = malloc(sizeof(event_t));
     /* Initialise the event structs values */
-    init_event(&event, creator);
+    init_event(event, creator);
+    /* Add the event to the event list */
+    list_add(event_manager->events, (void*) event, sizeof(event_t));
 
-    /* Assign the created event to the next free array index
-     * ie; there are 2 events that already exist, so access event array
-     * index 2, or the 3rd event struct */
-    event_manager->events[event_manager->num_events] = event;
 
-    /* Increment event counter */
-    event_manager->num_events++;
 
     return;
 }

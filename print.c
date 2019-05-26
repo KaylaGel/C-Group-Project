@@ -54,17 +54,17 @@ void print_event_details(event_t event, int event_index)
 
 void list_event_names(event_manager_t event_manager)
 {
-    if(event_manager.num_events == 0)
+    if(list_count(event_manager.events) == 0)
     {
         printf("No events\n");
         return;
     }
 
     int i;
-    for (i = 0; i < event_manager.num_events; i++)
+    for (i = 0; i < list_count(event_manager.events); i++)
     {
-        event_t event = event_manager.events[i];
-        print_event_name(event, i + 1);
+        event_t* event = (event_t*) list_get(event_manager.events, i)->data;
+        print_event_name(*event, i + 1);
     }
     return;
 }
@@ -83,16 +83,16 @@ void list_all(event_manager_t event_manager)
     int i;
 
     printf("Events\n");
-    for (i = 0; i < event_manager.num_events; i++)
+    for (i = 0; i < list_count(event_manager.events); i++)
     {
-        event_t event = event_manager.events[i];
-        print_event_details(event, i + 1);
+        event_t* event = (event_t*) list_get(event_manager.events, i)->data;
+        print_event_details(*event, i + 1);
     }
     printf("Users\n");
-    for (i = 0; i < event_manager.num_users; i++)
+    for (i = 0; i < list_count(event_manager.users); i++)
     {
-        person_t user = event_manager.users[i];
-        print_user_details(user, i + 1);
+        person_t* user = (person_t*) list_get(event_manager.users, i)->data;
+        print_user_details(*user, i + 1);
     }
 
     /*TODO*/

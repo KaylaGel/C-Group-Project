@@ -3,21 +3,20 @@
 
 #include "structs.h" /* event_t */
 
-#define DEBUG
-
 int search_event(event_manager_t* event_manager, char* event_name)
 {
     int i;
 
-    for (i = 0; i < event_manager->num_events; i++)
+    for (i = 0; i < list_count(event_manager->events); i++)
     {
+        event_t* event = (event_t*) list_get(event_manager->events, i)->data;
+
         #ifdef DEBUG /* For debugging */
             printf("DEBUG: %-*s | %-*s\n", MAX_NAME_LEN, event_name,
-            MAX_NAME_LEN,
-                    event_manager->events[i].name);
+            MAX_NAME_LEN, event->name);
         #endif
 
-        if ( strcmp(event_name, event_manager->events[i].name) == 0 )
+        if ( strcmp(event_name, event->name) == 0 )
         {
             return i;
         }
@@ -52,9 +51,10 @@ int search_user(event_manager_t* event_manager, char* username)
 {
     int i;
 
-    for (i = 0; i < event_manager->num_users; i++)
+    for (i = 0; i < list_count(event_manager->users); i++)
     {
-        if ( strcmp(username, event_manager->users[i].username) == 0 )
+        person_t* user = (person_t*) list_get(event_manager->users, i)->data;
+        if ( strcmp(username, user->username) == 0 )
         {
             return i;
         }

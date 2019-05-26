@@ -51,7 +51,7 @@ void menu_login(event_manager_t* event_manager)
 
 void menu_main(event_manager_t* event_manager)
 {
-    print_menu_main(event_manager->current_logged_in_user.username);
+    print_menu_main(event_manager->current_logged_in_user->username);
     int user_selection = scan_int();
     switch(user_selection)
     {
@@ -59,7 +59,7 @@ void menu_main(event_manager_t* event_manager)
             #ifdef DEBUG /* For debugging */
                 printf("Add Event Selected\n");
             #endif
-            create_event(event_manager, event_manager->current_logged_in_user);
+            create_event(event_manager, *event_manager->current_logged_in_user);
             break;
         case 2:
             #ifdef DEBUG /* For debugging */
@@ -117,7 +117,7 @@ void menu_admin(event_manager_t* event_manager)
 
 void menu_edit(event_manager_t* event_manager, int event_num)
 {
-    event_t* event = &event_manager->events[event_num];
+    event_t* event = (event_t*) list_get(event_manager->events, event_num);
 
     print_menu_edit(event->name);
     int user_selection = scan_int();

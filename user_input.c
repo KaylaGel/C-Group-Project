@@ -95,13 +95,13 @@ void join_event(event_manager_t* event_manager)
         return;
     }
 
-    event_t* event = &event_manager->events[event_num];
+    event_t* event = (event_t*) event_manager->events[event_num].data;
 
     printf("Are you sure you want to join '%s'?\n", event->name);
     if(response_yes())
     {
         printf("Joining '%s'\n", event->name);
-        add_patron_to_event(event, &event_manager->current_logged_in_user);
+        add_patron_to_event(event, event_manager->current_logged_in_user);
     }else
     {
         printf("Exiting event join\n");
@@ -118,9 +118,10 @@ void edit_event(event_manager_t* event_manager)
         printf("Not a valid Event\n");
         return;
     }
+    event_t* event = list_get(event_manager->events, event_num)->data;
 
-    if ( strcmp( event_manager->current_logged_in_user.username,
-                 event_manager->events[event_num].coordinator.username) != 0)
+    if ( strcmp( event_manager->current_logged_in_user->username,
+                 event->coordinator.username) != 0)
     {
         printf("You are not the coordinator for this event\n");
         return;
@@ -139,7 +140,7 @@ void add_patron(event_t* event, event_manager_t* event_manager)
         return;
     }
 
-    person_t* user = &event_manager->users[user_num];
+    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
 
     printf("Are you sure you want to add '%s'?\n", user->username);
     if(response_yes())
@@ -162,7 +163,7 @@ void add_staff(event_t* event, event_manager_t* event_manager)
         return;
     }
 
-    person_t* user = &event_manager->users[user_num];
+    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
 
     printf("Are you sure you want to add '%s' as a staff?\n", user->username);
     if(response_yes())

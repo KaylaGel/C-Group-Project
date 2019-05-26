@@ -2,6 +2,7 @@
 
 #ifndef C_GROUP_PROJECT_STRUCTS_H
     #include "definitions.h" /* MAX_NAME_LEN, MAX_PATRONS, MAX_STAFF */
+    #include "linked_list.h" /* node_t */
     #define C_GROUP_PROJECT_STRUCTS_H
 
     struct date
@@ -60,15 +61,10 @@
 
     struct event_manager
     {
-        person_t current_logged_in_user;
+        person_t* current_logged_in_user;
 
-        event_t events[MAX_EVENTS+1];
-        int num_events;
-
-        person_t users[MAX_USERS+1];
-        int num_users;
-
-        person_t admin_account;
+        node_t events[MAX_EVENTS];
+        node_t users[MAX_USERS];
     };
     typedef struct event_manager event_manager_t;
 
