@@ -16,23 +16,14 @@ void init_event_manager(event_manager_t* event_manager)
 
 void init_event(event_t* event, person_t* coordinator)
 {
-    event->num_patrons = 0;
-    event->num_staff = 0;
+    event->patrons = NULL;
+    event->staff = NULL;
     get_new_event_name(event->name);
     get_new_event_free_status(&event->free_event);
     get_new_event_type(event->event_type);
 
     event->coordinator = coordinator;
 
-    return;
-}
-
-void init_staff(event_t* event, person_t staff)
-{
-    /* Set the next available staff array spot to the provided staff struct */
-    event->staff[event->num_staff] = staff;
-    /* Increment the staff counter */
-    event->num_staff++;
     return;
 }
 
@@ -62,7 +53,5 @@ void create_event(event_manager_t* event_manager, person_t* creator)
     {
         list_add(event_manager->events, (void*) event, sizeof(event_t));
     }
-
-
     return;
 }

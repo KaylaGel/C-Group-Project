@@ -111,6 +111,7 @@ void edit_staff(event_manager_t* event_manager, int event_num)
                     event_manager);
             break;
         case 2:
+
             break;
         case 9:
             printf("Exiting edit menu\n\n");

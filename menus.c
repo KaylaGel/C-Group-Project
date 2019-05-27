@@ -98,7 +98,7 @@ void menu_admin(event_manager_t* event_manager)
     switch(user_selection)
     {
         case 1:
-            list_all(*event_manager);
+            list_all(event_manager);
             break;
         case 2:
             list_event_names(*event_manager);

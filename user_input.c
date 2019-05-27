@@ -101,7 +101,10 @@ void join_event(event_manager_t* event_manager)
     if(response_yes())
     {
         printf("Joining '%s'\n", event->name);
-        add_patron_to_event(event, event_manager->current_logged_in_user);
+
+        list_add(event->patrons,
+                (void*) event_manager->current_logged_in_user,
+                 sizeof (person_t));
     }else
     {
         printf("Exiting event join\n");
@@ -146,7 +149,13 @@ void add_patron(event_t* event, event_manager_t* event_manager)
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
-        add_patron_to_event(event, user);
+        if(event->patrons == NULL)
+        {
+            event->patrons = init_node(user, sizeof(person_t));
+        }else
+        {
+            list_add(event->patrons, (void*) user, sizeof(person_t));
+        }
     }else
     {
         printf("Exiting event join\n");
@@ -169,10 +178,64 @@ void add_staff(event_t* event, event_manager_t* event_manager)
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
-        add_staff_to_event(event, user);
+
+        if(event->staff == NULL)
+        {
+            event->staff = init_node(user, sizeof(person_t));
+        }else
+        {
+            list_add(event->staff, (void*) user, sizeof(person_t));
+        }
     }else
     {
         printf("Exiting event join\n");
     }
     return;
 }
+/*
+void remove_patron(event_t* event, event_manager_t* event_manager)
+{
+    int user_num = search_user_remove(event_manager);
+    if (user_num == -1)
+    {
+        printf("Not a valid user\n");
+        return;
+    }
+
+    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
+
+    printf("Are you sure you want to remove '%s'?\n", user->username);
+    if(response_yes())
+    {
+        printf("Adding '%s'\n", user->username);
+        add_patron_to_event(event, user);
+    }else
+    {
+        printf("Exiting event join\n");
+    }
+    return;
+}
+
+void remove_staff(event_t* event, event_manager_t* event_manager)
+{
+    int user_num = search_user_remove(event_manager);
+    if (user_num == -1)
+    {
+        printf("Not a valid user\n");
+        return;
+    }
+
+    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
+
+    printf("Are you sure you want to remove '%s' from the staff?\n",
+            user->username);
+    if(response_yes())
+    {
+        printf("Adding '%s'\n", user->username);
+        add_staff_to_event(event, user);
+    }else
+    {
+        printf("Exiting event join\n");
+    }
+    return;
+}*/

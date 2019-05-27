@@ -12,8 +12,6 @@
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
-    void list_event_names(event_manager_t event_manager);
-    void list_all(event_manager_t event_manager);
 
     /* data_validation.c */
     int valid_int(char* input);
@@ -51,16 +49,16 @@
     /* struct_factory.c */
     void init_event_manager(event_manager_t* event_manager);
     void init_event(event_t* event, person_t* coordinator);
-    void init_staff(event_t* event, person_t staff);
+    void init_staff(event_t* event, person_t* staff);
     void init_admin_account(person_t* admin);
     void create_event(event_manager_t* event_manager, person_t* creator);
 
     /* print.c */
-    void print_event_name(event_t event, int event_index);
-    void print_event_details(event_t event, int event_index);
+    void print_event_name(event_t* event, int event_index);
+    void print_event_details(event_t* event, int event_index);
     void list_event_names(event_manager_t event_manager);
     void print_user_details(person_t user, int user_index);
-    void list_all(event_manager_t event_manager);
+    void list_all(event_manager_t* event_manager);
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);

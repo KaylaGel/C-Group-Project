@@ -72,3 +72,13 @@ int search_user_add(event_manager_t* event_manager)
 
     return search_user(event_manager, username);
 }
+int search_user_remove(event_manager_t* event_manager)
+{
+    char username[MAX_NAME_LEN+1];
+
+    printf("Who would you like to remove from the event?\n");
+    printf("> ");
+    scanf("%s", username);
+
+    return search_user(event_manager, username);
+}

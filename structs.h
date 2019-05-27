@@ -48,11 +48,11 @@
     {
         char name[MAX_NAME_LEN+1];
         char event_type[MAX_NAME_LEN+1];
-        person_t patrons[MAX_PATRONS];
-        person_t staff[MAX_STAFF];
-        person_t *coordinator;
-        int num_patrons;
-        int num_staff;
+
+        node_t* patrons;
+        node_t* staff;
+        person_t* coordinator;
+
         address_t location;
         date_t event_date;
         int free_event;

@@ -3,52 +3,52 @@
 #include "structs.h"
 #include "definitions.h"
 
-void print_event_name(event_t event, int event_index)
+void print_event_name(event_t* event, int event_index)
 {
     printf("\t%i: ", event_index);
     /* Print event name, right padded with spaces up until MAX_NAME_LEN
      * length */
-    printf("%-*s", MAX_NAME_LEN, event.name);
+    printf("%-*s", MAX_NAME_LEN, event->name);
 
     /* If an event is free */
-    if(event.free_event)
+    if(event->free_event)
         printf(" | Free Event");
     printf("\n");
     return;
 }
 
-void print_event_details(event_t event, int event_index)
+void print_event_details(event_t* event, int event_index)
 {
     print_event_name(event, event_index);
     printf("\t\tCoordinator:\n");
-    printf("\t\t\t%-*s | ", MAX_NAME_LEN, event.coordinator->username);
-    printf("%s %s\n", event.coordinator->firstname,
-                      event.coordinator->lastname);
+    printf("\t\t\t%-*s | ", MAX_NAME_LEN, event->coordinator->username);
+    printf("%s %s\n", event->coordinator->firstname,
+                      event->coordinator->lastname);
 
     printf("\t\tStaff:\n");
-    if(event.num_staff == 0)
+    if(list_count(event->staff) == 0)
     {
         printf("\t\t\tNo Staff\n");
     }
     int i;
-    for (i = 0; i < event.num_staff; i++)
+    for (i = 0; i < list_count(event->staff); i++)
     {
-        person_t current_staff = event.staff[i];
+        person_t* current_staff = (person_t *) list_get(event->staff, i);
         printf("\t\t\t");
-        printf("%-*s | ", MAX_NAME_LEN, current_staff.username);
-        printf("%s %s\n", current_staff.firstname, current_staff.lastname);
+        printf("%-*s | ", MAX_NAME_LEN, current_staff->username);
+        printf("%s %s\n", current_staff->firstname, current_staff->lastname);
     }
 
     printf("\t\tPatrons:\n");
-    if(event.num_patrons == 0)
+    if(list_count(event->patrons) == 0)
         printf("\t\t\tNo Patrons\n");
     int j;
-    for (j = 0; j < event.num_patrons; j++)
+    for (j = 0; j < list_count(event->patrons); j++)
     {
-        person_t current_patron = event.patrons[j];
+        person_t* current_patron = (person_t *) list_get(event->patrons, j);
         printf("\t\t\t");
-        printf("%-*s | ", MAX_NAME_LEN, current_patron.username);
-        printf("%s %s\n", current_patron.firstname, current_patron.lastname);
+        printf("%-*s | ", MAX_NAME_LEN, current_patron->username);
+        printf("%s %s\n", current_patron->firstname, current_patron->lastname);
     }
     printf("\n");
 }
@@ -65,35 +65,46 @@ void list_event_names(event_manager_t event_manager)
     for (i = 0; i < list_count(event_manager.events); i++)
     {
         event_t* event = (event_t*) list_get(event_manager.events, i)->data;
-        print_event_name(*event, i + 1);
+        print_event_name(event, i + 1);
     }
     return;
 }
 
-void print_user_details(person_t user, int user_index)
+void print_user_details(person_t* user, int user_index)
 {
-    printf("\t%i: %-*s\n", user_index, MAX_NAME_LEN, user.username);
-    printf("\t\tName: %s %s\n", user.firstname, user.lastname);
-    printf("\t\tPassword: %s\n", user.password);
-    printf("\t\tDOB: %i/%i/%i\n", user.DOB.day, user.DOB.month, user.DOB.year);
+    printf("\t%i: %-*s\n", user_index, MAX_NAME_LEN, user->username);
+    printf("\t\tName: %s %s\n", user->firstname, user->lastname);
+    printf("\t\tPassword: %s\n", user->password);
+    printf("\t\tDOB: %i/%i/%i\n", user->DOB.day,
+                                  user->DOB.month,
+                                  user->DOB.year);
     return;
 }
 
-void list_all(event_manager_t event_manager)
+void list_all(event_manager_t* event_manager)
 {
     int i;
 
     printf("Events\n");
-    for (i = 0; i < list_count(event_manager.events); i++)
+    for (i = 0; i < list_count(event_manager->events); i++)
     {
-        event_t* event = (event_t*) list_get(event_manager.events, i)->data;
-        print_event_details(*event, i + 1);
+        event_t* event = (event_t*) list_get(event_manager->events, i)->data;
+
+        print_event_details(event, i + 1);
+    }
+    if(i == 0)
+    {
+        printf("\tNo Events\n");
     }
     printf("Users\n");
-    for (i = 0; i < list_count(event_manager.users); i++)
+    for (i = 0; i < list_count(event_manager->users); i++)
     {
-        person_t* user = (person_t*) list_get(event_manager.users, i)->data;
-        print_user_details(*user, i + 1);
+        person_t* user = (person_t*) list_get(event_manager->users, i)->data;
+        print_user_details(user, i + 1);
+    }
+    if(i == 0)
+    {
+        printf("\tNo Users\n");
     }
 
     /*TODO*/
