@@ -28,6 +28,8 @@
     void edit_event(event_manager_t* event_manager);
     void add_patron(event_t* event, event_manager_t* event_manager);
     void add_staff(event_t* event, event_manager_t* event_manager);
+    void remove_patron(event_t* event, event_manager_t* event_manager);
+    void remove_staff(event_t* event, event_manager_t* event_manager);
 
     /* user_factory.c */
     void get_new_user_username(event_manager_t event_manager, char* username);
@@ -80,11 +82,12 @@
     int xor_encrypt_file(const char* key, FILE* input, FILE* output);
 
     /* search.c */
-    int search_event(event_manager_t* event_manager, char* event_name);
-    int search_event_edit(event_manager_t* event_manager);
-    int search_event_join(event_manager_t* event_manager);
-    int search_user(event_manager_t* event_manager, char* username);
-    int search_user_add(event_manager_t* event_manager);
+    int search_event(node_t* list_node, char* event_name);
+    int search_event_edit(node_t* list_node);
+    int search_event_join(node_t* list_node);
+    int search_user(node_t* list_node, char* username);
+    int search_user_add(node_t* list_node);
+    int search_user_remove(node_t* list_node);
 
     /* display.c */
     void display_event(event_t* events, int event_count);
