@@ -25,12 +25,12 @@ int convert_int(char* input)
 }
 
 
-int username_taken(event_manager_t event_manager, char* username)
+int username_taken(event_manager_t* event_manager, char* username)
 {
     int i;
-    for (i = 0; i < list_count(event_manager.users); i++)
+    for (i = 0; i < list_count(&event_manager->users); i++)
     {
-        person_t* user = (person_t*) list_get(event_manager.users, i)->data;
+        person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
         #ifdef DEBUG /* For debugging */
             printf("DEBUG: %s | %s\n", username, user->username);
         #endif

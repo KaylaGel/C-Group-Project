@@ -9,7 +9,7 @@
 
 void create_new_user(event_manager_t event_manager, person_t *user /*should it be users or current_logged_in_user*/){
     get_new_user_username(event_manager, user->username);
-    get_new_user_password(user->password, list_count(event_manager.users));
+    get_new_user_password(user->password, list_count(&event_manager.users));
     get_new_user_firstname(user->firstname);
     get_new_user_lastname(user->lastname);
     get_new_user_DOB(&user->DOB); /*why &, because a pointer is needed for
@@ -27,12 +27,12 @@ void account_creation(event_manager_t* event_manager)
     create_new_user(*event_manager, user);
 
 
-    if(event_manager->users == NULL)
+    if(event_manager->users.head == NULL)
     {
-        event_manager->users = init_node(user, sizeof(person_t));
+        event_manager->users.head = init_node(user, sizeof(person_t));
     }else
     {
-        list_add(event_manager->users, (void *) user, sizeof(person_t));
+        list_add(&event_manager->users, (void *) user, sizeof(person_t));
     }
 
     return;
@@ -59,9 +59,9 @@ int login(event_manager_t* event_manager)
         }
     }
 
-    for (i = 0; i < list_count(event_manager->users); i++)
+    for (i = 0; i < list_count(&event_manager->users); i++)
     {
-        person_t* user = (person_t*) list_get(event_manager->users, i)->data;
+        person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
         if ( strcmp( user->username, username ) == 0 )
         {
             char ciphertext[MAX_NAME_LEN+1];

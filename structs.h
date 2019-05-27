@@ -49,8 +49,8 @@
         char name[MAX_NAME_LEN+1];
         char event_type[MAX_NAME_LEN+1];
 
-        node_t* patrons;
-        node_t* staff;
+        linked_list_t patrons;
+        linked_list_t staff;
         person_t* coordinator;
 
         address_t location;
@@ -64,8 +64,8 @@
         person_t* current_logged_in_user;
         person_t admin_account;
 
-        node_t* events;
-        node_t* users;
+        linked_list_t events;
+        linked_list_t users;
     };
     typedef struct event_manager event_manager_t;
 

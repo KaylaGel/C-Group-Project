@@ -3,13 +3,13 @@
 
 #include "structs.h" /* event_t */
 
-int search_event(node_t* list_node, char* event_name)
+int search_event(linked_list_t* list, char* event_name)
 {
     int i;
 
-    for (i = 0; i < list_count(list_node); i++)
+    for (i = 0; i < list_count(list); i++)
     {
-        event_t* event = (event_t*) list_get(list_node, i)->data;
+        event_t* event = (event_t*) list_get(list, i)->data;
 
         #ifdef DEBUG /* For debugging */
             printf("DEBUG: %-*s | %-*s\n", MAX_NAME_LEN, event_name,
@@ -24,7 +24,7 @@ int search_event(node_t* list_node, char* event_name)
     return -1;
 }
 
-int search_event_edit(node_t* list_node)
+int search_event_edit(linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
 
@@ -32,10 +32,10 @@ int search_event_edit(node_t* list_node)
     printf("> ");
     scanf("%s", event_name);
 
-    return search_event(list_node, event_name);
+    return search_event(list, event_name);
 }
 
-int search_event_join(node_t* list_node)
+int search_event_join(linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
 
@@ -43,17 +43,17 @@ int search_event_join(node_t* list_node)
     printf("> ");
     scanf("%s", event_name);
 
-    return search_event(list_node, event_name);
+    return search_event(list, event_name);
 }
 
 
-int search_user(node_t* list_node, char* username)
+int search_user(linked_list_t* list, char* username)
 {
     int i;
 
-    for (i = 0; i < list_count(list_node); i++)
+    for (i = 0; i < list_count(list); i++)
     {
-        person_t* user = (person_t*) list_get(list_node, i)->data;
+        person_t* user = (person_t*) list_get(list, i)->data;
         if ( strcmp(username, user->username) == 0 )
         {
             return i;
@@ -62,7 +62,7 @@ int search_user(node_t* list_node, char* username)
     return -1;
 }
 
-int search_user_add(node_t* list_node)
+int search_user_add(linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];
 
@@ -70,9 +70,9 @@ int search_user_add(node_t* list_node)
     printf("> ");
     scanf("%s", username);
 
-    return search_user(list_node, username);
+    return search_user(list, username);
 }
-int search_user_remove(node_t* list_node)
+int search_user_remove(linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];
 
@@ -80,5 +80,5 @@ int search_user_remove(node_t* list_node)
     printf("> ");
     scanf("%s", username);
 
-    return search_user(list_node, username);
+    return search_user(list, username);
 }

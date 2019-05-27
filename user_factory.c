@@ -12,7 +12,7 @@ void get_new_user_username(event_manager_t event_manager, char* username)
 
     scanf("%s", username);
     printf("Username: %s\n", username);
-    if(username_taken(event_manager, username))
+    if(username_taken(&event_manager, username))
     {
         printf("Username already taken\n");
         get_new_user_username(event_manager, username);

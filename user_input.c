@@ -88,21 +88,22 @@ int response_yes(void)
 
 void join_event(event_manager_t* event_manager)
 {
-    int event_num = search_event_join(event_manager->events);
+    int event_num = search_event_join(&event_manager->events);
     if (event_num == -1)
     {
         printf("Not a valid event\n");
         return;
     }
 
-    event_t* event = (event_t*) event_manager->events[event_num].data;
+    event_t* event = (event_t*) list_get(&event_manager->events, event_num)
+            ->data;
 
     printf("Are you sure you want to join '%s'?\n", event->name);
     if(response_yes())
     {
         printf("Joining '%s'\n", event->name);
 
-        list_add(event->patrons,
+        list_add(&event->patrons,
                 (void*) event_manager->current_logged_in_user,
                  sizeof (person_t));
     }else
@@ -114,14 +115,15 @@ void join_event(event_manager_t* event_manager)
 
 void edit_event(event_manager_t* event_manager)
 {
-    int event_num = search_event_edit(event_manager->events);
+    int event_num = search_event_edit(&event_manager->events);
 
     if (event_num == -1)
     {
         printf("Not a valid Event\n");
         return;
     }
-    event_t* event = list_get(event_manager->events, event_num)->data;
+    event_t* event = (event_t* ) list_get(&event_manager->events, event_num)
+            ->data;
 
     if ( strcmp( event_manager->current_logged_in_user->username,
                  event->coordinator->username) != 0)
@@ -136,25 +138,26 @@ void edit_event(event_manager_t* event_manager)
 
 void add_patron(event_t* event, event_manager_t* event_manager)
 {
-    int user_num = search_user_add(event_manager->users);
+    int user_num = search_user_add(&event_manager->users);
     if (user_num == -1)
     {
         printf("Not a valid user\n");
         return;
     }
 
-    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
+    person_t* user = (person_t*) list_get(&event_manager->users, user_num)
+            ->data;
 
     printf("Are you sure you want to add '%s'?\n", user->username);
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
-        if(event->patrons == NULL)
+        if(event->patrons.head == NULL)
         {
-            event->patrons = init_node(user, sizeof(person_t));
+            event->patrons.head = init_node(user, sizeof(person_t));
         }else
         {
-            list_add(event->patrons, (void*) user, sizeof(person_t));
+            list_add(&event->patrons, (void*) user, sizeof(person_t));
         }
     }else
     {
@@ -165,26 +168,27 @@ void add_patron(event_t* event, event_manager_t* event_manager)
 
 void add_staff(event_t* event, event_manager_t* event_manager)
 {
-    int user_num = search_user_add(event_manager->users);
+    int user_num = search_user_add(&event_manager->users);
     if (user_num == -1)
     {
         printf("Not a valid user\n");
         return;
     }
 
-    person_t* user = (person_t*) list_get(event_manager->users, user_num)->data;
+    person_t* user = (person_t*) list_get(&event_manager->users, user_num)
+            ->data;
 
     printf("Are you sure you want to add '%s' as a staff?\n", user->username);
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
 
-        if(event->staff == NULL)
+        if(event->staff.head == NULL)
         {
-            event->staff = init_node(user, sizeof(person_t));
+            event->staff.head = init_node(user, sizeof(person_t));
         }else
         {
-            list_add(event->staff, (void*) user, sizeof(person_t));
+            list_add(&event->staff, (void*) user, sizeof(person_t));
         }
     }else
     {
@@ -195,20 +199,20 @@ void add_staff(event_t* event, event_manager_t* event_manager)
 
 void remove_patron(event_t* event, event_manager_t* event_manager)
 {
-    int user_num = search_user_remove(event->patrons);
+    int user_num = search_user_remove(&event->patrons);
     if (user_num == -1)
     {
         printf("Not a valid user\n");
         return;
     }
 
-    person_t* user = (person_t*) list_get(event->patrons, user_num)->data;
+    person_t* user = (person_t*) list_get(&event->patrons, user_num)->data;
 
     printf("Are you sure you want to remove '%s'?\n", user->username);
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
-        list_remove(list_get(event->patrons, user_num));
+        list_remove(&event->patrons, list_get(&event->patrons, user_num));
 
     }else
     {
@@ -219,21 +223,21 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
 
 void remove_staff(event_t* event, event_manager_t* event_manager)
 {
-    int user_num = search_user_remove(event->staff);
+    int user_num = search_user_remove(&event->staff);
     if (user_num == -1)
     {
         printf("Not a valid user\n");
         return;
     }
 
-    person_t* user = (person_t*) list_get(event->staff, user_num)->data;
+    person_t* user = (person_t*) list_get(&event->staff, user_num)->data;
 
     printf("Are you sure you want to remove '%s' from the staff?\n",
             user->username);
     if(response_yes())
     {
         printf("Removing '%s'\n", user->username);
-        list_remove(list_get(event->staff, user_num));
+        list_remove(&event->staff, list_get(&event->staff, user_num));
 
     }else
     {

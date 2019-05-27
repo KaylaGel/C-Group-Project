@@ -3,9 +3,9 @@
 
 #include "linked_list.h"
 
-void list_add(node_t* list_node, void* data, size_t data_size)
+void list_add(linked_list_t* list, void* data, size_t data_size)
 {
-    node_t* current_node = list_node;
+    node_t* current_node = list->head;
     node_t* new_node = init_node(data, data_size);
 
     /* Crawl to the end of the linked list */
@@ -19,32 +19,49 @@ void list_add(node_t* list_node, void* data, size_t data_size)
     return;
 }
 
-void list_remove(node_t* node)
+void list_remove(linked_list_t* list, node_t* node)
 {
-    /* If there is a previous node. ie. the node is not the first */
-    if( !(node->previous == NULL) )
+    int first_node, last_node;
+    first_node = node->previous == NULL;
+     last_node = node->next     == NULL;
+
+
+    if(first_node && !last_node)
     {
+        /* If its the first node but not the last node */
+        list->head = node->next;
+        node->next->previous = NULL;
+    }else
+    if(!first_node && last_node)
+    {
+        /* If its the last node but not the first node */
+        node->previous->next = NULL;
+    }else
+    if(first_node && last_node)
+    {
+        /* If its the first node and last node */
+        list->head = NULL;
+    }else
+    if(!first_node && !last_node)
+    {
+        /* If its neither the first nor the last node */
         node->previous->next = node->next;
-    }
-    /* If there is a next node ie. the node is not the last */
-    if( !(node->next == NULL) )
-    {
         node->next->previous = node->previous;
     }
-    /* If the node failed the last two checks, then it must be the last node
-     * in the list, and can just be removed */
+
     free(node->data);
     free(node);
     return;
 }
 
-int list_count(node_t* node)
+int list_count(linked_list_t* list)
 {
-    if(node == NULL)
+
+    if(list->head == NULL)
     {
         return 0;
     }
-    node_t* current_node = node;
+    node_t* current_node = list->head;
     int count = 0;
 
     /* Crawl to the start of the linked list */
@@ -87,15 +104,9 @@ node_t* init_node(void* data, size_t data_size)
     return new_node;
 }
 
-node_t* list_get(node_t* list_node, int index)
+node_t* list_get(linked_list_t* list, int index)
 {
-    node_t* current_node = list_node;
-
-    /* Crawl to the start of the linked list */
-    while(current_node->previous != NULL)
-    {
-        current_node = current_node->previous;
-    }
+    node_t* current_node = list->head;
 
     int i;
     for (i = 0; i < index; i++)
@@ -110,21 +121,14 @@ node_t* list_get(node_t* list_node, int index)
     return current_node;
 }
 
-node_t* list_first(node_t* list_node)
+node_t* list_first(linked_list_t* list)
 {
-    node_t* current_node = list_node;
-
-    /* Crawl to the start of the linked list */
-    while(current_node->previous != NULL)
-    {
-        current_node = current_node->previous;
-    }
-    return current_node;
+    return list->head;
 }
 
-node_t* list_last(node_t* list_node)
+node_t* list_last(linked_list_t* list)
 {
-    node_t* current_node = list_node;
+    node_t* current_node = list->head;
 
     /* Crawl to the start of the linked list */
     while(current_node->next != NULL)

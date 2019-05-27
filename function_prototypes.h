@@ -16,7 +16,7 @@
     /* data_validation.c */
     int valid_int(char* input);
     int convert_int(char* input);
-    int username_taken(event_manager_t event_manager, char* username);
+    int username_taken(event_manager_t* event_manager, char* username);
 
     /* user_input.c */
     void get_user_login(char* username, char* password);
@@ -82,12 +82,12 @@
     int xor_encrypt_file(const char* key, FILE* input, FILE* output);
 
     /* search.c */
-    int search_event(node_t* list_node, char* event_name);
-    int search_event_edit(node_t* list_node);
-    int search_event_join(node_t* list_node);
-    int search_user(node_t* list_node, char* username);
-    int search_user_add(node_t* list_node);
-    int search_user_remove(node_t* list_node);
+    int search_event(linked_list_t* list, char* event_name);
+    int search_event_edit(linked_list_t* list);
+    int search_event_join(linked_list_t* list);
+    int search_user(linked_list_t* list, char* username);
+    int search_user_add(linked_list_t* list);
+    int search_user_remove(linked_list_t* list);
 
     /* display.c */
     void display_event(event_t* events, int event_count);

@@ -26,27 +26,27 @@ void print_event_details(event_t* event, int event_index)
                       event->coordinator->lastname);
 
     printf("\t\tStaff:\n");
-    if(list_count(event->staff) == 0)
+    if(list_count(&event->staff) == 0)
     {
         printf("\t\t\tNo Staff\n");
     }
     int i;
-    for (i = 0; i < list_count(event->staff); i++)
+    for (i = 0; i < list_count(&event->staff); i++)
     {
-        person_t* current_staff = (person_t *) list_get(event->staff, i)->data;
+        person_t* current_staff = (person_t *) list_get(&event->staff, i)->data;
         printf("\t\t\t");
         printf("%-*s | ", MAX_NAME_LEN, current_staff->username);
         printf("%s %s\n", current_staff->firstname, current_staff->lastname);
     }
 
     printf("\t\tPatrons:\n");
-    if(list_count(event->patrons) == 0)
+    if(list_count(&event->patrons) == 0)
         printf("\t\t\tNo Patrons\n");
     int j;
-    for (j = 0; j < list_count(event->patrons); j++)
+    for (j = 0; j < list_count(&event->patrons); j++)
     {
         person_t* current_patron =
-                (person_t *) list_get(event->patrons, j)->data;
+                (person_t *) list_get(&event->patrons, j)->data;
         printf("\t\t\t");
         printf("%-*s | ", MAX_NAME_LEN, current_patron->username);
         printf("%s %s\n", current_patron->firstname, current_patron->lastname);
@@ -56,16 +56,16 @@ void print_event_details(event_t* event, int event_index)
 
 void list_event_names(event_manager_t* event_manager)
 {
-    if(list_count(event_manager->events) == 0)
+    if(list_count(&event_manager->events) == 0)
     {
         printf("No events\n");
         return;
     }
 
     int i;
-    for (i = 0; i < list_count(event_manager->events); i++)
+    for (i = 0; i < list_count(&event_manager->events); i++)
     {
-        event_t* event = (event_t*) list_get(event_manager->events, i)->data;
+        event_t* event = (event_t*) list_get(&event_manager->events, i)->data;
         print_event_name(event, i + 1);
     }
     return;
@@ -87,9 +87,9 @@ void list_all(event_manager_t* event_manager)
     int i;
 
     printf("Events\n");
-    for (i = 0; i < list_count(event_manager->events); i++)
+    for (i = 0; i < list_count(&event_manager->events); i++)
     {
-        event_t* event = (event_t*) list_get(event_manager->events, i)->data;
+        event_t* event = (event_t*) list_get(&event_manager->events, i)->data;
 
         print_event_details(event, i + 1);
     }
@@ -98,9 +98,9 @@ void list_all(event_manager_t* event_manager)
         printf("\tNo Events\n");
     }
     printf("Users\n");
-    for (i = 0; i < list_count(event_manager->users); i++)
+    for (i = 0; i < list_count(&event_manager->users); i++)
     {
-        person_t* user = (person_t*) list_get(event_manager->users, i)->data;
+        person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
         print_user_details(user, i + 1);
     }
     if(i == 0)
