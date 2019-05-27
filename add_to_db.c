@@ -55,8 +55,7 @@ void add_database(event_manager_t* event_manager)
     for (i = 0; i <= event_manager->num_events; i++)
     {
         /* For Event Export might have to change some things due to encryption*/
-        fprintf(fp, "%s",
-                event_manager->events[i]); /*What other variables need to be saved to the file*/
+        fprintf(fp, "%s", event_manager->events[i]); /*What other variables need to be saved to the file*/
     }
 
 
