@@ -28,7 +28,7 @@ void menu_login(event_manager_t* event_manager)
             break;
         case 2:
             #ifdef DEBUG /* For debugging */
-                printf("Create Account Selected\n");
+                printf("\nCreate Account Selected\n");
             #endif
             account_creation(event_manager);
             break;

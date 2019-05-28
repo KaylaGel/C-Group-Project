@@ -92,6 +92,7 @@
     /* display.c */
     void display_event(event_t* events, int event_count);
 
+
     /* TODO
     void add_event(event_manager_t* event_manager);
     void display_event(event_manager_t* event_manager);

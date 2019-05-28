@@ -16,13 +16,16 @@ void create_new_user(event_manager_t event_manager, person_t *user /*should it b
  * the function to actually edit the value passed, and not just a local copy
  * made by the function, the others dont need it because they are pointers
  * already, strings are just char pointers*/
+    
+    /* To Do */
+    /*Print all the new users details together */
 
     return;
 }
 
 void account_creation(event_manager_t* event_manager)
 {
-    printf("Account Creation\n");
+    printf("\nAccount Creation\n");
     person_t* user = malloc(sizeof(person_t)); /* Allocates memory which is the size of person_t */
     create_new_user(*event_manager, user); /* This function calls functions withi itself to collect all the data required from the user e.g. Username, Password ect. */
 
