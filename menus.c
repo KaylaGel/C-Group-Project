@@ -115,6 +115,7 @@ void menu_admin(event_manager_t* event_manager)
             {
                 printf("Exiting save attempt\n");
             }
+            break;
         case 4:
             printf("Note: Loading a database will erase any data "
                    "already loaded in the database\n");

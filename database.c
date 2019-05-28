@@ -223,12 +223,12 @@ int load_database(event_manager_t* event_manager)
 
             staff = (person_t*) list_get(&event_manager->users,
                                           user_index)->data;
-            if(event->patrons.head == NULL)
+            if(event->staff.head == NULL)
             {
-                event->patrons.head = init_node(staff, sizeof(person_t));
+                event->staff.head = init_node(staff, sizeof(person_t));
             }else
             {
-                list_add(&event->patrons, (void*) staff, sizeof(person_t));
+                list_add(&event->staff, (void*) staff, sizeof(person_t));
             }
         }
 
