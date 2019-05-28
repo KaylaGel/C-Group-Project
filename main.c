@@ -18,7 +18,7 @@ int main(void)
     event_manager_t event_manager;
     init_event_manager(&event_manager);
 
-    /* TODO: make this temp welcome line better - Done? */ 
+
     printf("---- Welcome to EventManager v2.4 ----\n\n");
     printf("Description: This program is specifically designed to help event organisers\n");
     printf("and event attenders access event information and join them if they please.\n");
