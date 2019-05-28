@@ -149,6 +149,7 @@ void add_patron(event_t* event, event_manager_t* event_manager)
             ->data;
 
     printf("Are you sure you want to add '%s'?\n", user->username);
+    printf("> ");
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
@@ -179,6 +180,7 @@ void add_staff(event_t* event, event_manager_t* event_manager)
             ->data;
 
     printf("Are you sure you want to add '%s' as a staff?\n", user->username);
+    printf("> ");
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
@@ -209,6 +211,7 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
     person_t* user = (person_t*) list_get(&event->patrons, user_num)->data;
 
     printf("Are you sure you want to remove '%s'?\n", user->username);
+    printf("> ");
     if(response_yes())
     {
         printf("Adding '%s'\n", user->username);
@@ -234,6 +237,7 @@ void remove_staff(event_t* event, event_manager_t* event_manager)
 
     printf("Are you sure you want to remove '%s' from the staff?\n",
             user->username);
+    printf("> ");
     if(response_yes())
     {
         printf("Removing '%s'\n", user->username);

@@ -17,6 +17,10 @@
     #define MAX_MONTH 12
     #define MIN_DAY 1
     #define MAX_DAY 31
+    #define MIN_HOUR 0
+    #define MAX_HOUR 23
+    #define MIN_MINUTE 0
+    #define MAX_MINUTE 59
 
     /* 200 patrons, 50 staff and a coordinator = 251 users per event */
     /* 10 events * 251 users = 2510 total users. 3000 gives headroom */

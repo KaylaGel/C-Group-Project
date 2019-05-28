@@ -42,6 +42,8 @@
     void get_new_event_name(char* event_name);
     void get_new_event_free_status(int* event_free_status);
     void get_new_event_type(char* event_type);
+    void get_new_event_location(address_t* address);
+    void get_new_event_date(date_t* date);
 
     /* accounts.c */
     void create_new_user(event_manager_t event_manager, person_t* user);
@@ -58,9 +60,11 @@
     /* print.c */
     void print_event_name(event_t* event, int event_index);
     void print_event_details(event_t* event, int event_index);
-    void list_event_names(event_manager_t event_manager);
+    void list_events(event_manager_t* event_manager);
     void print_user_details(person_t user, int user_index);
     void list_all(event_manager_t* event_manager);
+    void list_events_detail(event_manager_t* event_manager);
+    void list_users_detail(event_manager_t* event_manager);
     void print_menu_login(void);
     void print_menu_main(char* current_logged_in_username);
     void print_menu_admin(void);
@@ -92,6 +96,9 @@
     /* display.c */
     void display_event(event_t* events, int event_count);
 
+    /* database.c */
+    int save_database(event_manager_t* event_manager);
+    int load_database(event_manager_t* event_manager);
 
     /* TODO
     void add_event(event_manager_t* event_manager);

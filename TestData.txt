@@ -55,8 +55,8 @@
 
 
 1 JSmith Password
-	1 JSmithsEvent no
-	1 JSmithsEventPaid yes
+	1 JSmithsEvent no TestEvent NSW 2007 Ultimo Broadway 81 2019 5 29 12 0
+	1 JSmithsEventPaid yes TestEvent ACT 2600 Canberra ParliamentDr 1 1970 1 1 0 0
 	2 JSmithsEvent
 		5
 			1 APotts yes
