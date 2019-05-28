@@ -11,7 +11,7 @@ void get_new_user_username(event_manager_t event_manager, char* username)
     printf("> ");
 
     scanf("%s", username);
-    printf("Username: %s\n", username);
+    printf("\nUsername: %s\n", username);
     if(username_taken(&event_manager, username))
     {
         printf("Username already taken\n");
@@ -35,7 +35,7 @@ void get_new_user_password(char* password, int user_index)
         printf("Password should be between %i and %i characters long\n",
                MIN_PASS_LEN, MAX_PASS_LEN);
         printf("Your password was %i characters long\n",
-               (int) strlen(password));
+               (int) strlen(plaintext));
         get_new_user_password(password, user_index  );
         return;
     }
@@ -54,7 +54,7 @@ void get_new_user_password(char* password, int user_index)
 
 void get_new_user_firstname(char* firstname)
 {
-    printf("Please enter your first name\n");
+    printf("\nPlease enter your first name\n");
     printf("> ");
 
     scanf("%s", firstname);
@@ -73,7 +73,7 @@ void get_new_user_firstname(char* firstname)
 
 void get_new_user_lastname(char* lastname)
 {
-    printf("Please enter your last name\n");
+    printf("\nPlease enter your last name\n");
     printf("> ");
 
     scanf("%s", lastname);
@@ -92,7 +92,7 @@ void get_new_user_lastname(char* lastname)
 
 void get_new_user_DOB(date_t* DOB)
 {
-    printf("Please enter your date of birth\n");
+    printf("\nPlease enter your date of birth\n");
 
     printf("Day");
     printf(">");
