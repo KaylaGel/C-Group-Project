@@ -91,7 +91,7 @@ void edit_date_time(event_t* event)
               &event->event_date.minute);
     } else
     {
-        printf("\"Keeping event Date and Time as '%d/%d/%d %d%d'\n",
+        printf("\"Keeping event Date and Time as '%d/%d/%d %d:%d'\n",
                event->event_date.day,
                event->event_date.month,
                event->event_date.year,
