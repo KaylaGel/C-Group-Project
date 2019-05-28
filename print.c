@@ -108,7 +108,7 @@ void list_all(event_manager_t* event_manager)
         printf("\tNo Users\n");
     }
 
-    /*TODO*/
+    
     return;
 }
 

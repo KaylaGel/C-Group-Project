@@ -23,8 +23,8 @@ void create_new_user(event_manager_t event_manager, person_t *user /*should it b
 void account_creation(event_manager_t* event_manager)
 {
     printf("Account Creation\n");
-    person_t* user = malloc(sizeof(person_t));
-    create_new_user(*event_manager, user);
+    person_t* user = malloc(sizeof(person_t)); /* Allocates memory which is the size of person_t */
+    create_new_user(*event_manager, user); /* This function calls functions withi itself to collect all the data required from the user e.g. Username, Password ect. */
 
 
     if(event_manager->users.head == NULL)

@@ -46,7 +46,6 @@ int search_event_join(linked_list_t* list)
     return search_event(list, event_name);
 }
 
-
 int search_user(linked_list_t* list, char* username)
 {
     int i;
