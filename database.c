@@ -48,6 +48,7 @@ int save_database(event_manager_t* event_manager)
         event_t* event = list_get(&event_manager->events, i)->data;
 
         fprintf(plaintext, "%s ", event->name);
+        fprintf(plaintext, "%s ", event->event_type);
 
         fprintf(plaintext, "%i | ", event->free_event);
 
@@ -55,7 +56,13 @@ int save_database(event_manager_t* event_manager)
         fprintf(plaintext, "%i ", event->event_date.month);
         fprintf(plaintext, "%i ", event->event_date.day);
         fprintf(plaintext, "%i ", event->event_date.hour);
-        fprintf(plaintext, "%i \t", event->event_date.minute);
+        fprintf(plaintext, "%i ", event->event_date.minute);
+
+        fprintf(plaintext, "%s ", event->location.state);
+        fprintf(plaintext, "%i ", event->location.postcode);
+        fprintf(plaintext, "%s ", event->location.suburb);
+        fprintf(plaintext, "%s ", event->location.street_name);
+        fprintf(plaintext, "%i ", event->location.street_num);
 
         person_t* coordinator = event->coordinator;
         int coordinator_index = search_user(&event_manager->users,
@@ -170,6 +177,7 @@ int load_database(event_manager_t* event_manager)
         event_t* event = malloc(sizeof(event_t));
 
         fscanf(plaintext, "%s ", event->name);
+        fscanf(plaintext, "%s ", event->event_type);
 
         fscanf(plaintext, "%i | ", &event->free_event);
 
@@ -177,7 +185,13 @@ int load_database(event_manager_t* event_manager)
         fscanf(plaintext, "%i ", &event->event_date.month);
         fscanf(plaintext, "%i ", &event->event_date.day);
         fscanf(plaintext, "%i ", &event->event_date.hour);
-        fscanf(plaintext, "%i \t", &event->event_date.minute);
+        fscanf(plaintext, "%i ", &event->event_date.minute);
+
+        fscanf(plaintext, "%s ", event->location.state);
+        fscanf(plaintext, "%i ", &event->location.postcode);
+        fscanf(plaintext, "%s ", event->location.suburb);
+        fscanf(plaintext, "%s ", event->location.street_name);
+        fscanf(plaintext, "%i ", &event->location.street_num);
 
 
         int coordinator_index;

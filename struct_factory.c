@@ -21,6 +21,8 @@ void init_event(event_t* event, person_t* coordinator)
     get_new_event_name(event->name);
     get_new_event_free_status(&event->free_event);
     get_new_event_type(event->event_type);
+    get_new_event_location(&event->location);
+    get_new_event_date(&event->event_date);
 
     event->coordinator = coordinator;
 

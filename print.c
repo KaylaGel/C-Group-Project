@@ -54,7 +54,7 @@ void print_event_details(event_t* event, int event_index)
     printf("\n");
 }
 
-void list_event_names(event_manager_t* event_manager)
+void list_events(event_manager_t* event_manager)
 {
     if(list_count(&event_manager->events) == 0)
     {
@@ -107,8 +107,39 @@ void list_all(event_manager_t* event_manager)
     {
         printf("\tNo Users\n");
     }
+    return;
+}
+void list_events_detail(event_manager_t* event_manager)
+{
+    int i;
 
-    
+    printf("Events\n");
+    for (i = 0; i < list_count(&event_manager->events); i++)
+    {
+        event_t* event = (event_t*) list_get(&event_manager->events, i)->data;
+
+        print_event_details(event, i + 1);
+    }
+    if(i == 0)
+    {
+        printf("\tNo Events\n");
+    }
+    return;
+}
+void list_users_detail(event_manager_t* event_manager)
+{
+    int i;
+
+    printf("Users\n");
+    for (i = 0; i < list_count(&event_manager->users); i++)
+    {
+        person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
+        print_user_details(user, i + 1);
+    }
+    if(i == 0)
+    {
+        printf("\tNo Users\n");
+    }
     return;
 }
 
@@ -142,8 +173,10 @@ void print_menu_admin(void)
     printf("\nAdmin Menu\n\n");
     printf("1. List All\n");
     printf("2. List Events\n");
-    printf("3. Save Database\n");
-    printf("4. Load Database\n");
+    printf("3. List Events - Detailed\n");
+    printf("4. List Users\n");
+    printf("7. Save Database\n");
+    printf("8. Load Database\n");
     printf("9. Logout\n");
     printf("> ");
     return;
