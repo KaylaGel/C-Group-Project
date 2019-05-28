@@ -1,6 +1,8 @@
 #include <string.h>
 #include <stdio.h>
 
+#define BUFFER_SIZE 256
+
 void caeser_cipher(const int shift, const char* plaintext, char* ciphertext)
 {
     strcpy(ciphertext, plaintext);
@@ -43,16 +45,28 @@ void caeser_cipher(const int shift, const char* plaintext, char* ciphertext)
 
 int xor_encrypt_file(const char* key, FILE* input, FILE* output)
 {
-    char buffer;
+    rewind(input);
+    rewind(output);
+
+    unsigned char buffer[BUFFER_SIZE];
     int index = 0;
     int key_len = strlen(key);
+    int bytes_read;
+
 
     /* While the end of the file hasn't been reached yet*/
-    while( ( buffer = fgetc(input) ) != EOF )
+    do
     {
-        buffer ^= key[index % key_len];
-        fputc(buffer, output);
+        bytes_read = fread(buffer, sizeof(unsigned char), BUFFER_SIZE, input);
+        printf("DEBUG: %i\n", bytes_read);
+        int i;
+        for (i = 0; i < bytes_read; i++)
+        {
+            buffer[i] ^= key[index % key_len];
+            index++;
+        }
+        fwrite(buffer, sizeof(unsigned char), BUFFER_SIZE, output);
         index++;
-    }
+    }while(bytes_read == BUFFER_SIZE);
     return 0;
 }
