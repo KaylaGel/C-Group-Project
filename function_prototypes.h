@@ -92,6 +92,11 @@
     /* display.c */
     void display_event(event_t* events, int event_count);
 
+    /* database.c */
+    int save_database(event_manager_t* event_manager);
+    int load_database(event_manager_t* event_manager);
+    int file_exists(char* filename);
+
     /* TODO
     void add_event(event_manager_t* event_manager);
     void display_event(event_manager_t* event_manager);

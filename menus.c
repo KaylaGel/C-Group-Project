@@ -103,6 +103,31 @@ void menu_admin(event_manager_t* event_manager)
         case 2:
             list_event_names(*event_manager);
             break;
+        case 3:
+            printf("Note: Saving the database will overwrite any already "
+                   "saved databases\n");
+            printf("Would you like to continue?\n");
+            printf("> ");
+            if(response_yes())
+            {
+                save_database(event_manager);
+            }else
+            {
+                printf("Exiting save attempt\n");
+            }
+        case 4:
+            printf("Note: Loading a database will erase any data "
+                   "already loaded in the database\n");
+            printf("Would you like to continue?\n");
+            printf("> ");
+            if(response_yes())
+            {
+                load_database(event_manager);
+            }else
+            {
+                printf("Exiting load attempt\n");
+            }
+            break;
         case 9:
             printf("Logging out\n\n");
             return;

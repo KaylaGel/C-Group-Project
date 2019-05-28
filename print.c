@@ -142,6 +142,8 @@ void print_menu_admin(void)
     printf("\nAdmin Menu\n\n");
     printf("1. List All\n");
     printf("2. List Events\n");
+    printf("3. Save Database\n");
+    printf("4. Load Database\n");
     printf("9. Logout\n");
     printf("> ");
     return;

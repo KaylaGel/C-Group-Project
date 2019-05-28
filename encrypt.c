@@ -48,8 +48,7 @@ int xor_encrypt_file(const char* key, FILE* input, FILE* output)
     rewind(input);
     rewind(output);
 
-    unsigned char buffer[BUFFER_SIZE];
-    int index = 0;
+    char buffer[BUFFER_SIZE];
     int key_len = strlen(key);
     int bytes_read;
 
@@ -58,15 +57,26 @@ int xor_encrypt_file(const char* key, FILE* input, FILE* output)
     do
     {
         bytes_read = fread(buffer, sizeof(unsigned char), BUFFER_SIZE, input);
-        printf("DEBUG: %i\n", bytes_read);
         int i;
         for (i = 0; i < bytes_read; i++)
         {
-            buffer[i] ^= key[index % key_len];
-            index++;
+            char result;
+
+            result = buffer[i] ^ key[i % key_len];
+
+            /*preserve newlines*/
+            if(buffer[i] == '\n' || result == '\n')
+            {
+                continue;
+            }
+
+            buffer[i] = result;
         }
-        fwrite(buffer, sizeof(unsigned char), BUFFER_SIZE, output);
-        index++;
+        fwrite(buffer, sizeof(unsigned char), bytes_read, output);
+
     }while(bytes_read == BUFFER_SIZE);
+
+    rewind(input);
+    rewind(output);
     return 0;
 }
