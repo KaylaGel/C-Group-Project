@@ -7,7 +7,7 @@
 
 void get_new_event_name(char* event_name)
 {
-    printf("Please enter the event name\n");
+    printf("\nPlease enter the event name\n");
     printf(">");
 
     scanf("%s", event_name);

@@ -143,7 +143,7 @@ void menu_edit(event_manager_t* event_manager, int event_num)
             edit_patrons(event_manager, event_num);
             break;
         case 9:
-            printf("Exiting edit menu\n\n");
+            printf("Exiting edit menu\n");
             return;
         default:
             printf("Invalid Input\n");
