@@ -8,7 +8,8 @@ void print_event_name(event_t* event, int event_index)
     printf("\t%i: ", event_index);
     /* Print event name, right padded with spaces up until MAX_NAME_LEN
      * length */
-    printf("%-*s", MAX_NAME_LEN, event->name);
+    printf("%-*s | ", MAX_NAME_LEN, event->name);
+    printf("%-*s", MAX_NAME_LEN, event->event_type);
 
     /* If an event is free */
     if(event->free_event)
@@ -20,6 +21,18 @@ void print_event_name(event_t* event, int event_index)
 void print_event_details(event_t* event, int event_index)
 {
     print_event_name(event, event_index);
+
+    printf("\t\tLocation: %i %s %s %i %s\n", event->location.street_num,
+                                             event->location.street_name,
+                                             event->location.suburb,
+                                             event->location.postcode,
+                                             event->location.state);
+    printf("\t\tDate: %i:%i %i/%i/%i\n", event->event_date.minute,
+                                         event->event_date.hour,
+                                         event->event_date.day,
+                                         event->event_date.month,
+                                         event->event_date.year );
+
     printf("\t\tCoordinator:\n");
     printf("\t\t\t%-*s | ", MAX_NAME_LEN, event->coordinator->username);
     printf("%s %s\n", event->coordinator->firstname,
