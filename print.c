@@ -4,11 +4,11 @@
 #include "definitions.h"
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
+ * Function Name: print_event_name
+ * Author(s): Kayla
+ * Inputs: event
  * Outputs: 
- * Description: 
+ * Description: Prints out the basic details of the event and it index
 **************************************************************/
 
 void print_event_name(event_t* event, int event_index)
@@ -27,11 +27,11 @@ void print_event_name(event_t* event, int event_index)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
+ * Function Name: print_event_details
+ * Author(s): Kayla
+ * Inputs: e
  * Outputs: 
- * Description: 
+ * Description: Print out the full details of the event
 **************************************************************/
 
 void print_event_details(event_t* event, int event_index)
@@ -88,7 +88,7 @@ void print_event_details(event_t* event, int event_index)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Calls the print_event_name function for each event
 **************************************************************/
 
 void list_events(event_manager_t* event_manager)
@@ -113,7 +113,7 @@ void list_events(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the details of a user
 **************************************************************/
 
 void print_user_details(person_t* user, int user_index)
@@ -132,7 +132,7 @@ void print_user_details(person_t* user, int user_index)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Calls the "print details" function for every user and event 
 **************************************************************/
 
 void list_all(event_manager_t* event_manager)
@@ -168,7 +168,7 @@ void list_all(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Calls the print_event_details function for each event
 **************************************************************/
 
 void list_events_detail(event_manager_t* event_manager)
@@ -194,7 +194,7 @@ void list_events_detail(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: calls the print_user_details function for every user
 **************************************************************/
 
 void list_users_detail(event_manager_t* event_manager)
@@ -219,7 +219,7 @@ void list_users_detail(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the login menu 
 **************************************************************/
 
 void print_menu_login(void)
@@ -238,7 +238,7 @@ void print_menu_login(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the main menu
 **************************************************************/
 
 void print_menu_main(char* current_logged_in_username)
@@ -259,7 +259,7 @@ void print_menu_main(char* current_logged_in_username)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the admin menu
 **************************************************************/
 
 void print_menu_admin(void)
@@ -281,7 +281,7 @@ void print_menu_admin(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the edit menu and the event that is being edited
 **************************************************************/
 
 void print_menu_edit(char* event_name)
@@ -304,7 +304,7 @@ void print_menu_edit(char* event_name)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the edit staff menu
 **************************************************************/
 
 void print_menu_edit_staff(void)
@@ -322,7 +322,7 @@ void print_menu_edit_staff(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Prints the edit patron menu
 **************************************************************/
 
 void print_menu_edit_patrons(void)
@@ -334,7 +334,13 @@ void print_menu_edit_patrons(void)
     printf("> ");
     return;
 }
-
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: Prints the information about this program
+**************************************************************/
 void print_info()
 {
     printf("EventManager Information\n"

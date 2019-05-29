@@ -5,15 +5,16 @@
 #include "structs.h" /* event_manager_t, patron_t, staff_t, event_t */
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: valid_int
+ * Author(s): Ryan
+ * Inputs: input(string pointer)
+ * Outputs: Boolean
+ * Description: Outputs true or false depending on whether the input ...
+ *              is an integer that meets the criteria or not
 **************************************************************/
 int valid_int(char* input)
 {
-    /* TODO: Account for negatives */
+    
     int i;
     for (i = 0; i < strlen(input); i++)
     {
@@ -26,11 +27,11 @@ int valid_int(char* input)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: convert_int
+ * Author(s): Ryan
+ * Inputs: input(string pointer)
+ * Outputs: integer
+ * Description: Returns the input converted to an integer
 **************************************************************/
 int convert_int(char* input)
 {
@@ -38,11 +39,14 @@ int convert_int(char* input)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: username_taken
+ * Author(s): Ryan 
+ * Inputs: event_manager(pointer), username(sting pointer)
+ * Outputs: Boolean
+ * Description: Outputs a true or false depending on the supplied username is
+ *              already taken. 
+ *              The function loops through each user of the users linked list 
+ *              and compares the username to the supplied username.
 **************************************************************/
 int username_taken(event_manager_t* event_manager, char* username)
 {

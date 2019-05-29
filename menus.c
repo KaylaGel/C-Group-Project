@@ -5,11 +5,13 @@
 #include "function_prototypes.h" /* print_menu_login(), print_menu_main(), scan_int() */
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: menu_login
+ * Author(s): Ryan
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
+ * Description: Prints the login menu and then gets the user input to determine 
+ *              the following function. It will then recursively call itself 
+ *              until the exit option is selected.
 **************************************************************/
 
 void menu_login(event_manager_t* event_manager)
@@ -67,11 +69,13 @@ void menu_login(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: main_menu
+ * Author(s): Ryan
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
+ * Description: Prints the main menu and then gets the user input to determine 
+ *              the following function. It will then recursively call itself 
+ *              until the exit option is selected.
 **************************************************************/
 
 void menu_main(event_manager_t* event_manager)
@@ -129,11 +133,13 @@ void menu_main(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: menu_admin
+ * Author(s): Tylar
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
+ * Description: Prints the admin menu and then gets the user input to determine 
+ *              the following function. It will then recursively call itself 
+ *              until the exit option is selected.
 **************************************************************/
 
 void menu_admin(event_manager_t* event_manager)
@@ -244,11 +250,13 @@ void menu_admin(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: menu_edit
+ * Author(s): Tylar
+ * Inputs: event_manager - Struct Pointer, event_num - Integer
+ * Outputs: N/A
+ * Description: Prints the edit menu and then gets the user input to determine 
+ *              the following function. It will then recursively call itself 
+ *              until the exit option is selected.
 **************************************************************/
 
 void menu_edit(event_manager_t* event_manager, int event_num)

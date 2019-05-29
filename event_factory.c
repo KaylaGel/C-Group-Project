@@ -6,11 +6,11 @@
 #include "function_prototypes.h"
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: get_new_event_name
+ * Author(s): Jacob
+ * Inputs: event_name - String Pointer
+ * Outputs: event_name string
+ * Description: Scans the user input and checks if its within the criteria
 **************************************************************/
 void get_new_event_name(char* event_name)
 {
@@ -32,11 +32,11 @@ void get_new_event_name(char* event_name)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: get_new_event_free_status
+ * Author(s): Jacob
+ * Inputs: event_free_status - Integer Pointer
+ * Outputs: event_free_status Integer
+ * Description: Scans the user input and checks if its within the criteria
 **************************************************************/
 void get_new_event_free_status(int* event_free_status)
 {
@@ -70,11 +70,11 @@ void get_new_event_free_status(int* event_free_status)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: get_new_event_type
+ * Author(s): Jacob
+ * Inputs: event_type - String Pointer
+ * Outputs: event_type String
+ * Description: Scans the user input and checks if its within the criteria
 **************************************************************/
 
 void get_new_event_type(char* event_type)
@@ -97,11 +97,11 @@ void get_new_event_type(char* event_type)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: get_new_event_location
+ * Author(s): Jacob
+ * Inputs: address - Struct Pointer
+ * Outputs: address struct
+ * Description: Scans the user input and checks if its within the criteria
 **************************************************************/
 
 void get_new_event_location(address_t* address)
@@ -126,11 +126,11 @@ void get_new_event_location(address_t* address)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: get_new_event_date
+ * Author(s): Jacob
+ * Inputs: date - Struct Pointer
+ * Outputs: data struct
+ * Description: Scans the user input and checks if its within the criteria
 **************************************************************/
 
 void get_new_event_date(date_t* date)

@@ -9,11 +9,15 @@
 #define DATABASE_DECRYPT_TEMP "database_decrypt.txt"
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: save_database
+ * Author(s): Dee-Jay
+ * Inputs: event_manager(pointer)
+ * Outputs: Integer and File    
+ * Description: The returned integer determines whether the save was 
+ *              successful or not.
+ *              This function saves the entire database to a temperary file, 
+ *              it then asks the users for a password to xor encrypt the 
+ *              database. It then saves the encrypted DB to a file on disk.
 **************************************************************/
 int save_database(event_manager_t* event_manager)
 {
@@ -140,11 +144,13 @@ int save_database(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: load_database
+ * Author(s): Dee-Jay
+ * Inputs: event_manager(pointer)
+ * Outputs: Database loaded from disk into event_manager
+ * Description: Loads the database, then xor decrypts the file with a 
+ *              user supplied password. The function then laods the database 
+ *              information into the event_manager
 **************************************************************/
 
 int load_database(event_manager_t* event_manager)

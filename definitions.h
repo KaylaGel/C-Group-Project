@@ -1,10 +1,3 @@
-/**************************************************************
- * Header Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
-**************************************************************/
 /* Header file for event_manager.c #defines */
 
 #ifndef C_GROUP_PROJECT_DEFINITIONS_H

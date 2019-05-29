@@ -10,7 +10,8 @@
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user login.
+ *              Gets user input
 **************************************************************/
 
 void get_user_login(char* username, char* password)
@@ -28,25 +29,8 @@ void get_user_login(char* username, char* password)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
-**************************************************************/
-
-void get_event_login(int* event_id, char* event_password)
-{
-    printf("Event ID: ");
-    scanf("%i", event_id);
-
-    printf("Password: ");
-    scanf("%s", event_password);
-    return;
-}
-
-/**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Description: Gets user input for an integer.
+ *              Checks whether its a valid int or not and converts it if it is, and requests a new number if it isn't
 **************************************************************/
 
 int scan_int(void)
@@ -70,7 +54,7 @@ int scan_int(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets an integer from the user and validates it based on defined criteria
 **************************************************************/
 
 int scan_int_min_max(int min_value, int max_value)
@@ -92,7 +76,7 @@ int scan_int_min_max(int min_value, int max_value)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets yes/no input and converts it to boolean
 **************************************************************/
 
 int response_yes(void)
@@ -124,7 +108,7 @@ int response_yes(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Adds the currently logged in user to the user requested event
 **************************************************************/
 
 void join_event(event_manager_t* event_manager)
@@ -167,7 +151,7 @@ void join_event(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Requests a user input of which event to edit and calls the menu_edit function for that event
 **************************************************************/
 
 void edit_event(event_manager_t* event_manager)
@@ -198,7 +182,7 @@ void edit_event(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets user input of the patron to add and adds them to the supplied event
 **************************************************************/
 
 void add_patron(event_t* event, event_manager_t* event_manager)
@@ -237,7 +221,7 @@ void add_patron(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets user input of the staff to add and adds them to the supplied event
 **************************************************************/
 
 void add_staff(event_t* event, event_manager_t* event_manager)
@@ -277,7 +261,7 @@ void add_staff(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets user input of the patron to remove and removes them from the supplied event
 **************************************************************/
 
 void remove_patron(event_t* event, event_manager_t* event_manager)
@@ -310,7 +294,7 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Gets user input of the staff to remove and removes them from the supplied event
 **************************************************************/
 
 void remove_staff(event_t* event, event_manager_t* event_manager)

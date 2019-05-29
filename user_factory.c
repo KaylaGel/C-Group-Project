@@ -10,7 +10,8 @@
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user initialisation.
+ *              Gets user input and validates it
 **************************************************************/
 
 void get_new_user_username(event_manager_t event_manager, char* username)
@@ -33,7 +34,8 @@ void get_new_user_username(event_manager_t event_manager, char* username)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user initialisation.
+ *              Gets user input and validates it
 **************************************************************/
 
 void get_new_user_password(char* password, int user_index)
@@ -68,7 +70,8 @@ void get_new_user_password(char* password, int user_index)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user initialisation.
+ *              Gets user input and validates it
 **************************************************************/
 
 void get_new_user_firstname(char* firstname)
@@ -95,7 +98,8 @@ void get_new_user_firstname(char* firstname)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user initialisation.
+ *              Gets user input and validates it
 **************************************************************/
 
 void get_new_user_lastname(char* lastname)
@@ -122,7 +126,8 @@ void get_new_user_lastname(char* lastname)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: 
+ * Description: Helper function for user initialisation.
+ *              Gets user input and validates it
 **************************************************************/
 
 void get_new_user_DOB(date_t* DOB)

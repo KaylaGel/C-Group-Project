@@ -7,11 +7,13 @@
 
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: edit_name
+ * Author(s): Jacob
+ * Inputs: event(pointer)
+ * Outputs: N/A
+ * Description: Requests if the user would like to change the name and 
+ *              if given consent then it will change the event name to the
+ *              name that the user supplies
 **************************************************************/
 void edit_name(event_t* event)
 {
@@ -31,11 +33,13 @@ void edit_name(event_t* event)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: edit_type
+ * Author(s): Jacob
+ * Inputs: event(pointer)
+ * Outputs: N/A
+ * Description: Requests if the user would like to change the event type and 
+ *              if given consent then it will change the event type to the
+ *              type that the user supplies
 **************************************************************/
 void edit_type(event_t* event)
 {
@@ -57,10 +61,12 @@ void edit_type(event_t* event)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Author(s): Kayla
+ * Inputs: event(pointer)
+ * Outputs: N/A
+ * Description: Requests if the user would like to change the event location 
+ *              and if given consent then it will change the event location 
+ *              to the location that the user supplies
 **************************************************************/
 void edit_location(event_t* event)
 {
@@ -95,10 +101,12 @@ void edit_location(event_t* event)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Author(s): Kayla
+ * Inputs: event(pointer)
+ * Outputs: N/A
+ * Description: Requests if the user would like to change the event time and
+ *              if given consent then it will change the event time to the
+ *              time that the user supplies
 **************************************************************/
 
 void edit_date_time(event_t* event)
@@ -134,10 +142,11 @@ void edit_date_time(event_t* event)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Author(s): Dee-Jay, Tylar
+ * Inputs: event_manager(pointer), event_num
+ * Outputs: N/A
+ * Description: The function asks whether the user would like to add or
+ *              remove staff and will call the respective functions.
 **************************************************************/
 
 void edit_staff(event_manager_t* event_manager, int event_num)
@@ -182,10 +191,11 @@ void edit_staff(event_manager_t* event_manager, int event_num)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Author(s): Dee-Jay, Tylar
+ * Inputs: event_manager(pointer), event_num
+ * Outputs: N/A
+ * Description: The function asks whether the user would like to add or
+ *              remove patrons and will call the respective functions.
 **************************************************************/
 
 void edit_patrons(event_manager_t* event_manager, int event_num)

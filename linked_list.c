@@ -5,10 +5,11 @@
 
 /**************************************************************
  * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Author(s): Dee-Jay
+ * Inputs: list - List Pointer, data - Void Pointer, data_size
+ * Outputs: N/A
+ * Description: Takes the inputted data, creates an new linked list node and
+ *              puts it at the end of the list 
 **************************************************************/
 
 void list_add(linked_list_t* list, void* data, size_t data_size)
@@ -24,11 +25,11 @@ void list_add(linked_list_t* list, void* data, size_t data_size)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: list_remove
+ * Author(s): Dee-Jay
+ * Inputs: list - List Pointer, node - Node Pointer
+ * Outputs: N/A
+ * Description: Removes all references to the node and frees up the memory 
 **************************************************************/
 
 void list_remove(linked_list_t* list, node_t* node)
@@ -68,7 +69,7 @@ void list_remove(linked_list_t* list, node_t* node)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
+ * Author(s): Dee-Jay
  * Inputs:
  * Outputs: 
  * Description: 
@@ -100,7 +101,7 @@ int list_count(linked_list_t* list)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
+ * Author(s): Dee-Jay
  * Inputs:
  * Outputs: 
  * Description: 
@@ -129,7 +130,7 @@ node_t* init_node(void* data, size_t data_size)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
+ * Author(s): Dee-Jay
  * Inputs:
  * Outputs: 
  * Description: 
@@ -154,7 +155,7 @@ node_t* list_get(linked_list_t* list, int index)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
+ * Author(s): Dee-Jay
  * Inputs:
  * Outputs: 
  * Description: 
@@ -167,7 +168,7 @@ node_t* list_first(linked_list_t* list)
 
 /**************************************************************
  * Function Name: 
- * Author(s):
+ * Author(s): Dee-Jay
  * Inputs:
  * Outputs: 
  * Description: 

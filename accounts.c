@@ -8,11 +8,12 @@
 #define DEBUG
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: create_new_user
+ * Author(s): Dee-Jay, Ryan
+ * Inputs: event_manager, user(pointer)
+ * Outputs: Initialised User
+ * Description: Calls various helper functions to get the user input on what 
+ *              the initialised user's variables should be.
 **************************************************************/
 
 
@@ -61,11 +62,12 @@ void create_new_user(event_manager_t event_manager, person_t *user)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: account_creation
+ * Author(s): Dee-Jay, Jacob
+ * Inputs: event_manager(pointer)
+ * Outputs: N/A
+ * Description: Creates a new user at end of the "users" linked list 
+ *              in event_manager
 **************************************************************/
 
 void account_creation(event_manager_t* event_manager)
@@ -97,11 +99,16 @@ void account_creation(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: login
+ * Author(s): Dee-Jay
+ * Inputs: event_manager(pointer)
+ * Outputs: Integer
+ * Description: Returns a 0 if the login failed.
+ *              Returns a 1 if the login succeeded as a user
+ *              Returns a 2 if the login succeeded as an admin
+ *              The function loops through each user and compares their 
+ *              information with the supplied user input which was recieved 
+ *              from the get_user_login function
 **************************************************************/
 
 int login(event_manager_t* event_manager)

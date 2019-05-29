@@ -10,11 +10,16 @@
 /* #define DEBUG */
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: main 
+ * Author(s): Everyone
+ * Inputs: argc - Integer, argv - String array
+ * Outputs: int
+ * Description: Main function of the program. 
+ *              Initialises the event_manager and adjusts the runtime mode 
+ *              based on the arguments supplied. It will then either call the 
+ *              menu_login function to continue with the rest of the program 
+ *              or it will call the print_info function depending on the 
+ *              runtime mode.
 **************************************************************/
 
 int main(int argc, char *argv[])

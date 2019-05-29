@@ -4,11 +4,12 @@
 #define BUFFER_SIZE 256
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: caeser_cipher
+ * Author(s): Ryan
+ * Inputs: shift - Integer, plaintext - String, ciphertext - String Pointer
+ * Outputs: ciphertext string
+ * Description: Loops through each character in plain text and increments 
+ *              it by "shift" number of characters
 **************************************************************/
 void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 {
@@ -57,11 +58,12 @@ void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
- * Description: 
+ * Function Name: xor_encrypt_file
+ * Author(s): Dee-Jay
+ * Inputs: key - String, Input File Pointer, Output File Pointer
+ * Outputs: Encrypted File
+ * Description: Reads bytes from input file, xors them with the supplied 
+ *              key and writes them to the output file
 **************************************************************/
 
 int xor_encrypt_file(const char* key, FILE* input, FILE* output)
