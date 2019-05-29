@@ -14,9 +14,10 @@ int main(void)
     #ifdef DEBUG /* For debugging */
         printf("Debug mode enabled\n");
     #endif
-
+    
     event_manager_t event_manager;
     init_event_manager(&event_manager);
+    
 
     printf("\n---- Welcome to EventManager v2.4 ----\n\n");
     printf("Description: This program is specifically designed to help event organisers\n");

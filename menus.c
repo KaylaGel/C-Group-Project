@@ -8,7 +8,10 @@
 
 void menu_login(event_manager_t* event_manager)
 {
+    /*load_database(event_manager);*/
     print_menu_login();
+    
+
     int user_selection = scan_int();
     switch(user_selection)
     {
@@ -40,6 +43,7 @@ void menu_login(event_manager_t* event_manager)
                 printf("Exit Selected\n");
             #endif
             printf("Exiting program\n");
+            save_database(event_manager);
             return;
         default:
             printf("Not a valid entry\n");
