@@ -229,3 +229,10 @@ void print_menu_edit_patrons(void)
     printf("> ");
     return;
 }
+
+void print_info()
+{
+    printf("EventManager Information\n"
+           "EventManager is a helper program for planning and managing events.\n"
+           "");
+}
