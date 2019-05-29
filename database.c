@@ -25,7 +25,11 @@ int save_database(event_manager_t* event_manager)
     }
     database = fopen(DATABASE_FILENAME, "w");
 
-
+    if(plaintext == NULL || database == NULL)
+    {
+        printf("Error opening file\n");
+        printf("Exiting Save attempt\n");
+    }
 
     printf("Saving Database\n");
 
@@ -144,6 +148,13 @@ int load_database(event_manager_t* event_manager)
         plaintext = tmpfile();
     }
         database = fopen(DATABASE_FILENAME, "r");
+
+
+    if(plaintext == NULL || database == NULL)
+    {
+        printf("Error opening file\n");
+        printf("Exiting Load attempt\n");
+    }
 
 
     char key[MAX_RESPONSE_LEN+1];
