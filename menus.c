@@ -11,8 +11,6 @@ void menu_login(event_manager_t* event_manager)
         printf("DEBUG: Login Menu\n");
     }
     print_menu_login();
-    
-
     int user_selection = scan_int();
     switch(user_selection)
     {
@@ -47,7 +45,6 @@ void menu_login(event_manager_t* event_manager)
                 printf("DEBUG: Exit Selected\n");
             }
             printf("Exiting program\n");
-            save_database(event_manager);
             return;
         default:
             if(event_manager->runtime_mode == MODE_DEBUG)
