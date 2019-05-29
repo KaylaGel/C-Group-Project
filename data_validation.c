@@ -4,7 +4,13 @@
 
 #include "structs.h" /* event_manager_t, patron_t, staff_t, event_t */
 
-
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 int valid_int(char* input)
 {
     /* TODO: Account for negatives */
@@ -19,12 +25,25 @@ int valid_int(char* input)
     return 1;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 int convert_int(char* input)
 {
     return (int) strtol(input, NULL, 10);
 }
 
-
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 int username_taken(event_manager_t* event_manager, char* username)
 {
     int i;

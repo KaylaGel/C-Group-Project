@@ -1,3 +1,11 @@
+/**************************************************************
+ * Header Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 /* Header file for event_manager.c function prototypes */
 
 #ifndef C_GROUP_PROJECT_PROTOTYPES_H

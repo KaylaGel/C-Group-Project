@@ -4,6 +4,14 @@
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* print_menu_login(), print_menu_main(), scan_int() */
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void menu_login(event_manager_t* event_manager)
 {
     if(event_manager->runtime_mode == MODE_DEBUG)
@@ -61,6 +69,14 @@ void menu_login(event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void menu_main(event_manager_t* event_manager)
 {
     if(event_manager->runtime_mode == MODE_DEBUG)
@@ -114,6 +130,14 @@ void menu_main(event_manager_t* event_manager)
     menu_main(event_manager);
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void menu_admin(event_manager_t* event_manager)
 {
@@ -222,6 +246,13 @@ void menu_admin(event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void menu_edit(event_manager_t* event_manager, int event_num)
 {

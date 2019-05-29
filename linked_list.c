@@ -3,6 +3,14 @@
 
 #include "linked_list.h"
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void list_add(linked_list_t* list, void* data, size_t data_size)
 {
     node_t* current_node = list->head;
@@ -14,6 +22,14 @@ void list_add(linked_list_t* list, void* data, size_t data_size)
     new_node->previous = current_node;
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void list_remove(linked_list_t* list, node_t* node)
 {
@@ -50,6 +66,14 @@ void list_remove(linked_list_t* list, node_t* node)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int list_count(linked_list_t* list)
 {
     if(list->head == NULL)
@@ -74,6 +98,14 @@ int list_count(linked_list_t* list)
     return count;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 node_t* init_node(void* data, size_t data_size)
 {
     node_t* new_node = malloc(sizeof(node_t));
@@ -95,6 +127,14 @@ node_t* init_node(void* data, size_t data_size)
     return new_node;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 node_t* list_get(linked_list_t* list, int index)
 {
     node_t* current_node = list->head;
@@ -112,10 +152,26 @@ node_t* list_get(linked_list_t* list, int index)
     return current_node;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 node_t* list_first(linked_list_t* list)
 {
     return list->head;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 node_t* list_last(linked_list_t* list)
 {

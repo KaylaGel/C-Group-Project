@@ -5,6 +5,14 @@
 #include "structs.h" /* event_manager_t, event_t */
 #include "function_prototypes.h" /* init_admin_account() */
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void init_event_manager(event_manager_t* event_manager)
 {
     init_admin_account(&event_manager->admin_account);
@@ -13,6 +21,14 @@ void init_event_manager(event_manager_t* event_manager)
     event_manager->events.head = NULL;
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void init_event(event_t* event, person_t* coordinator)
 {
@@ -29,6 +45,14 @@ void init_event(event_t* event, person_t* coordinator)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void init_admin_account(person_t* admin)
 {
     strcpy(admin->username, "Admin");
@@ -40,6 +64,13 @@ void init_admin_account(person_t* admin)
     admin->DOB.year = MIN_YEAR;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void create_event(event_manager_t* event_manager, person_t* creator)
 {

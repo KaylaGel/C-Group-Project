@@ -5,6 +5,13 @@
 #include "structs.h"
 #include "function_prototypes.h"
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void get_new_event_name(char* event_name)
 {
     printf("\nPlease enter the event name\n");
@@ -23,6 +30,14 @@ void get_new_event_name(char* event_name)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void get_new_event_free_status(int* event_free_status)
 {
     char user_response[MAX_RESPONSE_LEN];
@@ -54,6 +69,14 @@ void get_new_event_free_status(int* event_free_status)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void get_new_event_type(char* event_type)
 {
     printf("What type of event is it?\n");
@@ -72,6 +95,14 @@ void get_new_event_type(char* event_type)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void get_new_event_location(address_t* address)
 {
@@ -93,6 +124,14 @@ void get_new_event_location(address_t* address)
     address->street_num = scan_int();
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void get_new_event_date(date_t* date)
 {

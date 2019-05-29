@@ -3,6 +3,14 @@
 #include "structs.h"
 #include "definitions.h"
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void print_event_name(event_t* event, int event_index)
 {
     printf("\t%i: ", event_index);
@@ -17,6 +25,14 @@ void print_event_name(event_t* event, int event_index)
     printf("\n");
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void print_event_details(event_t* event, int event_index)
 {
@@ -67,6 +83,14 @@ void print_event_details(event_t* event, int event_index)
     printf("\n");
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void list_events(event_manager_t* event_manager)
 {
     if(list_count(&event_manager->events) == 0)
@@ -84,6 +108,14 @@ void list_events(event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void print_user_details(person_t* user, int user_index)
 {
     printf("\t%i: %-*s\n", user_index, MAX_NAME_LEN, user->username);
@@ -94,6 +126,14 @@ void print_user_details(person_t* user, int user_index)
                                   user->DOB.year);
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void list_all(event_manager_t* event_manager)
 {
@@ -122,6 +162,15 @@ void list_all(event_manager_t* event_manager)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void list_events_detail(event_manager_t* event_manager)
 {
     int i;
@@ -139,6 +188,15 @@ void list_events_detail(event_manager_t* event_manager)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void list_users_detail(event_manager_t* event_manager)
 {
     int i;
@@ -156,6 +214,13 @@ void list_users_detail(event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void print_menu_login(void)
 {
@@ -167,6 +232,14 @@ void print_menu_login(void)
     printf("> ");
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void print_menu_main(char* current_logged_in_username)
 {
@@ -181,6 +254,14 @@ void print_menu_main(char* current_logged_in_username)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void print_menu_admin(void)
 {
     printf("\nAdmin Menu\n\n");
@@ -194,6 +275,14 @@ void print_menu_admin(void)
     printf("> ");
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void print_menu_edit(char* event_name)
 {
@@ -210,6 +299,14 @@ void print_menu_edit(char* event_name)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void print_menu_edit_staff(void)
 {
     printf("Edit Staff Menu\n");
@@ -219,6 +316,14 @@ void print_menu_edit_staff(void)
     printf("> ");
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void print_menu_edit_patrons(void)
 {

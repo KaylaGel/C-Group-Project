@@ -1,13 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <string.h>
+#include <string.h> 
 
 #include "structs.h" /* event_t, person_t */
 #include "function_prototypes.h" /* get_new_user_* */
 
 #define DEBUG
 
-void create_new_user(event_manager_t event_manager, person_t *user)
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
+
+void create_new_user(event_manager_t event_manager, person_t *user) 
 {
     get_new_user_username(event_manager, user->username);
 
@@ -51,6 +60,14 @@ void create_new_user(event_manager_t event_manager, person_t *user)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void account_creation(event_manager_t* event_manager)
 {
     printf("\nAccount Creation\n");
@@ -78,6 +95,14 @@ void account_creation(event_manager_t* event_manager)
 
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 int login(event_manager_t* event_manager)
 {

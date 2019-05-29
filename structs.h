@@ -1,3 +1,10 @@
+/**************************************************************
+ * Header Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 /* Header file for event_manager.c structs */
 
 #ifndef C_GROUP_PROJECT_STRUCTS_H

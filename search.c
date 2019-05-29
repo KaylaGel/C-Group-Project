@@ -3,6 +3,14 @@
 
 #include "structs.h" /* event_t */
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int search_event(linked_list_t* list, char* event_name)
 {
     int i;
@@ -20,6 +28,14 @@ int search_event(linked_list_t* list, char* event_name)
     return -1;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int search_event_edit(linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
@@ -31,6 +47,14 @@ int search_event_edit(linked_list_t* list)
     return search_event(list, event_name);
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int search_event_join(linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
@@ -41,6 +65,14 @@ int search_event_join(linked_list_t* list)
 
     return search_event(list, event_name);
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 int search_user(linked_list_t* list, char* username)
 {
@@ -57,6 +89,14 @@ int search_user(linked_list_t* list, char* username)
     return -1;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int search_user_add(linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];
@@ -67,6 +107,15 @@ int search_user_add(linked_list_t* list)
 
     return search_user(list, username);
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int search_user_remove(linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];

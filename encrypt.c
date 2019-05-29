@@ -3,6 +3,13 @@
 
 #define BUFFER_SIZE 256
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 {
     if(shift % 26 == 0)
@@ -48,6 +55,14 @@ void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 int xor_encrypt_file(const char* key, FILE* input, FILE* output)
 {

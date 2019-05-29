@@ -17,6 +17,14 @@ typedef struct node Node;
 /* TO DO */
 /* once files have been created, in the add_to_db function, pass through the name of the file that needs to be compressed */
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void Huffman_Compression()
 {
   node *tree;
@@ -36,44 +44,50 @@ void Huffman_Compression()
 }
 
 /* Builds the Huffman tree and returns its address */
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void CreateHuffmanTree(Node **tree){
-  int i, Trees = 27; /* Trees is equal to 27 because of the 26 letters in the alphabet + a space */
-  int heapOne, heapTwo; /* We need two heaps to find the smallest one */
-  Node *temp;
-  Node *array[27];
+    int i, Trees = 27; /* Trees is equal to 27 because of the 26 letters in the alphabet + a space */
+    int heapOne, heapTwo; /* We need two heaps to find the smallest one */
+    Node *temp;
+    Node *array[27];
 
-  /* finds the frequency of each letter */
-  for(i = 0; i < Trees; i++){
-    array[i] = malloc(sizeof(Node));
-    array[i]->freq = englishLetterFrequencies[i];
-    array[i]->char = i;
-    array[i]->left = NULL;
-    array[i]->right = NULL;
-  }
+    /* finds the frequency of each letter */
+    for(i = 0; i < Trees; i++){
+      array[i] = malloc(sizeof(Node));
+      array[i]->freq = englishLetterFrequencies[i];
+      array[i]->char = i;
+      array[i]->left = NULL;
+      array[i]->right = NULL;
+    }
 
-  i = 1;
+    i = 1;
 
-  for (Trees; Trees > 1; Trees --){
-    /* find the smallest value in each heap */
-    MinHeapOne = findSmaller(array, -1);
-    MinHeapTwo = findSmaller(array, MinHeapOne);
-    /* store min value in temporary value */
-    temp = array[MinHeapOne];
-    array[heapOne] = malloc(sizeof(Node));
-    /* create new interal node with the freq equal to the sum of the two nodes  */
-    array[heapOne]->freq= temp->value + array[heapTwo];
-    array[heapOne]->char = 27;
-    /* assign first extracted node to the left child and other extracted nodes to the right child*/
-    array[heapOne]->left = array[heapTwo];
-    array[heapOne]->right = temp;
-    array[heapOne]->freq = -1;
-  }
+    for (Trees; Trees > 1; Trees --){
+      /* find the smallest value in each heap */
+      MinHeapOne = findSmaller(array, -1);
+      MinHeapTwo = findSmaller(array, MinHeapOne);
+      /* store min value in temporary value */
+      temp = array[MinHeapOne];
+      array[heapOne] = malloc(sizeof(Node));
+      /* create new interal node with the freq equal to the sum of the two nodes  */
+      array[heapOne]->freq= temp->value + array[heapTwo];
+      array[heapOne]->char = 27;
+      /* assign first extracted node to the left child and other extracted nodes to the right child*/
+      array[heapOne]->left = array[heapTwo];
+      array[heapOne]->right = temp;
+      array[heapOne]->freq = -1;
+    }
 
-  *tree = array[heapOne]
+    *tree = array[heapOne];
 
-  return;
-
+    return;
 }
 
 /* English letter Frequencies are based on a sample of 4,000 words (online source from pi.math)*/
@@ -81,29 +95,29 @@ int englishLetterFrequencies[27] = {81, 15, 28, 43, 128, 23, 20, 61, 71, 2, 1, 4
 
 /* find and return small sub-trees in the 'forrest'*/
 int find_smaller_trees(Node * array[], int difference){
-  int smaller_count;
-  int i = 0;
+    int smaller_count;
+    int i = 0;
 
-  while (array[i]->freq==-1)
-    i++;
-    smaller = i;
-    if (i==difference){
-      i++
-      while (array[i]->char == -1)
-        i++;
+    while (array[i]->freq==-1)
+      i++;
       smaller = i;
-    }
+      if (i==difference){
+        i++
+        while (array[i]->char == -1)
+          i++;
+        smaller = i;
+      }
+    
+      for (i=1; i<27; i++) {
+        if(array[i]->freq== -1)
+          if (i == difference)
+            if (array[i]->freq< array[smaller]->freq)
+                smaller = i;
 
-    for (i=1; i<27; i++) {
-      if(array[i]->freq== -1)
-        if (i == difference)
-          if (array[i]->freq< array[smaller]->freq)
-              smaller = i;
+      }
 
-    }
-
-    return smaller;
-}
+      return smaller;
+  }
 
 /* builds the table with the bits for each letter. */
 void fillTable(int codeTable[], Node *tree, int code){

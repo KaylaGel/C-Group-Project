@@ -5,6 +5,14 @@
 #include "function_prototypes.h" /* edit_event, print_edit, edit_name, 
  * edit_type, edit_location, edit_date_time, edit_staff, edit_patrons */
 
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void edit_name(event_t* event)
 {
     printf("Current Name: %s\n", event->name);
@@ -22,6 +30,13 @@ void edit_name(event_t* event)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void edit_type(event_t* event)
 {
     printf("Current Event Type: %s\n",
@@ -40,6 +55,13 @@ void edit_type(event_t* event)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 void edit_location(event_t* event)
 {
     printf("Current Location: %d %s, %s %s %d\n",
@@ -71,6 +93,13 @@ void edit_location(event_t* event)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void edit_date_time(event_t* event)
 {
@@ -102,6 +131,14 @@ void edit_date_time(event_t* event)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void edit_staff(event_manager_t* event_manager, int event_num)
 {
@@ -142,6 +179,14 @@ void edit_staff(event_manager_t* event_manager, int event_num)
     }
     edit_staff(event_manager, event_num);
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void edit_patrons(event_manager_t* event_manager, int event_num)
 {

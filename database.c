@@ -8,7 +8,13 @@
 #define DATABASE_ENCRYPT_TEMP "database_encrypt.txt"
 #define DATABASE_DECRYPT_TEMP "database_decrypt.txt"
 
-
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 int save_database(event_manager_t* event_manager)
 {
     FILE* plaintext;
@@ -132,6 +138,15 @@ int save_database(event_manager_t* event_manager)
 
     return 0;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int load_database(event_manager_t* event_manager)
 {
     init_event_manager(event_manager);

@@ -5,6 +5,13 @@
 #include "definitions.h" /* MAX_INT_LEN */
 #include "function_prototypes.h" /* valid_int(), convert_int() */
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void get_user_login(char* username, char* password)
 {
@@ -16,6 +23,14 @@ void get_user_login(char* username, char* password)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void get_event_login(int* event_id, char* event_password)
 {
     printf("Event ID: ");
@@ -26,6 +41,13 @@ void get_event_login(int* event_id, char* event_password)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 int scan_int(void)
 {
@@ -43,6 +65,14 @@ int scan_int(void)
     }
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 int scan_int_min_max(int min_value, int max_value)
 {
     int value = scan_int();
@@ -56,6 +86,14 @@ int scan_int_min_max(int min_value, int max_value)
     }
     return value;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 int response_yes(void)
 {
@@ -80,6 +118,14 @@ int response_yes(void)
     }
     return response_yes();
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void join_event(event_manager_t* event_manager)
 {
@@ -108,6 +154,14 @@ void join_event(event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void edit_event(event_manager_t* event_manager)
 {
     int event_num = search_event_edit(&event_manager->events);
@@ -130,6 +184,14 @@ void edit_event(event_manager_t* event_manager)
     menu_edit(event_manager, event_num);
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void add_patron(event_t* event, event_manager_t* event_manager)
 {
@@ -161,6 +223,14 @@ void add_patron(event_t* event, event_manager_t* event_manager)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void add_staff(event_t* event, event_manager_t* event_manager)
 {
@@ -194,6 +264,14 @@ void add_staff(event_t* event, event_manager_t* event_manager)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void remove_patron(event_t* event, event_manager_t* event_manager)
 {
     int user_num = search_user_remove(&event->patrons);
@@ -218,6 +296,14 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void remove_staff(event_t* event, event_manager_t* event_manager)
 {

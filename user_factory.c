@@ -5,6 +5,14 @@
 #include "structs.h"
 #include "function_prototypes.h"
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void get_new_user_username(event_manager_t event_manager, char* username)
 {
     printf("Please enter your chosen username\n");
@@ -19,6 +27,14 @@ void get_new_user_username(event_manager_t event_manager, char* username)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void get_new_user_password(char* password, int user_index)
 {
@@ -47,6 +63,14 @@ void get_new_user_password(char* password, int user_index)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void get_new_user_firstname(char* firstname)
 {
     printf("\nPlease enter your first name\n");
@@ -66,6 +90,14 @@ void get_new_user_firstname(char* firstname)
     return;
 }
 
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
+
 void get_new_user_lastname(char* lastname)
 {
     printf("\nPlease enter your last name\n");
@@ -84,6 +116,14 @@ void get_new_user_lastname(char* lastname)
     }
     return;
 }
+
+/**************************************************************
+ * Function Name: 
+ * Author(s):
+ * Inputs:
+ * Outputs: 
+ * Description: 
+**************************************************************/
 
 void get_new_user_DOB(date_t* DOB)
 {
