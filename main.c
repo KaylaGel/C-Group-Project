@@ -1,4 +1,5 @@
 #include <stdio.h> /* printf() */
+#include <string.h>
 
 #include "definitions.h" /* MAX_EVENTS */
 #include "structs.h" /* event_t */
@@ -9,14 +10,31 @@
 /* #define DEBUG */
 
 
-int main(void)
+int main(int argc, char *argv[])
 {
-    #ifdef DEBUG /* For debugging */
-        printf("Debug mode enabled\n");
-    #endif
-
     event_manager_t event_manager;
     init_event_manager(&event_manager);
+
+
+    if (argc == 2)
+    {
+        if(strcmp(argv[1], "Debug") == 0 || strcmp(argv[1], "debug") == 0)
+        {
+            event_manager.runtime_mode = MODE_DEBUG;
+        }else
+        {
+            event_manager.runtime_mode = MODE_NORMAL;
+        }
+    }else
+    {
+        event_manager.runtime_mode = MODE_NORMAL;
+    }
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Debug Mode Enabled\n");
+    }
+
 
     printf("\n---- Welcome to EventManager v2.4 ----\n\n");
     printf("Description: This program is specifically designed to help event organisers\n");

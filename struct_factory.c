@@ -43,7 +43,10 @@ void init_admin_account(person_t* admin)
 
 void create_event(event_manager_t* event_manager, person_t* creator)
 {
-
+    if(event_manager->runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Creating event\n");
+    }
     /* Create an event struct */
     event_t* event = malloc(sizeof(event_t));
     /* Initialise the event structs values */

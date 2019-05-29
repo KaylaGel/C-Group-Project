@@ -31,15 +31,24 @@ int username_taken(event_manager_t* event_manager, char* username)
     for (i = 0; i < list_count(&event_manager->users); i++)
     {
         person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
-        #ifdef DEBUG /* For debugging */
+        if(event_manager->runtime_mode == MODE_DEBUG)
+        {
             printf("DEBUG: %s | %s\n", username, user->username);
-        #endif
+        }
 
         if ( strcmp(user->username, username) == 0 )
         {
+
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: Username '%s' exists\n", username);
+            }
             return 1;
         }
     }
-
+    if(event_manager->runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Username '%s' does not exist\n", username);
+    }
     return 0;
 }
