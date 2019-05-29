@@ -79,6 +79,7 @@
     void print_menu_edit(char* event_name);
     void print_menu_edit_staff(void);
     void print_menu_edit_patrons(void);
+    void print_info(void);
 
     /* edit_event.c */
     void edit_name(event_t* event);

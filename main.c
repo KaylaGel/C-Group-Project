@@ -30,6 +30,10 @@ int main(int argc, char *argv[])
         {
             event_manager.runtime_mode = MODE_DEBUG;
         }else
+        if(argv[1][0] == 'i' || argv[1][0] == 'I')
+        {
+            event_manager.runtime_mode = MODE_INFO;
+        }else
         {
             event_manager.runtime_mode = MODE_NORMAL;
         }
@@ -41,6 +45,11 @@ int main(int argc, char *argv[])
     if(event_manager.runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: Debug Mode Enabled\n");
+    }else
+    if(event_manager.runtime_mode == MODE_INFO)
+    {
+        print_info();
+        return;
     }
 
 
