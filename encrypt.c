@@ -3,8 +3,14 @@
 
 #define BUFFER_SIZE 256
 
-void caeser_cipher(const int shift, const char* plaintext, char* ciphertext)
+void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 {
+    if(shift % 26 == 0)
+    {
+        shift++;
+    }
+
+
     strcpy(ciphertext, plaintext);
 
     int text_len = strlen(ciphertext);

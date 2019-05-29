@@ -81,7 +81,7 @@
     void edit_patrons(event_manager_t* event_manager, int event_num);
 
     /* encrypt.c */
-    void caeser_cipher(const int shift, const char* plaintext,
+    void caeser_cipher(int shift, const char* plaintext,
                                               char* ciphertext);
     int xor_encrypt_file(const char* key, FILE* input, FILE* output);
 
