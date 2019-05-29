@@ -102,7 +102,7 @@ void join_event(event_manager_t* event_manager)
         {
             event->patrons.head =
                     init_node(event_manager->current_logged_in_user,
-                              sizeof(person_t));    
+                              sizeof(person_t));
         }else
         {
             list_add(&event->patrons,
