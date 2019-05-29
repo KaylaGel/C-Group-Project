@@ -32,7 +32,8 @@ void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
 
         if (current_char >= 'a' && current_char <= 'z')/* lower case */
         {
-            /* convert the current_char from an ascii value to its alphabet index */
+            /* convert the current_char from an ascii value to its alphabet 
+            index */
             char_index = current_char - 'a';
             /* shift the char by "shift" characters */
             char_index += shift;
@@ -42,7 +43,8 @@ void caeser_cipher(int shift, const char* plaintext, char* ciphertext)
         if (current_char >= 'A' && current_char <= 'Z')/* upper case */
         {
 
-            /* convert the current_char from an ascii value to its alphabet index */
+            /* convert the current_char from an ascii value to its alphabet 
+            index */
             char_index = current_char - 'A';
             /* shift the char by "shift" characters */
             char_index += shift;

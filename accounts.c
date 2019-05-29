@@ -73,8 +73,12 @@ void create_new_user(event_manager_t event_manager, person_t *user)
 void account_creation(event_manager_t* event_manager)
 {
     printf("\nAccount Creation\n");
-    person_t* user = malloc(sizeof(person_t)); /* Allocates memory which is the size of person_t */
-    create_new_user(*event_manager, user); /* This function calls functions withi itself to collect all the data required from the user e.g. Username, Password ect. */
+    person_t* user = malloc(sizeof(person_t));  /* Allocates memory which is 
+                                                the size of person_t */
+    create_new_user(*event_manager, user); /* This function calls functions 
+                                            within itself to collect all the 
+                                            data required from the user e.g. 
+                                            Username, Password ect. */
 
 
     if(event_manager->users.head == NULL)
@@ -104,8 +108,8 @@ void account_creation(event_manager_t* event_manager)
  * Inputs: event_manager(pointer)
  * Outputs: Integer
  * Description: Returns a 0 if the login failed.
- *              Returns a 1 if the login succeeded as a user
- *              Returns a 2 if the login succeeded as an admin
+ *              Returns a 1 if the login succeeded as a user.
+ *              Returns a 2 if the login succeeded as an admin.
  *              The function loops through each user and compares their 
  *              information with the supplied user input which was recieved 
  *              from the get_user_login function

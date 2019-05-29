@@ -30,7 +30,8 @@ void get_user_login(char* username, char* password)
  * Inputs:
  * Outputs: 
  * Description: Gets user input for an integer.
- *              Checks whether its a valid int or not and converts it if it is, and requests a new number if it isn't
+ *              Checks whether its a valid int or not and converts it if 
+ *              it is, and requests a new number if it isn't
 **************************************************************/
 
 int scan_int(void)
@@ -54,7 +55,8 @@ int scan_int(void)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Gets an integer from the user and validates it based on defined criteria
+ * Description: Gets an integer from the user and validates it based 
+ *              on defined criteria
 **************************************************************/
 
 int scan_int_min_max(int min_value, int max_value)
@@ -151,7 +153,8 @@ void join_event(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Requests a user input of which event to edit and calls the menu_edit function for that event
+ * Description: Requests a user input of which event to edit and 
+ *              calls the menu_edit function for that event
 **************************************************************/
 
 void edit_event(event_manager_t* event_manager)
@@ -182,7 +185,8 @@ void edit_event(event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Gets user input of the patron to add and adds them to the supplied event
+ * Description: Gets user input of the patron to add and adds them 
+ *              to the supplied event
 **************************************************************/
 
 void add_patron(event_t* event, event_manager_t* event_manager)
@@ -221,7 +225,8 @@ void add_patron(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Gets user input of the staff to add and adds them to the supplied event
+ * Description: Gets user input of the staff to add and adds them to 
+ *              the supplied event
 **************************************************************/
 
 void add_staff(event_t* event, event_manager_t* event_manager)
@@ -261,7 +266,8 @@ void add_staff(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Gets user input of the patron to remove and removes them from the supplied event
+ * Description: Gets user input of the patron to remove and removes them 
+ *              from the supplied event
 **************************************************************/
 
 void remove_patron(event_t* event, event_manager_t* event_manager)
@@ -294,7 +300,8 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Gets user input of the staff to remove and removes them from the supplied event
+ * Description: Gets user input of the staff to remove and removes 
+ *              them from the supplied event
 **************************************************************/
 
 void remove_staff(event_t* event, event_manager_t* event_manager)

@@ -72,7 +72,9 @@ void init_admin_account(person_t* admin)
  * Outputs: 
  * Description: Creates a new event pointer and allocates memory for it.
  *              Calls the initialisation function for the event.
- *              Then either adds the event to the event linked list or creates a new events linked list depending on whether it exists or not
+ *              Then either adds the event to the event linked list or 
+ *              creates a new events linked list depending on whether it 
+ *              exists or not
 **************************************************************/
 
 void create_event(event_manager_t* event_manager, person_t* creator)

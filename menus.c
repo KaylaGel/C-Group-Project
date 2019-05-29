@@ -2,7 +2,8 @@
 #include <string.h>
 
 #include "structs.h" /* event_manager_t, event_t */
-#include "function_prototypes.h" /* print_menu_login(), print_menu_main(), scan_int() */
+#include "function_prototypes.h" /* print_menu_login(), print_menu_main(), 
+scan_int() */
 
 /**************************************************************
  * Function Name: menu_login
@@ -137,7 +138,7 @@ void menu_main(event_manager_t* event_manager)
  * Author(s): Tylar
  * Inputs: event_manager - Struct Pointer
  * Outputs: N/A
- * Description: Prints the admin menu and then gets the user input to determine 
+ * Description: Prints the admin menu and then gets the user input to determine
  *              the following function. It will then recursively call itself 
  *              until the exit option is selected.
 **************************************************************/
@@ -254,7 +255,7 @@ void menu_admin(event_manager_t* event_manager)
  * Author(s): Tylar
  * Inputs: event_manager - Struct Pointer, event_num - Integer
  * Outputs: N/A
- * Description: Prints the edit menu and then gets the user input to determine 
+ * Description: Prints the edit menu and then gets the user input to determine
  *              the following function. It will then recursively call itself 
  *              until the exit option is selected.
 **************************************************************/

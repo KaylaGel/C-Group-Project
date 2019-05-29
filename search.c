@@ -8,7 +8,9 @@
  * Author(s):
  * Inputs:
  * Outputs: Integer
- * Description: Goes through each event in the supplied list and compares the supplied event name with it and returns the index of the found event
+ * Description: Goes through each event in the supplied list and 
+ *              compares the supplied event name with it and returns 
+ *              the index of the found event
 **************************************************************/
 
 int search_event(linked_list_t* list, char* event_name)
@@ -34,7 +36,8 @@ int search_event(linked_list_t* list, char* event_name)
  * Inputs:
  * Outputs: 
  * Description: Helper function for the edit event menu
- *              Asks the user what event they would like to edit and returns the index of the event found
+ *              Asks the user what event they would like to edit and 
+ *              returns the index of the event found
 **************************************************************/
 
 int search_event_edit(linked_list_t* list)
@@ -54,7 +57,8 @@ int search_event_edit(linked_list_t* list)
  * Inputs:
  * Outputs: 
  * Description: Helper function for the join event menu
- *              Asks the user what event they would like to join and returns the index of the event found
+ *              Asks the user what event they would like to join and 
+ *              returns the index of the event found
 **************************************************************/
 
 int search_event_join(linked_list_t* list)
@@ -73,7 +77,9 @@ int search_event_join(linked_list_t* list)
  * Author(s):
  * Inputs:
  * Outputs: 
- * Description: Goes through each user in the supplied list and compares the supplied username with it and returns the index of the found user
+ * Description: Goes through each user in the supplied list and compares the 
+ *              supplied username with it and returns the index of the 
+ *              found user
 **************************************************************/
 
 int search_user(linked_list_t* list, char* username)
@@ -97,7 +103,8 @@ int search_user(linked_list_t* list, char* username)
  * Inputs:
  * Outputs: 
  * Description: Helper function for the add user menu
- *              Asks the user what user they would like to add to the event and returns the index of the user found
+ *              Asks the user what user they would like to add to the event and
+ *              returns the index of the user found
 **************************************************************/
 
 int search_user_add(linked_list_t* list)
@@ -117,7 +124,8 @@ int search_user_add(linked_list_t* list)
  * Inputs:
  * Outputs: 
  * Description: Helper function for the add user menu
- *              Asks the user what user they would like to remove from the event and returns the index of the user found
+ *              Asks the user what user they would like to remove from the 
+ *              event and returns the index of the user found
 **************************************************************/
 
 int search_user_remove(linked_list_t* list)
