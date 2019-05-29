@@ -8,8 +8,8 @@
 
 /* Node of the huffman tree */
 struct node{
-  int value;
-  char letter;
+  char char;
+  int freq;
   struct node *left, *right;
 }
 typedef struct node Node;
@@ -19,47 +19,55 @@ typedef struct node Node;
 
 void Huffman_Compression()
 {
-  Node *tree;
+  node *tree;
   int codeTable[27], codeTable2[27];
   int compress;
   FILE *input *output;
 
-  buildHuffmanTree(&tree);
+  CreateHuffmanTree(&tree);
   fillTable(codeTable, tree, 0);
 
   invertCodes(codeTable, codeTable2);
 
-  input = fopen(FILE_NAME, "r")
+  input = fopen(FILE_NAME, "r");
+  output = fopen(FILE_NAME, "w");
+  compressFile(input, output, CodeTable2); 
 
 }
 
 /* Builds the Huffman tree and returns its address */
 
-void buildHuffmanTree(Node **tree){
-  int i, subTrees = 27;
-  int heapOne, heapTwo;
+void CreateHuffmanTree(Node **tree){
+  int i, Trees = 27; /* Trees is equal to 27 because of the 26 letters in the alphabet + a space */
+  int heapOne, heapTwo; /* We need two heaps to find the smallest one */
   Node *temp;
   Node *array[27];
 
-  for(i = 0; i < 27; i++){
+  /* finds the frequency of each letter */
+  for(i = 0; i < Trees; i++){
     array[i] = malloc(sizeof(Node));
-    array[i]->value = englishLetterFrequencies[i];
-    array[i]->letter = i;
+    array[i]->freq = englishLetterFrequencies[i];
+    array[i]->char = i;
     array[i]->left = NULL;
     array[i]->right = NULL;
   }
 
-  while (subTrees>1){
-    smallOne = findSmaller(array, -1);
-    smallTwo = findSmaller(array, smallOne);
-    temp = array[smallOne];
+  i = 1;
+
+  for (Trees; Trees > 1; Trees --){
+    /* find the smallest value in each heap */
+    MinHeapOne = findSmaller(array, -1);
+    MinHeapTwo = findSmaller(array, MinHeapOne);
+    /* store min value in temporary value */
+    temp = array[MinHeapOne];
     array[heapOne] = malloc(sizeof(Node));
-    array[heapOne]->value = temp->value + array[heapTwo];
-    array[heapOne]->letter = 127;
+    /* create new interal node with the freq equal to the sum of the two nodes  */
+    array[heapOne]->freq= temp->value + array[heapTwo];
+    array[heapOne]->char = 27;
+    /* assign first extracted node to the left child and other extracted nodes to the right child*/
     array[heapOne]->left = array[heapTwo];
     array[heapOne]->right = temp;
-    array[heapOne]->value = -1;
-    subTrees --;
+    array[heapOne]->freq = -1;
   }
 
   *tree = array[heapOne]
@@ -68,6 +76,7 @@ void buildHuffmanTree(Node **tree){
 
 }
 
+/* English letter Frequencies are based on a sample of 4,000 words (online source from pi.math)*/
 int englishLetterFrequencies[27] = {81, 15, 28, 43, 128, 23, 20, 61, 71, 2, 1, 40, 24, 69, 76, 20, 1, 61, 64, 91, 28, 10, 24, 1, 20, 1, 130};
 
 /* find and return small sub-trees in the 'forrest'*/
@@ -75,20 +84,20 @@ int find_smaller_trees(Node * array[], int difference){
   int smaller_count;
   int i = 0;
 
-  while (array[i]->value==-1)
+  while (array[i]->freq==-1)
     i++;
     smaller = i;
     if (i==difference){
       i++
-      while (array[i]->value == -1)
+      while (array[i]->char == -1)
         i++;
       smaller = i;
     }
 
     for (i=1; i<27; i++) {
-      if(array[i]->value == -1)
+      if(array[i]->freq== -1)
         if (i == difference)
-          if (array[i]->value < array[smaller]->value)
+          if (array[i]->freq< array[smaller]->freq)
               smaller = i;
 
     }
@@ -98,8 +107,8 @@ int find_smaller_trees(Node * array[], int difference){
 
 /* builds the table with the bits for each letter. */
 void fillTable(int codeTable[], Node *tree, int code){
-  if (tree->letter<27)
-    codeTable[(int)tree->letter] = code;
+  if (tree->char<27)
+    codeTable[(int)tree->char] = code;
   else{
     fillTable(codeTable, tree->left, code*10+1);
     fillTable(codeTable, tree->right, code*10+2);
