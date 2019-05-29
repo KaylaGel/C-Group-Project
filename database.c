@@ -5,6 +5,8 @@
 #include "function_prototypes.h"
 
 #define DATABASE_FILENAME "database.sav"
+#define DATABASE_ENCRYPT_TEMP "database_encrypt.txt"
+#define DATABASE_DECRYPT_TEMP "database_decrypt.txt"
 
 
 int save_database(event_manager_t* event_manager)
@@ -12,7 +14,15 @@ int save_database(event_manager_t* event_manager)
     FILE* plaintext;
     FILE* database;
 
-    plaintext = tmpfile();
+    if(event_manager->runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Saving plaintext tmp file to '%s'\n",
+                DATABASE_ENCRYPT_TEMP);
+        plaintext = fopen(DATABASE_ENCRYPT_TEMP, "w+");
+    }else
+    {
+        plaintext = tmpfile();
+    }
     database = fopen(DATABASE_FILENAME, "w");
 
 
@@ -124,9 +134,16 @@ int load_database(event_manager_t* event_manager)
 
     FILE* plaintext;
     FILE* database;
-
-    plaintext = tmpfile();
-    database = fopen(DATABASE_FILENAME, "r");
+    if(event_manager->runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Saving plaintext tmp file to '%s'\n",
+               DATABASE_DECRYPT_TEMP);
+        plaintext = fopen(DATABASE_DECRYPT_TEMP, "w+");
+    }else
+    {
+        plaintext = tmpfile();
+    }
+        database = fopen(DATABASE_FILENAME, "r");
 
 
     char key[MAX_RESPONSE_LEN+1];

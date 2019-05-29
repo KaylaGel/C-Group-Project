@@ -37,6 +37,7 @@ void edit_type(event_t* event)
     {
         printf("Keeping event type as '%s'\n", event->event_type);
     }
+    return;
 }
 
 void edit_location(event_t* event)
@@ -67,6 +68,7 @@ void edit_location(event_t* event)
                event->location.state,
                event->location.postcode);
     }
+    return;
 }
 
 
@@ -98,6 +100,7 @@ void edit_date_time(event_t* event)
                event->event_date.hour,
                event->event_date.minute);
     }
+    return;
 }
 
 void edit_staff(event_manager_t* event_manager, int event_num)
@@ -107,17 +110,33 @@ void edit_staff(event_manager_t* event_manager, int event_num)
     switch (user_selection)
     {
         case 1:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Add Staff' chosen\n");
+            }
             add_staff((event_t *) list_get(&event_manager->events,
                     event_num)->data, event_manager);
             break;
         case 2:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Remoce Staff' chosen\n");
+            }
             remove_staff((event_t *) list_get(&event_manager->events,
                     event_num)->data, event_manager);
             break;
         case 9:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Exit' chosen\n");
+            }
             printf("Exiting edit menu\n\n");
             return;
         default:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: Invalid input '%i' chosen\n", user_selection);
+            }
             printf("Invalid Input\n");
             break;
     }
@@ -131,17 +150,33 @@ void edit_patrons(event_manager_t* event_manager, int event_num)
     switch (user_selection)
     {
         case 1:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Add Patron' chosen\n");
+            }
             add_patron((event_t *) list_get(&event_manager->events,
                     event_num)->data, event_manager);
             break;
         case 2:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Remove Patron' chosen\n");
+            }
             remove_patron((event_t *) list_get(&event_manager->events,
                     event_num)->data, event_manager);
             break;
         case 9:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: 'Exit Menu' chosen\n");
+            }
             printf("Exiting edit menu\n\n");
             return;
         default:
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: Invalid input '%i' chosen\n", user_selection);
+            }
             printf("Invalid Input\n");
             break;
     }

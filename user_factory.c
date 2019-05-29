@@ -11,7 +11,6 @@ void get_new_user_username(event_manager_t event_manager, char* username)
     printf("> ");
 
     scanf("%s", username);
-    printf("\nUsername: %s\n", username);
     if(username_taken(&event_manager, username))
     {
         printf("Username already taken\n");
@@ -36,15 +35,11 @@ void get_new_user_password(char* password, int user_index)
                MIN_PASS_LEN, MAX_PASS_LEN);
         printf("Your password was %i characters long\n",
                (int) strlen(plaintext));
-        get_new_user_password(password, user_index  );
+        get_new_user_password(password, user_index);
         return;
     }
 
-    caeser_cipher(user_index, plaintext, password);
-#ifdef DEBUG /* For debugging */
-    printf("DEBUG: Plaintext Password: %s\n", plaintext);
-            printf("DEBUG: Encrypted Password: %s\n", password);
-#endif
+    caeser_cipher(user_index + 1, plaintext, password);
 
 
     strcpy(plaintext, " ");
@@ -105,13 +100,6 @@ void get_new_user_DOB(date_t* DOB)
     printf("Year");
     printf(">");
     DOB->year = scan_int_min_max(MIN_YEAR, MAX_YEAR);
-
-#ifdef DEBUG /* For debugging */
-    printf("Inputted DOB is\n");
-        printf("Day: %i\n", DOB->day);
-        printf("Month: %i\n", DOB->month);
-        printf("Year: %i\n", DOB->year);
-#endif
 
     return;
 }
