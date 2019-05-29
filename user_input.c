@@ -144,9 +144,17 @@ void join_event(event_manager_t* event_manager)
     {
         printf("Joining '%s'\n", event->name);
 
-        list_add(&event->patrons,
-                (void*) event_manager->current_logged_in_user,
-                 sizeof (person_t));
+        if(event->patrons.head == NULL)
+        {
+            event->patrons.head =
+                    init_node(event_manager->current_logged_in_user,
+                              sizeof(person_t));
+        }else
+        {
+            list_add(&event->patrons,
+                     (void*) event_manager->current_logged_in_user,
+                     sizeof (person_t));
+        }
     }else
     {
         printf("Exiting event join\n");
