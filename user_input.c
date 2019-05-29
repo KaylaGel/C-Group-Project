@@ -5,7 +5,6 @@
 #include "definitions.h" /* MAX_INT_LEN */
 #include "function_prototypes.h" /* valid_int(), convert_int() */
 
-#define DEBUG
 
 void get_user_login(char* username, char* password)
 {
@@ -30,21 +29,17 @@ void get_event_login(int* event_id, char* event_password)
 
 int scan_int(void)
 {
-    char* input = malloc(MAX_INT_LEN + 1);
-    while(1)
+    char *input = malloc(MAX_INT_LEN + 1);
+    scanf("%s", input);
+    if (valid_int(input))
     {
-        /* TODO: account for spaces in user input */
-        scanf("%s", input);
-        if( valid_int(input) )
-        {
-            return convert_int(input);
-        }else
-        {
-            printf("Not a valid number\n");
-            printf("Please input a valid number: \n");
-            printf("> ");
-            return scan_int();
-        }
+        return convert_int(input);
+    } else
+    {
+        printf("Not a valid number\n");
+        printf("Please input a valid number: \n");
+        printf("> ");
+        return scan_int();
     }
 }
 

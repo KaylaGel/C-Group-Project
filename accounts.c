@@ -7,15 +7,43 @@
 
 #define DEBUG
 
-void create_new_user(event_manager_t event_manager, person_t *user /*should it be users or current_logged_in_user*/){
+void create_new_user(event_manager_t event_manager, person_t *user)
+{
     get_new_user_username(event_manager, user->username);
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Username '%s'\n", user->username);
+    }
     get_new_user_password(user->password, list_count(&event_manager.users));
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Password '%s'\n", user->password);
+    }
     get_new_user_firstname(user->firstname);
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: First Name '%s'\n", user->firstname);
+    }
     get_new_user_lastname(user->lastname);
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: Last Name '%s'\n", user->lastname);
+    }
     get_new_user_DOB(&user->DOB); /*why &, because a pointer is needed for
  * the function to actually edit the value passed, and not just a local copy
  * made by the function, the others dont need it because they are pointers
  * already, strings are just char pointers*/
+
+    if(event_manager.runtime_mode == MODE_DEBUG)
+    {
+        printf("DEBUG: DOB '%i/%i/%i'\n", user->DOB.day,
+                                          user->DOB.month,
+                                          user->DOB.year);
+    }
     
     /* To Do */
     /*Print all the new users details together */
@@ -32,9 +60,19 @@ void account_creation(event_manager_t* event_manager)
 
     if(event_manager->users.head == NULL)
     {
+        if(event_manager->runtime_mode == MODE_DEBUG)
+        {
+            printf("DEBUG: User linked list == NULL\n");
+            printf("DEBUG: Initialising new linked list\n");
+        }
         event_manager->users.head = init_node(user, sizeof(person_t));
     }else
     {
+        if(event_manager->runtime_mode == MODE_DEBUG)
+        {
+            printf("DEBUG: User linked list exists\n");
+            printf("DEBUG: Adding user to linked list\n");
+        }
         list_add(&event_manager->users, (void *) user, sizeof(person_t));
     }
 
@@ -65,17 +103,26 @@ int login(event_manager_t* event_manager)
     for (i = 0; i < list_count(&event_manager->users); i++)
     {
         person_t* user = (person_t*) list_get(&event_manager->users, i)->data;
+
+        if(event_manager->runtime_mode == MODE_DEBUG)
+        {
+            printf("DEBUG: Username Attempt: '%s' | '%s'\n", username,
+                                                             user->username);
+        }
+
         if ( strcmp( user->username, username ) == 0 )
         {
             char ciphertext[MAX_NAME_LEN+1];
-            caeser_cipher(i, password, ciphertext);
+            caeser_cipher(i + 1, password, ciphertext);
 
-            #ifdef DEBUG /* For debugging */
-                printf("DEBUG: Plaintext User Input: %s\n", password);
-                printf("DEBUG: Encrypted User Input: %s\n", ciphertext);
-                printf("DEBUG: Encrypted Account Password: %s\n", user->password);
-            #endif
-            
+            if(event_manager->runtime_mode == MODE_DEBUG)
+            {
+                printf("DEBUG: Plaintext User Input:       %s\n", password);
+                printf("DEBUG: Encrypted User Input:       %s\n", ciphertext);
+                printf("DEBUG: Encrypted Account Password: %s\n",
+                       user->password);
+            }
+
             if( strcmp( user->password, ciphertext ) == 0 )
             {
                 event_manager->current_logged_in_user = user;

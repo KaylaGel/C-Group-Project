@@ -11,10 +11,6 @@ int search_event(linked_list_t* list, char* event_name)
     {
         event_t* event = (event_t*) list_get(list, i)->data;
 
-        #ifdef DEBUG /* For debugging */
-            printf("DEBUG: %-*s | %-*s\n", MAX_NAME_LEN, event_name,
-            MAX_NAME_LEN, event->name);
-        #endif
 
         if ( strcmp(event_name, event->name) == 0 )
         {

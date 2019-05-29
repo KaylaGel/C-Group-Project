@@ -8,11 +8,7 @@ void list_add(linked_list_t* list, void* data, size_t data_size)
     node_t* current_node = list->head;
     node_t* new_node = init_node(data, data_size);
 
-    /* Crawl to the end of the linked list */
-    while(current_node->next != NULL)
-    {
-        current_node = current_node->next;
-    }
+    current_node = list_last(list);
 
     current_node->next = new_node;
     new_node->previous = current_node;
@@ -56,7 +52,6 @@ void list_remove(linked_list_t* list, node_t* node)
 
 int list_count(linked_list_t* list)
 {
-
     if(list->head == NULL)
     {
         return 0;
@@ -64,11 +59,7 @@ int list_count(linked_list_t* list)
     node_t* current_node = list->head;
     int count = 0;
 
-    /* Crawl to the start of the linked list */
-    while(current_node->previous != NULL)
-    {
-        current_node = current_node->previous;
-    }
+    current_node = list_first(list);
 
     /* Crawl to the end of the linked list, counting each node */
     while(current_node->next != NULL)

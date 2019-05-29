@@ -27,8 +27,8 @@ void print_event_details(event_t* event, int event_index)
                                              event->location.suburb,
                                              event->location.postcode,
                                              event->location.state);
-    printf("\t\tDate: %i:%i %i/%i/%i\n", event->event_date.minute,
-                                         event->event_date.hour,
+    printf("\t\tDate: %i:%i %i/%i/%i\n", event->event_date.hour,
+                                         event->event_date.minute,
                                          event->event_date.day,
                                          event->event_date.month,
                                          event->event_date.year );

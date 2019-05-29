@@ -3,6 +3,7 @@
 #ifndef C_GROUP_PROJECT_STRUCTS_H
     #include "definitions.h" /* MAX_NAME_LEN, MAX_PATRONS, MAX_STAFF */
     #include "linked_list.h" /* node_t */
+    #include "runtime_modes.h"
     #define C_GROUP_PROJECT_STRUCTS_H
 
     struct date
@@ -66,6 +67,8 @@
 
         linked_list_t events;
         linked_list_t users;
+
+        int runtime_mode;
     };
     typedef struct event_manager event_manager_t;
 
