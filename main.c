@@ -14,6 +14,7 @@ int main(int argc, char *argv[])
 {
     event_manager_t event_manager;
     init_event_manager(&event_manager);
+    
 
 
     if (argc == 2)
