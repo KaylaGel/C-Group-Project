@@ -54,7 +54,7 @@ int main(int argc, char *argv[])
     if(event_manager.runtime_mode == MODE_INFO)
     {
         print_info();
-        return;
+        return 0;
     }
 
 
