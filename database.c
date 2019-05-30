@@ -169,7 +169,7 @@ int load_database(event_manager_t* event_manager)
     {
         plaintext = tmpfile();
     }
-        database = fopen(DATABASE_FILENAME, "r");
+    database = fopen(DATABASE_FILENAME, "r");
 
 
     if(plaintext == NULL || database == NULL)
