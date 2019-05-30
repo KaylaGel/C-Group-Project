@@ -7,7 +7,7 @@
 /**************************************************************
  * Function Name: valid_int
  * Author(s): Ryan
- * Inputs: input(string pointer)
+ * Inputs: input - String Pointer
  * Outputs: Boolean
  * Description: Outputs true or false depending on whether the input ...
  *              is an integer that meets the criteria or not
@@ -29,7 +29,7 @@ int valid_int(char* input)
 /**************************************************************
  * Function Name: convert_int
  * Author(s): Ryan
- * Inputs: input(string pointer)
+ * Inputs: input - String Pointer
  * Outputs: integer
  * Description: Returns the input converted to an integer
 **************************************************************/
@@ -41,7 +41,7 @@ int convert_int(char* input)
 /**************************************************************
  * Function Name: username_taken
  * Author(s): Ryan 
- * Inputs: event_manager(pointer), username(sting pointer)
+ * Inputs: event_manager - Pointer, username - String Pointer
  * Outputs: Boolean
  * Description: Outputs a true or false depending on the supplied username is
  *              already taken. 

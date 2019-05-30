@@ -11,7 +11,7 @@
 /**************************************************************
  * Function Name: save_database
  * Author(s): Dee-Jay
- * Inputs: event_manager(pointer)
+ * Inputs: event_manager - Pointer
  * Outputs: Integer and File    
  * Description: The returned integer determines whether the save was 
  *              successful or not.
@@ -146,7 +146,7 @@ int save_database(event_manager_t* event_manager)
 /**************************************************************
  * Function Name: load_database
  * Author(s): Dee-Jay
- * Inputs: event_manager(pointer)
+ * Inputs: event_manager - Pointer
  * Outputs: Database loaded from disk into event_manager
  * Description: Loads the database, then xor decrypts the file with a 
  *              user supplied password. The function then laods the database 

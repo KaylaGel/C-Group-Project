@@ -29,7 +29,7 @@ void print_event_name(event_t* event, int event_index)
 /**************************************************************
  * Function Name: print_event_details
  * Author(s): Kayla
- * Inputs: e
+ * Inputs: event - 
  * Outputs: 
  * Description: Print out the full details of the event
 **************************************************************/

@@ -9,7 +9,7 @@
 /**************************************************************
  * Function Name: edit_name
  * Author(s): Jacob
- * Inputs: event(pointer)
+ * Inputs: event - Pointer
  * Outputs: N/A
  * Description: Requests if the user would like to change the name and 
  *              if given consent then it will change the event name to the
@@ -35,7 +35,7 @@ void edit_name(event_t* event)
 /**************************************************************
  * Function Name: edit_type
  * Author(s): Jacob
- * Inputs: event(pointer)
+ * Inputs: event - Pointer
  * Outputs: N/A
  * Description: Requests if the user would like to change the event type and 
  *              if given consent then it will change the event type to the
@@ -62,7 +62,7 @@ void edit_type(event_t* event)
 /**************************************************************
  * Function Name: 
  * Author(s): Kayla
- * Inputs: event(pointer)
+ * Inputs: event - Pointer
  * Outputs: N/A
  * Description: Requests if the user would like to change the event location 
  *              and if given consent then it will change the event location 
@@ -102,7 +102,7 @@ void edit_location(event_t* event)
 /**************************************************************
  * Function Name: 
  * Author(s): Kayla
- * Inputs: event(pointer)
+ * Inputs: event - Pointer
  * Outputs: N/A
  * Description: Requests if the user would like to change the event time and
  *              if given consent then it will change the event time to the
