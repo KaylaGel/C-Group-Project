@@ -39,6 +39,7 @@ int save_database(event_manager_t* event_manager)
     {
         printf("Error opening file\n");
         printf("Exiting Save attempt\n");
+        return 1;
     }
 
     printf("Saving Database\n");
@@ -175,6 +176,7 @@ int load_database(event_manager_t* event_manager)
     {
         printf("Error opening file\n");
         printf("Exiting Load attempt\n");
+        return 1;
     }
 
 
