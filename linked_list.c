@@ -29,7 +29,9 @@ void list_add(linked_list_t* list, void* data, size_t data_size)
  * Author(s): Dee-Jay
  * Inputs: list - List Pointer, node - Node Pointer
  * Outputs: N/A
- * Description: Removes all references to the node and frees up the memory 
+ * Description: Removes all references to the supplied node, changes the
+ *              pointer for nodes adjacent to the new respective previous/next
+ *              node, then frees up the memory.
 **************************************************************/
 
 void list_remove(linked_list_t* list, node_t* node)
@@ -68,11 +70,11 @@ void list_remove(linked_list_t* list, node_t* node)
 }
 
 /**************************************************************
- * Function Name: 
+ * Function Name: list_count
  * Author(s): Dee-Jay
- * Inputs:
- * Outputs: 
- * Description: 
+ * Inputs: linked_list pointer
+ * Outputs: integer
+ * Description: Returns the count for the amount of nodes in the supplied list
 **************************************************************/
 
 int list_count(linked_list_t* list)
@@ -100,20 +102,20 @@ int list_count(linked_list_t* list)
 }
 
 /**************************************************************
- * Function Name: 
+ * Function Name: init_node
  * Author(s): Dee-Jay
- * Inputs:
- * Outputs: 
- * Description: 
+ * Inputs: data void pointer, data_size integer
+ * Outputs: initialised node
+ * Description: Allocates the memory required for a new node, allocates the
+ *              memory required for the data, then copies the supplied data
+ *              byte by byte to the newly allocated memory space
 **************************************************************/
 
 node_t* init_node(void* data, size_t data_size)
 {
     node_t* new_node = malloc(sizeof(node_t));
 
-    new_node->previous = malloc(sizeof(node_t*));
     new_node->previous = NULL;
-    new_node->next = malloc(sizeof(node_t*));
     new_node->next = NULL;
 
     new_node->data = malloc(data_size);
@@ -129,11 +131,12 @@ node_t* init_node(void* data, size_t data_size)
 }
 
 /**************************************************************
- * Function Name: 
+ * Function Name: list_get
  * Author(s): Dee-Jay
- * Inputs:
- * Outputs: 
- * Description: 
+ * Inputs: linked_list pointer, index integer
+ * Outputs: node pointer
+ * Description: Returns the node at the supplied index position in the
+ *              supplied linked list
 **************************************************************/
 
 node_t* list_get(linked_list_t* list, int index)
@@ -154,11 +157,11 @@ node_t* list_get(linked_list_t* list, int index)
 }
 
 /**************************************************************
- * Function Name: 
+ * Function Name: list_first
  * Author(s): Dee-Jay
- * Inputs:
- * Outputs: 
- * Description: 
+ * Inputs: linked_list pointer
+ * Outputs: node pointer
+ * Description: Returns the first node in a list
 **************************************************************/
 
 node_t* list_first(linked_list_t* list)
@@ -167,11 +170,11 @@ node_t* list_first(linked_list_t* list)
 }
 
 /**************************************************************
- * Function Name: 
+ * Function Name: list_last
  * Author(s): Dee-Jay
- * Inputs:
- * Outputs: 
- * Description: 
+ * Inputs: linked_list pointer
+ * Outputs: node pointer
+ * Description: Returns the last node in a list
 **************************************************************/
 
 node_t* list_last(linked_list_t* list)
