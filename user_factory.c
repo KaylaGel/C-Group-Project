@@ -14,13 +14,13 @@
  *              Gets user input and validates it
 **************************************************************/
 
-void get_new_user_username(event_manager_t event_manager, char* username)
+void get_new_user_username(const event_manager_t* event_manager, char* username)
 {
     printf("Please enter your chosen username\n");
     printf("> ");
 
     scanf("%s", username);
-    if(username_taken(&event_manager, username))
+    if(username_taken(event_manager, username))
     {
         printf("Username already taken\n");
         get_new_user_username(event_manager, username);

@@ -19,7 +19,7 @@
  *              it then asks the users for a password to xor encrypt the 
  *              database. It then saves the encrypted DB to a file on disk.
 **************************************************************/
-int save_database(event_manager_t* event_manager)
+int save_database(const event_manager_t* event_manager)
 {
     FILE* plaintext;
     FILE* database;

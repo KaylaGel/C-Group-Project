@@ -12,7 +12,7 @@
  *              puts it at the end of the list 
 **************************************************************/
 
-void list_add(linked_list_t* list, void* data, size_t data_size)
+void list_add(linked_list_t* list, const void* data, const size_t data_size)
 {
     node_t* current_node = list->head;
     node_t* new_node = init_node(data, data_size);
@@ -77,7 +77,7 @@ void list_remove(linked_list_t* list, node_t* node)
  * Description: Returns the count for the amount of nodes in the supplied list
 **************************************************************/
 
-int list_count(linked_list_t* list)
+int list_count(const linked_list_t* list)
 {
     if(list->head == NULL)
     {
@@ -111,7 +111,7 @@ int list_count(linked_list_t* list)
  *              byte by byte to the newly allocated memory space
 **************************************************************/
 
-node_t* init_node(void* data, size_t data_size)
+node_t* init_node(const void* data, const size_t data_size)
 {
     node_t* new_node = malloc(sizeof(node_t));
 
@@ -139,7 +139,7 @@ node_t* init_node(void* data, size_t data_size)
  *              supplied linked list
 **************************************************************/
 
-node_t* list_get(linked_list_t* list, int index)
+node_t* list_get(const linked_list_t* list, int index)
 {
     node_t* current_node = list->head;
 
@@ -164,7 +164,7 @@ node_t* list_get(linked_list_t* list, int index)
  * Description: Returns the first node in a list
 **************************************************************/
 
-node_t* list_first(linked_list_t* list)
+node_t* list_first(const linked_list_t* list)
 {
     return list->head;
 }
@@ -177,7 +177,7 @@ node_t* list_first(linked_list_t* list)
  * Description: Returns the last node in a list
 **************************************************************/
 
-node_t* list_last(linked_list_t* list)
+node_t* list_last(const linked_list_t* list)
 {
     node_t* current_node = list->head;
 

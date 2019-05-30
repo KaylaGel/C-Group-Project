@@ -17,29 +17,29 @@
 **************************************************************/
 
 
-void create_new_user(event_manager_t event_manager, person_t *user) 
+void create_new_user(const event_manager_t* event_manager, person_t *user)
 {
     get_new_user_username(event_manager, user->username);
 
-    if(event_manager.runtime_mode == MODE_DEBUG)
+    if(event_manager->runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: Username '%s'\n", user->username);
     }
-    get_new_user_password(user->password, list_count(&event_manager.users));
+    get_new_user_password(user->password, list_count(&event_manager->users));
 
-    if(event_manager.runtime_mode == MODE_DEBUG)
+    if(event_manager->runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: Password '%s'\n", user->password);
     }
     get_new_user_firstname(user->firstname);
 
-    if(event_manager.runtime_mode == MODE_DEBUG)
+    if(event_manager->runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: First Name '%s'\n", user->firstname);
     }
     get_new_user_lastname(user->lastname);
 
-    if(event_manager.runtime_mode == MODE_DEBUG)
+    if(event_manager->runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: Last Name '%s'\n", user->lastname);
     }
@@ -48,7 +48,7 @@ void create_new_user(event_manager_t event_manager, person_t *user)
  * made by the function, the others dont need it because they are pointers
  * already, strings are just char pointers*/
 
-    if(event_manager.runtime_mode == MODE_DEBUG)
+    if(event_manager->runtime_mode == MODE_DEBUG)
     {
         printf("DEBUG: DOB '%i/%i/%i'\n", user->DOB.day,
                                           user->DOB.month,
@@ -75,10 +75,10 @@ void account_creation(event_manager_t* event_manager)
     printf("\nAccount Creation\n");
     person_t* user = malloc(sizeof(person_t));  /* Allocates memory which is 
                                                 the size of person_t */
-    create_new_user(*event_manager, user); /* This function calls functions 
-                                            within itself to collect all the 
-                                            data required from the user e.g. 
-                                            Username, Password ect. */
+    create_new_user(event_manager, user); /* This function calls functions
+                                             within itself to collect all the
+                                             data required from the user e.g.
+                                             Username, Password ect. */
 
 
     if(event_manager->users.head == NULL)

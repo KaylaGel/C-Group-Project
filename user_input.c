@@ -189,7 +189,7 @@ void edit_event(event_manager_t* event_manager)
  *              to the supplied event
 **************************************************************/
 
-void add_patron(event_t* event, event_manager_t* event_manager)
+void add_patron(event_t* event, const event_manager_t* event_manager)
 {
     int user_num = search_user_add(&event_manager->users);
     if (user_num == -1)
@@ -229,7 +229,7 @@ void add_patron(event_t* event, event_manager_t* event_manager)
  *              the supplied event
 **************************************************************/
 
-void add_staff(event_t* event, event_manager_t* event_manager)
+void add_staff(event_t* event, const event_manager_t* event_manager)
 {
     int user_num = search_user_add(&event_manager->users);
     if (user_num == -1)
@@ -270,7 +270,7 @@ void add_staff(event_t* event, event_manager_t* event_manager)
  *              from the supplied event
 **************************************************************/
 
-void remove_patron(event_t* event, event_manager_t* event_manager)
+void remove_patron(event_t* event, const event_manager_t* event_manager)
 {
     int user_num = search_user_remove(&event->patrons);
     if (user_num == -1)
@@ -304,7 +304,7 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
  *              them from the supplied event
 **************************************************************/
 
-void remove_staff(event_t* event, event_manager_t* event_manager)
+void remove_staff(event_t* event, const event_manager_t* event_manager)
 {
     int user_num = search_user_remove(&event->staff);
     if (user_num == -1)

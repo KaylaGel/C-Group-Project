@@ -29,12 +29,13 @@
     };
     typedef struct linked_list linked_list_t;
 
-    void list_add(linked_list_t* list, void* data, size_t data_size);
+    void list_add(linked_list_t* list, const void* data,
+                                       const size_t data_size);
     void list_remove(linked_list_t* list, node_t* node);
-    int list_count(linked_list_t* list);
-    node_t* init_node(void* data, size_t data_size);
-    node_t* list_get(linked_list_t* list, int index);
-    node_t* list_first(linked_list_t* list);
-    node_t* list_last(linked_list_t* list);
+    int list_count(const linked_list_t* list);
+    node_t* init_node(const void* data, const size_t data_size);
+    node_t* list_get(const linked_list_t* list, const int index);
+    node_t* list_first(const linked_list_t* list);
+    node_t* list_last(const linked_list_t* list);
 
 #endif /*C_GROUP_PROJECT_LINKED_LIST_H*/
