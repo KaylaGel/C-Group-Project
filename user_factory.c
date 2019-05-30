@@ -6,10 +6,10 @@
 #include "function_prototypes.h"
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_new_user_username
+ * Author(s): Tylar
+ * Inputs: event_manager, username - Character Pointer
+ * Outputs: username
  * Description: Helper function for user initialisation.
  *              Gets user input and validates it
 **************************************************************/
@@ -30,10 +30,10 @@ void get_new_user_username(event_manager_t event_manager, char* username)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_new_user_password
+ * Author(s): Tylar
+ * Inputs: password - Character Pointer, user_index - Integer
+ * Outputs: password
  * Description: Helper function for user initialisation.
  *              Gets user input and validates it
 **************************************************************/
@@ -66,10 +66,10 @@ void get_new_user_password(char* password, int user_index)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_new_user_firstname
+ * Author(s): Tylar
+ * Inputs: firstname - Character Pointer
+ * Outputs: firstname
  * Description: Helper function for user initialisation.
  *              Gets user input and validates it
 **************************************************************/
@@ -94,10 +94,10 @@ void get_new_user_firstname(char* firstname)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_new_user_lastname
+ * Author(s): Tylar
+ * Inputs: lastname - Character Pointer
+ * Outputs: lastname
  * Description: Helper function for user initialisation.
  *              Gets user input and validates it
 **************************************************************/
@@ -122,10 +122,10 @@ void get_new_user_lastname(char* lastname)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_new_user_DOB
+ * Author(s): Tylar
+ * Inputs: DOB - Struct Pointer
+ * Outputs: DOB
  * Description: Helper function for user initialisation.
  *              Gets user input and validates it
 **************************************************************/

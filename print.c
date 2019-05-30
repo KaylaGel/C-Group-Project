@@ -6,8 +6,8 @@
 /**************************************************************
  * Function Name: print_event_name
  * Author(s): Kayla
- * Inputs: event
- * Outputs: 
+ * Inputs: event - Struct Pointer, event_index - Integer
+ * Outputs: N/A
  * Description: Prints out the basic details of the event and it index
 **************************************************************/
 
@@ -29,8 +29,8 @@ void print_event_name(event_t* event, int event_index)
 /**************************************************************
  * Function Name: print_event_details
  * Author(s): Kayla
- * Inputs: event - 
- * Outputs: 
+ * Inputs: event - Struct Pointer, event_index - Integer
+ * Outputs: N/A
  * Description: Print out the full details of the event
 **************************************************************/
 
@@ -84,9 +84,9 @@ void print_event_details(event_t* event, int event_index)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
+ * Function Name: list_events
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
  * Outputs: 
  * Description: Calls the print_event_name function for each event
 **************************************************************/
@@ -109,10 +109,10 @@ void list_events(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_user_details
+ * Author(s): Kayla
+ * Inputs:user - Struct Pointer, user_index - Integer
+ * Outputs: N/A
  * Description: Prints the details of a user
 **************************************************************/
 
@@ -128,10 +128,10 @@ void print_user_details(person_t* user, int user_index)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: list_all
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
  * Description: Calls the "print details" function for every user and event 
 **************************************************************/
 
@@ -164,10 +164,10 @@ void list_all(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: list_events_detail
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
  * Description: Calls the print_event_details function for each event
 **************************************************************/
 
@@ -190,10 +190,10 @@ void list_events_detail(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: list_users_detail
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
  * Description: calls the print_user_details function for every user
 **************************************************************/
 
@@ -215,10 +215,10 @@ void list_users_detail(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_login
+ * Author(s): Tylar
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the login menu 
 **************************************************************/
 
@@ -234,10 +234,10 @@ void print_menu_login(void)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_main
+ * Author(s): Tylar
+ * Inputs: current_logged_in_username - Character Pointer
+ * Outputs: N/A
  * Description: Prints the main menu
 **************************************************************/
 
@@ -255,10 +255,10 @@ void print_menu_main(char* current_logged_in_username)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_admin
+ * Author(s): Tylar
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the admin menu
 **************************************************************/
 
@@ -277,10 +277,10 @@ void print_menu_admin(void)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_edit
+ * Author(s): Jacob
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the edit menu and the event that is being edited
 **************************************************************/
 
@@ -300,10 +300,10 @@ void print_menu_edit(char* event_name)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_edit_staff
+ * Author(s): Jacob
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the edit staff menu
 **************************************************************/
 
@@ -318,10 +318,10 @@ void print_menu_edit_staff(void)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_menu_edit_patrons
+ * Author(s): Jacob
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the edit patron menu
 **************************************************************/
 
@@ -335,10 +335,10 @@ void print_menu_edit_patrons(void)
     return;
 }
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: print_info
+ * Author(s): Jacob
+ * Inputs: N/A
+ * Outputs: N/A
  * Description: Prints the information about this program
 **************************************************************/
 void print_info()

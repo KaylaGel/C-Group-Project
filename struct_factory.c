@@ -6,10 +6,10 @@
 #include "function_prototypes.h" /* init_admin_account() */
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: init_event_manager
+ * Author(s): Ryan
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: initialised event_manager
  * Description: Initiallises the variables of the event_manager
 **************************************************************/
 
@@ -23,10 +23,10 @@ void init_event_manager(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: init_event
+ * Author(s): Ryan
+ * Inputs: event - Struct Pointer, coordinator - Struct Pointer
+ * Outputs: initialised events
  * Description: Initiallises the variables of the event
  *              Calls various helper functions to get user input for the values
 **************************************************************/
@@ -47,10 +47,10 @@ void init_event(event_t* event, person_t* coordinator)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: init_admin_account
+ * Author(s): Ryan
+ * Inputs: admin - Struct Pointer
+ * Outputs: initialised admin
  * Description: Initiallises the variables of the admin account
 **************************************************************/
 
@@ -66,10 +66,10 @@ void init_admin_account(person_t* admin)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: create_event
+ * Author(s): Ryan
+ * Inputs: event_manager - Struct Pointer, creator - Struct Pointer
+ * Outputs: initialised event
  * Description: Creates a new event pointer and allocates memory for it.
  *              Calls the initialisation function for the event.
  *              Then either adds the event to the event linked list or 

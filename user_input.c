@@ -6,10 +6,10 @@
 #include "function_prototypes.h" /* valid_int(), convert_int() */
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: get_user_login
+ * Author(s): Ryan
+ * Inputs: username - Character Pointer, password - Character Pointer
+ * Outputs: Username, Password
  * Description: Helper function for user login.
  *              Gets user input
 **************************************************************/
@@ -25,10 +25,10 @@ void get_user_login(char* username, char* password)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: scan_int
+ * Author(s): Ryan
+ * Inputs: N/A
+ * Outputs: Integer
  * Description: Gets user input for an integer.
  *              Checks whether its a valid int or not and converts it if 
  *              it is, and requests a new number if it isn't
@@ -51,10 +51,10 @@ int scan_int(void)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: scan_int_min_max
+ * Author(s): Ryan, Tylar
+ * Inputs: min_value - Integer, max_value - Integer
+ * Outputs: value
  * Description: Gets an integer from the user and validates it based 
  *              on defined criteria
 **************************************************************/
@@ -74,10 +74,10 @@ int scan_int_min_max(int min_value, int max_value)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: response_yes
+ * Author(s): Tylar
+ * Inputs: N/A
+ * Outputs: Boolean
  * Description: Gets yes/no input and converts it to boolean
 **************************************************************/
 
@@ -106,10 +106,10 @@ int response_yes(void)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: join_event
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
  * Description: Adds the currently logged in user to the user requested event
 **************************************************************/
 
@@ -149,10 +149,10 @@ void join_event(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: edit_event
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer
+ * Outputs: N/A
  * Description: Requests a user input of which event to edit and 
  *              calls the menu_edit function for that event
 **************************************************************/
@@ -181,10 +181,10 @@ void edit_event(event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: add_patron
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer, event - Struct Pointer
+ * Outputs: N/A
  * Description: Gets user input of the patron to add and adds them 
  *              to the supplied event
 **************************************************************/
@@ -221,10 +221,10 @@ void add_patron(event_t* event, event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: add_staff
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer, event - Struct Pointer
+ * Outputs: N/A
  * Description: Gets user input of the staff to add and adds them to 
  *              the supplied event
 **************************************************************/
@@ -262,10 +262,10 @@ void add_staff(event_t* event, event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: remove_patron
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer, event - Struct Pointer
+ * Outputs: N/A
  * Description: Gets user input of the patron to remove and removes them 
  *              from the supplied event
 **************************************************************/
@@ -296,10 +296,10 @@ void remove_patron(event_t* event, event_manager_t* event_manager)
 }
 
 /**************************************************************
- * Function Name: 
- * Author(s):
- * Inputs:
- * Outputs: 
+ * Function Name: remove_staff
+ * Author(s): Kayla
+ * Inputs: event_manager - Struct Pointer, event - Struct Pointer
+ * Outputs: N/A
  * Description: Gets user input of the staff to remove and removes 
  *              them from the supplied event
 **************************************************************/
