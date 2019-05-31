@@ -1,11 +1,14 @@
 #include <stdio.h> /* scanf, printf */
 #include <stdlib.h> /* malloc */
+#include <string.h> /* strcmp() */
 
 #include "definitions.h" /* MAX_INT_LEN */
 #include "structs.h" /* event_t, event_manager_t, person_t */
 #include "linked_list.h" /* list_get, init_node, list_add, list_remove */
 #include "function_prototypes.h" /* valid_int, scan_int, search_event_join, 
-response_yes, search_event_edit, menu_edit, search_user_add, search_user_remove*/
+                                    response_yes, search_event_edit,
+                                    menu_edit, search_user_add,
+                                    search_user_remove */
 
 /**************************************************************
  * Function Name: get_user_login

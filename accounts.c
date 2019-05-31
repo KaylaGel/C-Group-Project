@@ -3,11 +3,12 @@
 #include <string.h> /* strcmp */
 
 #include "structs.h" /* event_manager_t, person_t */
-#include "function_prototypes.h" /* get_new_user_, create_new_user, get_user_login*/
+#include "function_prototypes.h" /* get_new_user_, create_new_user,
+                                    get_user_login*/
 #include "definitions.h" /*MAX_NAME_LEN,MAX_PASS_LEN*/
-#include "linked_list.h" /*init_node, list_add, list_get, list_count, caeser_cipher 
+#include "linked_list.h" /* init_node, list_add, list_get, list_count,
+                           caeser_cipher */
 
-#define DEBUG
 
 /**************************************************************
  * Function Name: create_new_user

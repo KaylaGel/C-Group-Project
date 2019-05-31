@@ -3,8 +3,9 @@
 
 #include "definitions.h" /* MAX_NAME_LEN, MAX_RESPONSE_LEN */
 #include "structs.h" /* date_t, address_t */
-#include "function_prototypes.h" /* get_new_event_name, get_new_event_free_status, 
-get_new_event_type, scan_int_min_max */
+#include "function_prototypes.h" /* get_new_event_name,
+                                    get_new_event_free_status,
+                                    get_new_event_type, scan_int_min_max */
 
 /**************************************************************
  * Function Name: get_new_event_name

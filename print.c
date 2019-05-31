@@ -13,7 +13,7 @@
  * Description: Prints out the basic details of the event and it index
 **************************************************************/
 
-void print_event_name(event_t* event, int event_index)
+void print_event_name(const event_t* event, const int event_index)
 {
     printf("\t%i: ", event_index);
     /* Print event name, right padded with spaces up until MAX_NAME_LEN
@@ -36,7 +36,7 @@ void print_event_name(event_t* event, int event_index)
  * Description: Print out the full details of the event
 **************************************************************/
 
-void print_event_details(event_t* event, int event_index)
+void print_event_details(const event_t* event, const int event_index)
 {
     print_event_name(event, event_index);
 
@@ -93,7 +93,7 @@ void print_event_details(event_t* event, int event_index)
  * Description: Calls the print_event_name function for each event
 **************************************************************/
 
-void list_events(event_manager_t* event_manager)
+void list_events(const event_manager_t* event_manager)
 {
     if(list_count(&event_manager->events) == 0)
     {
@@ -118,7 +118,7 @@ void list_events(event_manager_t* event_manager)
  * Description: Prints the details of a user
 **************************************************************/
 
-void print_user_details(person_t* user, int user_index)
+void print_user_details(const person_t* user, const int user_index)
 {
     printf("\t%i: %-*s\n", user_index, MAX_NAME_LEN, user->username);
     printf("\t\tName: %s %s\n", user->firstname, user->lastname);
@@ -137,7 +137,7 @@ void print_user_details(person_t* user, int user_index)
  * Description: Calls the "print details" function for every user and event 
 **************************************************************/
 
-void list_all(event_manager_t* event_manager)
+void list_all(const event_manager_t* event_manager)
 {
     int i;
 
@@ -173,7 +173,7 @@ void list_all(event_manager_t* event_manager)
  * Description: Calls the print_event_details function for each event
 **************************************************************/
 
-void list_events_detail(event_manager_t* event_manager)
+void list_events_detail(const event_manager_t* event_manager)
 {
     int i;
 
@@ -199,7 +199,7 @@ void list_events_detail(event_manager_t* event_manager)
  * Description: calls the print_user_details function for every user
 **************************************************************/
 
-void list_users_detail(event_manager_t* event_manager)
+void list_users_detail(const event_manager_t* event_manager)
 {
     int i;
 
@@ -243,7 +243,7 @@ void print_menu_login(void)
  * Description: Prints the main menu
 **************************************************************/
 
-void print_menu_main(char* current_logged_in_username)
+void print_menu_main(const char* current_logged_in_username)
 {
     printf("\nMain Menu\n\n");
     printf("Currently logged in as '%s'\n", current_logged_in_username);
@@ -286,7 +286,7 @@ void print_menu_admin(void)
  * Description: Prints the edit menu and the event that is being edited
 **************************************************************/
 
-void print_menu_edit(char* event_name)
+void print_menu_edit(const char* event_name)
 {
     printf("Edit Menu\n");
     printf("Currently editing event '%s'\n", event_name);
@@ -343,31 +343,37 @@ void print_menu_edit_patrons(void)
  * Outputs: N/A
  * Description: Prints the information about this program
 **************************************************************/
-void print_info()
+void print_info(void)
 {
-    printf("\n---- Welcome to EventManager v2.4 Information Mode ----\n\n");
-    printf("Description: This program is specifically designed to help event");
-    printf("organisers\n");
-    printf("and patrons access event information and join them if they please.\n");
-    printf("Note: All private information entered into the program will be");
-    printf("saved in an encrypted format.\n");
-
-    printf("Event HUB aims to provide a platform where anyone can create, edit ");
-    printf("or join an event. By creating an event, the user immediately becomes");
-    printf("an event coordinator where they can specify the event name, whether");
-    printf("or not they would like the event to be free, the type of event and");
-    printf("the location of the event. Any user can create an account and");
-    printf("events, however, only the Admin is able to save and load database");
-    printf("files. Additionally, when a user creates an account, their");
-    printf("passwords are immediately encrypted and when the admin saves the");
-    printf("database file, the whole file is encrypted. Once the events have");
-    printf("been created, the event coordinator is able to add staff or");
-    printf("simply edit any important event details. If a user decides they");
-    printf("want to join an event as a patron, then their details are added to");    
-    printf("the event.");
-
-    printf("It is important to note that whilst our idea has been inspired by");
-    printf("the university society system, we have not designed our criteria,");
-    printf("specifically for UTS as we decided to create a broad design for the");
-    printf("benefit and use of everyone.");
+    printf(" \n"
+           " ---- Welcome to EventManager v2.4 Information Mode ----\n"
+           " \n"
+           "Description: This program is specifically designed to help \n"
+           "event organisers and patrons access event information and \n"
+           "join them if they please. \n"
+           "\n"
+           "Note: All private information entered into the program \n"
+           "will be saved in an encrypted format. Event HUB aims to \n"
+           "provide a platform where anyone can create, edit or join \n"
+           "an event. By creating an event, the user immediately \n"
+           "becomes an event coordinator where they can specify the \n"
+           "event name, whether or not they would like the event to be \n"
+           "free, the type of event and the location of the event.\n"
+           "\n"
+           "Any user can create an account and events, however, \n"
+           "only the Admin is able to save and load database files. \n"
+           "Additionally, when a user creates an account, their \n"
+           "passwords are immediately encrypted and when the admin \n"
+           "saves the database file, the whole file is encrypted. \n"
+           "Once the events have been created, the event coordinator \n"
+           "is able to add staff or simply edit any important event \n"
+           "details. If a user decides they want to join an event \n"
+           "as a patron, then their details are added to the event. \n"
+           "\n"
+           "It is important to note that whilst our idea has been \n"
+           "inspired by the university society system, we have not \n"
+           "designed our criteria, specifically for UTS as we \n"
+           "decided to create a broad design for the benefit and \n"
+           "use of everyone.\n");
+    return;
 }

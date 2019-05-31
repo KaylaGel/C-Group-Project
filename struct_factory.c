@@ -1,5 +1,6 @@
 #include <stdlib.h> /* malloc */
 #include <stdio.h> /* printf */
+#include <string.h> /* strcmp() */
 
 #include "structs.h" /* event_manager_t, event_t, person_t */
 #include "definitions.h" /* MIN_DAY, MIN_MONTH, MIN_YEAR */

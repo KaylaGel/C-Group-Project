@@ -4,8 +4,8 @@
 #include "function_prototypes.h" /* print_menu_login, print_menu_main, 
 scan_int, login, menu_main, menu_admin, account_creation, menu_login, 
 create_event, edit_event, join_event, print_menu_admin, response_yes,
-save_database, load_database, print_menu_edit, edit_name, edit_type, edit_location,
-edit_date_time, edit_staff, edit_patrons, menu_edit*/
+save_database, load_database, print_menu_edit, edit_name, edit_type,
+edit_location, edit_date_time, edit_staff, edit_patrons, menu_edit*/
 #include "linked_list.h" /* list_all, list_events, list_events_detail, 
 list_users_detail, list_get,  */
 

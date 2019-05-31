@@ -16,7 +16,7 @@
  *              the index of the found event
 **************************************************************/
 
-int search_event(linked_list_t* list, char* event_name)
+int search_event(const linked_list_t* list, const char* event_name)
 {
     int i;
 
@@ -43,7 +43,7 @@ int search_event(linked_list_t* list, char* event_name)
  *              returns the index of the event found
 **************************************************************/
 
-int search_event_edit(linked_list_t* list)
+int search_event_edit(const linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
 
@@ -64,7 +64,7 @@ int search_event_edit(linked_list_t* list)
  *              returns the index of the event found
 **************************************************************/
 
-int search_event_join(linked_list_t* list)
+int search_event_join(const linked_list_t* list)
 {
     char event_name[MAX_NAME_LEN+1];
 
@@ -85,7 +85,7 @@ int search_event_join(linked_list_t* list)
  *              found user
 **************************************************************/
 
-int search_user(linked_list_t* list, char* username)
+int search_user(const linked_list_t* list, const char* username)
 {
     int i;
 
@@ -110,7 +110,7 @@ int search_user(linked_list_t* list, char* username)
  *              returns the index of the user found
 **************************************************************/
 
-int search_user_add(linked_list_t* list)
+int search_user_add(const linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];
 
@@ -131,7 +131,7 @@ int search_user_add(linked_list_t* list)
  *              event and returns the index of the user found
 **************************************************************/
 
-int search_user_remove(linked_list_t* list)
+int search_user_remove(const linked_list_t* list)
 {
     char username[MAX_NAME_LEN+1];
 
