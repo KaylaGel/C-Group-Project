@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-#include "structs.h"
+#include "structs.h" /*event_t, 
 #include "definitions.h"
 
 /**************************************************************
@@ -336,14 +336,36 @@ void print_menu_edit_patrons(void)
 }
 /**************************************************************
  * Function Name: print_info
- * Author(s): Jacob
+ * Author(s): Ryan
  * Inputs: N/A
  * Outputs: N/A
  * Description: Prints the information about this program
 **************************************************************/
 void print_info()
 {
-    printf("EventManager Information\n"
-           "EventManager is a helper program for planning and managing events.\n"
-           "");
+    printf("\n---- Welcome to EventManager v2.4 Information Mode ----\n\n");
+    printf("Description: This program is specifically designed to help event");
+    printf("organisers\n");
+    printf("and patrons access event information and join them if they please.\n");
+    printf("Note: All private information entered into the program will be");
+    printf("saved in an encrypted format.\n");
+
+    printf("Event HUB aims to provide a platform where anyone can create, edit ");
+    printf("or join an event. By creating an event, the user immediately becomes");
+    printf("an event coordinator where they can specify the event name, whether");
+    printf("or not they would like the event to be free, the type of event and");
+    printf("the location of the event. Any user can create an account and");
+    printf("events, however, only the Admin is able to save and load database");
+    printf("files. Additionally, when a user creates an account, their");
+    printf("passwords are immediately encrypted and when the admin saves the");
+    printf("database file, the whole file is encrypted. Once the events have");
+    printf("been created, the event coordinator is able to add staff or");
+    printf("simply edit any important event details. If a user decides they");
+    printf("want to join an event as a patron, then their details are added to");    
+    printf("the event.");
+
+    printf("It is important to note that whilst our idea has been inspired by");
+    printf("the university society system, we have not designed our criteria,");
+    printf("specifically for UTS as we decided to create a broad design for the");
+    printf("benefit and use of everyone.");
 }

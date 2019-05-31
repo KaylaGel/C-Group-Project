@@ -2,7 +2,8 @@
 #include <string.h> /* strlen(), strcmp() */
 #include <stdlib.h> /* strtol() */
 
-#include "structs.h" /* event_manager_t, patron_t, staff_t, event_t */
+#include "structs.h" /* event_manager_t, person_t*/
+#include "linked_list.h" /* list_count, list_get */
 
 /**************************************************************
  * Function Name: valid_int

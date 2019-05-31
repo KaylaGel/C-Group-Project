@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "structs.h"
-#include "function_prototypes.h"
+#include "structs.h" /* event_manager_t, event_t, person_t,  */
+#include "linked_list.h" /* list_count, list_get */
+#include "function_prototypes.h" /* xor_encrypt_file, search_user,  */
 
 #define DATABASE_FILENAME "database.sav"
 #define DATABASE_ENCRYPT_TEMP "database_encrypt.txt"

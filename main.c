@@ -2,7 +2,7 @@
 #include <string.h>
 
 #include "definitions.h" /* MAX_EVENTS */
-#include "structs.h" /* event_t */
+#include "structs.h" /* event_manager_t*/
 #include "function_prototypes.h" /* menu_login() */
 
 /* lines within the code surrounded by #ifdef DEBUG
@@ -60,8 +60,8 @@ int main(int argc, char *argv[])
 
     printf("\n---- Welcome to EventManager v2.4 ----\n\n");
     printf("Description: This program is specifically designed to help event organisers\n");
-    printf("and event attenders access event information and join them if they please.\n");
-    printf("Note: All private information entered by you, the user, will be saved in an encrypted and compressed format.\n");
+    printf("and patrons access event information and join them if they please.\n");
+    printf("Note: All private information entered by you, the user, will be saved in an encrypted format.\n");
     menu_login(&event_manager);
 
     return 0;

@@ -2,8 +2,10 @@
 #include <string.h> /* strcmp() */
 
 #include "structs.h" /* event_manager_t, event_t */
-#include "function_prototypes.h" /* edit_event, print_edit, edit_name, 
- * edit_type, edit_location, edit_date_time, edit_staff, edit_patrons */
+#include "linked_list.h" /* list_get */
+#include "function_prototypes.h" /* response_yes, print_menu_edit_staff, 
+add_staff, remove_staff, edit_staff, scan_int, add_patron, remove_patron, 
+edit_patrons, print_menu_edit_patrons*/
 
 
 /**************************************************************
