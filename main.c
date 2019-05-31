@@ -1,9 +1,8 @@
-#include <stdio.h> /* printf() */
-#include <string.h>
+#include <stdio.h> /* printf */
+#include <string.h> /* strcmp */
 
-#include "definitions.h" /* MAX_EVENTS */
 #include "structs.h" /* event_manager_t*/
-#include "function_prototypes.h" /* menu_login() */
+#include "function_prototypes.h" /* init_event_manager, print_info, menu_login*/
 
 /* lines within the code surrounded by #ifdef DEBUG
  * will only run if the following line is not commented out*/

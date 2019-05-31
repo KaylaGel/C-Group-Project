@@ -1,6 +1,6 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h> 
+#include <stdio.h> /* printf */
+#include <stdlib.h> /* malloc */
+#include <string.h> /* strcmp */
 
 #include "structs.h" /* event_manager_t, person_t */
 #include "function_prototypes.h" /* get_new_user_, create_new_user, get_user_login*/

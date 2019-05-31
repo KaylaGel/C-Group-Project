@@ -1,9 +1,11 @@
-#include <stdio.h>
-#include <string.h>
+#include <stdio.h> /* printf, scanf */
+#include <string.h> /* strlen, strcpy */
 
-#include "definitions.h"
-#include "structs.h"
-#include "function_prototypes.h"
+#include "definitions.h" /* MIN_PASS_LEN, MAX_PASS_LEN */
+#include "structs.h" /* date_t, event_manager_t */
+#include "function_prototypes.h" /* username_taken, get_new_user_username,  
+get_new_user_password, caeser_cipher, get_new_user_firstname, get_new_user_lastname
+scan_int_min_max, */
 
 /**************************************************************
  * Function Name: get_new_user_username

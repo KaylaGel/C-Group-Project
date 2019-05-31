@@ -1,5 +1,5 @@
-#include <stdio.h>
-#include <stdlib.h>
+#include <stdio.h> /* printf, fopen, tmpfile, fprintf, fclose */
+#include <stdlib.h> /* printf */
 
 #include "structs.h" /* event_manager_t, event_t, person_t,  */
 #include "linked_list.h" /* list_count, list_get */

@@ -1,5 +1,6 @@
-#include <stdio.h> /* printf() */
-#include <string.h> /* strcmp() */
+#include <stdio.h> /* printf, scanf */
+#include <string.h>
+#include <stdlib.h> 
 
 #include "structs.h" /* event_manager_t, event_t */
 #include "linked_list.h" /* list_get */

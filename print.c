@@ -1,7 +1,9 @@
-#include <stdio.h>
+#include <stdio.h> /* printf */
 
-#include "structs.h" /*event_t, 
-#include "definitions.h"
+#include "structs.h" /* event_manager_t, event_t, person_t */
+#include "definitions.h" /* MAX_NAME_LEN  */
+#include "linked_list.h" /* list_count, list_get */
+#include "function_prototypes.h" /* print_event_name, print_user_details */
 
 /**************************************************************
  * Function Name: print_event_name

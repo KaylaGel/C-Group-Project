@@ -1,7 +1,7 @@
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h> /* free, malloc */
 
-#include "linked_list.h"
+#include "linked_list.h" /* linked_list_t, node_t, init_node, 
+list_last, list_first */
 
 /**************************************************************
  * Function Name: 

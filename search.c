@@ -1,7 +1,10 @@
-#include <stdio.h>
-#include <string.h>
+#include <stdio.h> /* printf, scanf */
+#include <string.h> /* strcmp */
 
 #include "structs.h" /* event_t */
+#include "definitions.h" /* MAX_NAME_LEN */
+#include "linked_list.h" /* linked_list_t, list_count, list_get,  */
+#include "function_prototypes.h" /*  */ 
 
 /**************************************************************
  * Function Name: search_event

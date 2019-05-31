@@ -1,5 +1,5 @@
-#include <string.h>
-#include <stdio.h>
+#include <string.h> /* strcpy, strlen */
+#include <stdio.h> /* rewind, fread, fwrite */
 
 #define BUFFER_SIZE 256
 

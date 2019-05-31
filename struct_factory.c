@@ -1,9 +1,13 @@
-#include <string.h>
-#include <stdlib.h>
-#include <stdio.h>
+#include <stdlib.h> /* malloc */
+#include <stdio.h> /* printf */
 
-#include "structs.h" /* event_manager_t, event_t */
-#include "function_prototypes.h" /* init_admin_account() */
+#include "structs.h" /* event_manager_t, event_t, person_t */
+#include "definitions.h" /* MIN_DAY, MIN_MONTH, MIN_YEAR */
+#include "linked_list.h" /* init_node, list_add */
+#include "function_prototypes.h" /* init_admin_account, get_new_event_name
+get_new_event_free_status, get_new_event_type, get_new_event_location, get_new_event_date
+init_event */
+
 
 /**************************************************************
  * Function Name: init_event_manager
