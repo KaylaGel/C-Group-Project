@@ -57,7 +57,7 @@ int main(int argc, char *argv[])
     }
 
 
-    printf("\n---- Welcome to EventManager v2.4 ----\n\n");
+    printf("\n---- Welcome to Event Hub v2.4 ----\n\n");
     printf("Description: This program is specifically designed to help event "
            "organisers\n");
     printf("and patrons access event information and join them if they please."

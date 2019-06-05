@@ -346,7 +346,7 @@ void print_menu_edit_patrons(void)
 void print_info(void)
 {
     printf(" \n"
-           " ---- Welcome to EventManager v2.4 Information Mode ----\n"
+           " ---- Welcome to Event Hub v2.4 Information Mode ----\n"
            " \n"
            "Description: This program is specifically designed to help \n"
            "event organisers and patrons access event information and \n"

@@ -5,7 +5,7 @@
 CC = gcc
 CFLAGS = -Wall -lm -ansi
 
-EXECUTABLE = EventManager
+EXECUTABLE = EventHub
 
 #Add any new header files that get created into this variable
 HEADERS = definitions.h structs.h funciton_prototypes.h
